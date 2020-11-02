@@ -2,12 +2,6 @@
 # - Variables -
 set $mod Mod4
 set $term --no-startup-id i3-sensible-terminal
-set $screenshot --no-startup-id sharenix-section
-set $brightness_up --no-startup-id ~/.config/i3/cubic-backlight -N 8 -i
-set $brightness_down --no-startup-id ~/.config/i3/cubic-backlight -N 8 -d
-set $volume_up --no-startup-id pactl set-sink-volume 0 +5%
-set $volume_down --no-startup-id pactl set-sink-volume 0 -5%
-set $volume_toggle --no-startup-id pactl sink-mute 0 toggle
 
 
 # #---Basic Definitions---# #
@@ -25,7 +19,8 @@ font pango:monospace 12
 # cursor for 60 seconds.
 
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/Dione_wallpaper.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Dione_wallpaper.jpg
+exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
