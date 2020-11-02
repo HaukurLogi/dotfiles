@@ -1,0 +1,3 @@
+/target
+!/target/release/display-battery
+**/*.rs.bk
