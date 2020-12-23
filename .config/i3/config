@@ -19,8 +19,8 @@ font pango:monospace 12
 # cursor for 60 seconds.
 
 # Setting the background:
-#exec_always --no-startup-id feh --bg-scale ~/Dione_wallpaper.jpg
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
+exec_always --no-startup-id feh --bg-scale ~/wallpaper.jpg
+
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
@@ -68,9 +68,9 @@ bindsym Print                   exec $screenshot
 bindsym XF86MonBrightnessUp     exec $brightness_up
 bindsym XF86MonBrightnessDown   exec $brightness_down
 
-bindsym XF86AudioRaiseVolume    exec $volume_up
-bindsym XF86AudioLowerVolume    exec $volume_down
-bindsym XF86AudioMute           exec $volume_toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 # }}}
 # -- Letter key bindings -- {{{
 # 'quit'
@@ -102,18 +102,9 @@ bindsym $mod+t                  layout tabbed
 # 'normal'
 bindsym $mod+n                  layout toggle split
 
-bindsym $mod+j                  focus left
-bindsym $mod+Shift+j            move left
-
-bindsym $mod+k                  focus down
-bindsym $mod+Shift+k            move down
-
-bindsym $mod+l                  focus right
-bindsym $mod+Shift+l            move right
-
 bindsym $mod+h                  split horizontal
 
-bindsym $mod+Shift+x            exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+l            exec --no-startup-id ~/.config/i3/lock.sh
 
 # 'chromium'
 bindsym $mod+c                  exec --no-startup-id firefox
@@ -121,6 +112,9 @@ bindsym $mod+c                  exec --no-startup-id firefox
 bindsym $mod+v                  split vertical
 
 bindsym $mod+comma                  resize shrink height 10 px or 10ppt
+
+bindsym $mod+Shift+r exec reboot
+
 bindsym $mod+Shift+comma            resize shrink width 10 px or 10ppt
 
 bindsym $mod+period                  resize grow height 10 px or 10ppt
@@ -179,4 +173,6 @@ bindsym $mod+Shift+Left         move left
 bindsym $mod+Shift+Down         move down
 bindsym $mod+Shift+Up           move up
 bindsym $mod+Shift+Right        move right
-# }}}
+
+
+

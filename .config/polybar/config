@@ -102,6 +102,23 @@ exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
 tail=true
 format-prefix="BAT: "
 
+; [module/battery]
+; type = internal/battery
+;
+; battery = BAT0
+; adapter = AC
+;
+; full-at = 100
+;
+; label-full = %percentage%%
+; format-full = BAT:  <label-full>
+;
+; label-charging = %percentage%% (%time%)
+; format-charging = BAT:  <label-charging>
+;
+; label-discharging = %percentage%% (%time%)
+; format-discharging = BAT: <label-discharging>
+
 [module/network]
 type=custom/script
 exec=nice -n4 ~/.config/polybar/bandwidth

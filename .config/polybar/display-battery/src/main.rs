@@ -12,7 +12,7 @@ use std::time::Duration;
 use arraydeque::{ArrayDeque, Wrapping};
 use battery::units::ratio::percent;
 use battery::units::time::second;
-use battery::Manager as BatteryManager;
+use battery::{Battery, Manager as BatteryManager};
 use battery::State;
 
 /// The time we'll sleep between each iteration of the main loop
@@ -47,10 +47,22 @@ fn main() -> Result<(), ErrorWrapper> {
         exit(if batteries.count() == 0 { 1 } else { 0 })
     }
 
-    let mut battery = batteries
-        .next()
-        .expect("No batteries found")
-        .expect("Unable to acecess battery information");
+    let mut battery = batteries.filter_map(|bat| {
+        match bat {
+            Ok(bat) => {
+                // println!("{:?} {:?} {:?} {:?} {:?}", bat.state_of_charge(), bat.vendor(), bat.model(), bat.serial_number(), bat.technology());
+                if bat.model() == Some("DELL HFRC349N") {
+                    Some(bat)
+                } else {
+                    None
+                }
+            },
+            _ => {
+                // We didn't find the battery we were looking for
+                exit(1);
+            }
+        }
+    }).next().unwrap();
 
     let stdout = io::stdout();
     let mut writer = stdout.lock();
