@@ -1,7 +1,7 @@
 # vim: filetype=i3:et:ts=4:sts=4:sw=4:fdm=marker
 # - Variables -
 set $mod Mod4
-set $term --no-startup-id i3-sensible-terminal
+set $term --no-startup-id alacritty
 
 
 # #---Basic Definitions---# #
@@ -86,6 +86,15 @@ bindsym $mod+Shift+u            move container to workspace prev
 bindsym $mod+i                  focus up
 bindsym $mod+Shift+i            move up
 
+bindsym $mod+j                  focus left
+bindsym $mod+Shift+j            move left
+
+bindsym $mod+k                  focus down
+bindsym $mod+Shift+k            move down
+
+bindsym $mod+l                  focus right
+bindsym $mod+Shift+l            move right
+
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
@@ -104,7 +113,7 @@ bindsym $mod+n                  layout toggle split
 
 bindsym $mod+h                  split horizontal
 
-bindsym $mod+l            exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+x            exec --no-startup-id ~/.config/i3/lock.sh
 
 # 'chromium'
 bindsym $mod+c                  exec --no-startup-id firefox
