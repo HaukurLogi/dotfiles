@@ -8,6 +8,6 @@ function config {
 }
 
 mkdir -p .dotfiles-backup
-config checkout || config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} bash -c 'mkdir -p `dirname .dotfiles-backup/{}` && mv {} .dotfiles-backup/{}'
+config checkout || config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} bash -c 'mkdir -p `dirname .dotfiles-backup/{}` && mv {} .dotfiles-backup/{}'
 
 config config --local status.showUntrackedFiles no
