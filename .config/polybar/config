@@ -19,7 +19,7 @@ font-0 = Ubuntu Mono:style=Regular:size=13;3
 font-1 = FontAwesome:style=Regular:size=13;3
 
 modules-left = i3
-modules-right = volume battery network gpu cpu memory date
+modules-right = i3-volume battery network gpu cpu memory date
 module-margin = 3
 
 tray-position = right
@@ -94,6 +94,16 @@ label-volume = VOL: %percentage%%
 ;   %percentage% (default)
 label-muted = VOL: %percentage%% (muted)
 ; label-muted-foreground = #666
+
+[module/i3-volume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/i3-volume/volume listen "%i %v %p\n"
+scroll-up = ~/i3-volume/volume up
+scroll-down = ~/i3-volume/volume down
+click-left = ~/i3-volume/volume mute
+click-right = exec pavucontrol &
 
 [module/battery]
 type=custom/script

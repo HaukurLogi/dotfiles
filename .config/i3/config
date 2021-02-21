@@ -19,12 +19,14 @@ font pango:monospace 12
 # cursor for 60 seconds.
 
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
 
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
+#Bluetooth Applet
+exec --no-startup-id blueman-applet
 # Network Manager applet
 exec --no-startup-id nm-applet
 # Polybar:
@@ -63,14 +65,18 @@ bindsym $mod+space              focus mode_toggle
 
 bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
-bindsym Print                   exec $screenshot
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-bindsym XF86MonBrightnessUp     exec $brightness_up
-bindsym XF86MonBrightnessDown   exec $brightness_down
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86MonBrightnessUp exec sudo brightnessctl set 15%+ # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo brightnessctl set 15%- # decrease screen brightness
+
+
+
+
+
 # }}}
 # -- Letter key bindings -- {{{
 # 'quit'
@@ -95,6 +101,8 @@ bindsym $mod+Shift+k            move down
 bindsym $mod+l                  focus right
 bindsym $mod+Shift+l            move right
 
+bindsym $mod+shift+b exec blueman-manager
+
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
@@ -113,7 +121,7 @@ bindsym $mod+n                  layout toggle split
 
 bindsym $mod+h                  split horizontal
 
-bindsym $mod+x            exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+shift+x            exec --no-startup-id ~/.config/i3/lock.sh
 
 # 'chromium'
 bindsym $mod+c                  exec --no-startup-id firefox
@@ -122,7 +130,7 @@ bindsym $mod+v                  split vertical
 
 bindsym $mod+comma                  resize shrink height 10 px or 10ppt
 
-bindsym $mod+Shift+r exec reboot
+bindsym $mod+Shift+r exec i3-msg restart
 
 bindsym $mod+Shift+comma            resize shrink width 10 px or 10ppt
 
