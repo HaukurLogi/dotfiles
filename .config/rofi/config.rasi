@@ -3,10 +3,10 @@
  * vim: ft=css
  */
 * {
-    foreground:                  #ffffff;
-    background:                  #000000;
-    separatorcolor:              #ffffff;
-    bordercolor:                 #ffffff;
+    foreground:                  #e3e3e3;
+    background:                  #141414;
+    separatorcolor:              #e3e3e3;
+    bordercolor:                 #e3e3e3;
 
     spacing:                     2;
 
@@ -140,3 +140,5 @@
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
 }
+
+

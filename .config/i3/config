@@ -19,7 +19,7 @@ font pango:monospace 12
 # cursor for 60 seconds.
 
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Downloads/wallpaper.jpg
 
 # Start dunst for notifications:
 exec --no-startup-id dunst
