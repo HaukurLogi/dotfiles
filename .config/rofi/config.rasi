@@ -4,7 +4,7 @@
  */
 * {
     foreground:                  #e3e3e3;
-    background:                  #141414;
+    background:                  #2e2e2e;
     separatorcolor:              #e3e3e3;
     bordercolor:                 #e3e3e3;
 
