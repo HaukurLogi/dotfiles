@@ -1,12 +1,13 @@
+
 /* Monochrome theme by Árni Dagur
  * Based on ROFI Color theme by Dave Davenport
  * vim: ft=css
  */
 * {
-    foreground:                  #e3e3e3;
-    background:                  #2e2e2e;
-    separatorcolor:              #e3e3e3;
-    bordercolor:                 #e3e3e3;
+    foreground:                  #ffffff;
+    background:                  #000000;
+    separatorcolor:              #ffffff;
+    bordercolor:                 #ffffff;
 
     spacing:                     2;
 
@@ -140,5 +141,3 @@
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
 }
-
-

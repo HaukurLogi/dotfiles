@@ -19,8 +19,11 @@ font pango:monospace 12
 # cursor for 60 seconds.
 
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/Downloads/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
 
+
+#Transparent Alacritty
+exec_always --no-startup-id compton
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
@@ -110,6 +113,7 @@ bindsym $mod+Shift+o            move container to workspace next
 # only shows applications that have generated .desktop file
 set $dmenu_settings -i -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -fn 'Inconsolata for Powerline:normal:pixelsize=21'
 bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu $dmenu_settings"
+
 # shows all applications
 bindsym $mod+Shift+d            exec --no-startup-id dmenu_run $dmenu_settings
 
