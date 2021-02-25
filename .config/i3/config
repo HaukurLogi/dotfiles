@@ -3,6 +3,8 @@
 set $mod Mod4
 set $term --no-startup-id alacritty
 
+#Font
+font pango: System San Francisco Display 10
 
 # #---Basic Definitions---# #
 #Needed for i3-gaps
@@ -46,17 +48,6 @@ focus_follows_mouse no
 hide_edge_borders smart
 # Make border thin
 default_border pixel 1
-
-# - Colours -
-# class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #000000 #ffffff #2e9ef4   #ffffff
-client.focused_inactive #333333 #000000 #ffffff #484e50   #5f676a
-client.unfocused        #333333 #000000 #888888 #292d2e   #222222
-client.urgent           #2f343a #000000 #ffffff #900000   #900000
-client.placeholder      #000000 #000000 #ffffff #000000   #0c0c0c
-
-client.background       #ffffff
-
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return             exec $term
@@ -108,13 +99,9 @@ bindsym $mod+shift+b exec blueman-manager
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
-# 'dmenu'
-# only shows applications that have generated .desktop file
-set $dmenu_settings -i -nb '#000000' -nf '#ffffff' -sb '#ffffff' -sf '#000000' -fn 'Inconsolata for Powerline:normal:pixelsize=21'
-bindsym $mod+d                  exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu $dmenu_settings"
+bindsym $mod+d exec rofi -show drun
 
-# shows all applications
-bindsym $mod+Shift+d            exec --no-startup-id dmenu_run $dmenu_settings
+          
 
 # 'tabbed'
 bindsym $mod+t                  layout tabbed
