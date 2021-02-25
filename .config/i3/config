@@ -99,7 +99,7 @@ bindsym $mod+shift+b exec blueman-manager
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 
           
 
