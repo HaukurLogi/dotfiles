@@ -17,10 +17,8 @@ font pango:monospace 12
 # launching. So, if an application is not startup-notification aware (most GTK
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
-
 # Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
-
 
 #Transparent Alacritty
 exec_always --no-startup-id compton
@@ -71,7 +69,8 @@ bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?"
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-
+#Pavucontrol
+bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 
 bindsym XF86MonBrightnessUp exec sudo brightnessctl set 15%+ # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo brightnessctl set 15%- # decrease screen brightness
