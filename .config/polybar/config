@@ -11,17 +11,17 @@ throttle-limit = 3
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 20
+height = 25
 
-background = #aa000000
-foreground = #ffffff	
+background = #ee000000
+foreground = #ddffff	
 linecolor = #ffffff
 
 font-0 = System San Francisco Display 18:style=Regular:size=13;3
 font-1 = FontAwesome:style=Regular:size=13;3
-
+font-2 = Weather Icons:style=Regular:size=13;3
 modules-left = i3 
-modules-right = i3-volume battery network gpu cpu memory date poweroff
+modules-right = i3-volume battery weather network gpu cpu memory date poweroff
 module-margin = 3
 
 tray-position = right
@@ -47,7 +47,7 @@ index-sort = true
 label-focused = %index%
 ; label-focused-font = 0
 label-focused-foreground = #000000
-label-focused-background = #ffffff
+label-focused-background = #aaffffff
 label-focused-padding = 1
 
 label-visible = %index%
@@ -57,8 +57,8 @@ label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
-label-unfocused-foreground = #ffffff
-label-unfocused-background = #222222
+label-unfocused-foreground = #000000
+label-unfocused-background = #aaffffff
 label-unfocused-padding = 1
 
 label-urgent = %index%
@@ -96,6 +96,16 @@ label-volume = VOL: %percentage%%
 ;   %percentage% (default)
 label-muted = VOL: %percentage%% (muted)
 ; label-muted-foreground = #666
+
+[module/weather]
+type = custom/script
+exec = ~/polybar-forecast/target/release/polybar-forecast --api-key=fa3fd985867e2ef4441b9ba9c04155ad --city-id=3417195 --units=metric
+exec-if = ping openweathermap.org -c 1
+
+;label = %output:0:15:...%
+label = %output%
+interval = 10
+label-font = 2
 
 [module/i3-volume]
 type = custom/script

@@ -20,7 +20,7 @@ font pango:monospace 12
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Dione_wallpaper.jpg
 
 #Transparent Alacritty
 exec_always --no-startup-id compton
