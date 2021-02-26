@@ -1,4 +1,8 @@
 
+#Midnight Purple By Haukur Logi
+#Inspired By CodeCast
+
+
 ; vim: ft=dosini
 ;
 ; This config uses the new syntax (which isn't merged upstream)
@@ -11,17 +15,18 @@ throttle-limit = 3
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 23
+height = 20
 
-background = #aaffffff
-foreground = #000000
+background = #2f343f
+foreground = #676e7d
 linecolor = #ffffff
 
-font-0 = System San Francisco Display 18:style=Regular:size=13;3
+font-0 = System San Francisco Display:style=Thin:size=12;3
+#font-0 = Fire Code:style=Bold:size=12;3
 font-1 = FontAwesome:style=Regular:size=13;3
 font-2 = Weather Icons:style=Regular:size=13;3
 modules-left = i3 
-modules-right = i3-volume battery weather network gpu cpu memory date poweroff
+modules-right = i3-volume battery weather network cpu memory date poweroff
 module-margin = 3
 
 tray-position = right
@@ -46,8 +51,8 @@ index-sort = true
 
 label-focused = %index%
 ; label-focused-font = 0
-label-focused-foreground = #000000
-label-focused-background = #aaffffff
+label-focused-foreground = #f3f4f5
+label-focused-background = #2f343f
 label-focused-padding = 1
 
 label-visible = %index%
@@ -57,8 +62,8 @@ label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
-label-unfocused-foreground = #000000
-label-unfocused-background = #aaffffff
+label-unfocused-foreground = #676e7d
+label-unfocused-background = #2f343f
 label-unfocused-padding = 1
 
 label-urgent = %index%
@@ -117,11 +122,11 @@ scroll-down = ~/i3-volume/volume down
 click-left = ~/i3-volume/volume mute
 click-right = exec pavucontrol &
 
-[module/poweroff]
-type=custom/script
-exec=echo "  "
-click-left=poweroff
-click-right=reboot
+#[module/poweroff]
+#type=custom/script
+#exec=echo "  "
+#click-left=poweroff
+#click-right=reboot
 
 [module/battery]
 type=custom/script

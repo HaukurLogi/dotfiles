@@ -48,6 +48,7 @@ focus_follows_mouse no
 hide_edge_borders smart
 # Make border thin
 default_border pixel 1
+
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return             exec $term

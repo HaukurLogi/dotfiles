@@ -1,7 +1,7 @@
-rofi.color-window: #333333 
-rofi.color-normal: #333333, #c4cbd4, #333333, #333333, #f9f9f9
-rofi.color-urgent: #333333, #cc6666, #333333, #c4cbd4, #f9f9f9
-rofi.color-active: #333333, #65acff, #333333, #4491ed, #f9f9f9
+rofi.color-window: #2f343f 
+rofi.color-normal: #2f343f, #c4cbd4, #2f343f, #2f343f, #f9f9f9
+rofi.color-urgent: #2f343f, #cc6666, #2f343f, #c4cbd4, #f9f9f9
+rofi.color-active: #2f343f, #65acff, #2f343f, #4491ed, #f9f9f9
 rofi.width: 100
 rofi.lines: 3
 rofi.font: System San Francisco Display 18
@@ -10,4 +10,29 @@ rofi.eh: 2
 rofi.padding: 800
 rofi.separator-style: none
 rofi.hide-scrollbar: true
+
+
+*loginshell: true
+*selectToClipboard: true
+! Font
+*faceName: Fira Code
+*faceSize: 14
+*background:  #000000
+*foreground:  #ffffff
+*color0:  #000000
+*color1:  #ce5384
+*color2:  #2d957e
+*color3:  #b19527
+*color4:  #5d4d84
+*color5:  #a31dbb
+*color6:  #2aa1b8
+*color7:  #ffffff
+*color8:  #000000
+*color9:  #f22429
+*color10:  #86dc39
+*color11:  #dc7539
+*color12:  #4f97e1
+*color13:  #c56ecd
+*color14:  #28defa
+*color15:  #ffffff
 
