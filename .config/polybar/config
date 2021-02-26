@@ -20,6 +20,7 @@ height = 20
 background = #2f343f
 foreground = #676e7d
 linecolor = #ffffff
+bottom = true
 
 font-0 = System San Francisco Display:style=Thin:size=12;3
 #font-0 = Fire Code:style=Bold:size=12;3
