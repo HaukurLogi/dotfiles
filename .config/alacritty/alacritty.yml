@@ -21,6 +21,8 @@ bell:
   animation: EaseOutExpo
   duration: 0
 
+  font: Fire Code:style=Bold:size=12;3
+
 colors:
   cursor:
     text: '0x000000'
@@ -44,8 +46,8 @@ colors:
     white: '#ffffff'
     yellow: '#b19527'
   primary:
-    background: '#000000'
-    foreground: '#ffffff'
+    background: '#2f343f'
+    foreground: '#f3f4f5'
 
 draw_bold_text_with_bright_colors: false
 
