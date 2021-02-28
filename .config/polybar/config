@@ -17,8 +17,8 @@ monitor = ${env:MONITOR:}
 width = 100%
 height = 20
 
-background = #2f343f
-foreground = #676e7d
+background = #000000
+foreground = #ffffff
 linecolor = #ffffff
 bottom = true
 
