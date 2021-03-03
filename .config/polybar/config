@@ -36,7 +36,7 @@ font-0 = System San Francisco Display:style=Thin:size=12;3
 font-1 = FontAwesome:style=Regular:size=13;3
 font-2 = Weather Icons:style=Regular:size=13;3
 modules-left = i3 
-modules-right = date
+modules-right = battery date cpu network
 module-margin = 3
 
 tray-position = right
