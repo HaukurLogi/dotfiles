@@ -1,19 +1,4 @@
-#  ___     ___   __________   ___    ___   ___    ___   ___    ___   _________
-# |   |   |   | |   ____   | |   |  |   | |   |  |   | |   |  |   | |         |_
-# |   |   |   | |  |    |  | |   |  |   | |   | |   |  |   |  |   | |   ____    |
-# |   |   |   | |  |    |  | |   |  |   | |   ||   |   |   |  |   | |  |    |    |
-# |   |___|   | |  |____|  | |   |  |   | |       |    |   |  |   | |  |____|   _|
-# |           | |          | |   |  |   | |      |     |   |  |   | |         _|
-# |    ___    | |    __    | |   |  |   | |      |     |   |  |   | |         |  
-# |   |   |   | |   |  |   | |   |  |   | |   ||   |   |   |  |   | |    __    |
-# |   |   |   | |   |  |   | |   |__|   | |   | |   |  |   |__|   | |   |  |    |
-# |   |   |   | |   |  |   | |          | |   | |   |  |          | |   |   |    |
-# |___|   |___| |___|  |___| |__________| |___|  |___| |__________| |___|    | ___|
-
-;=======================================================
-
 ; vim: ft=dosini
-;
 ; This config uses the new syntax (which isn't merged upstream)
 
 [settings]
@@ -24,19 +9,19 @@ throttle-limit = 3
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 20
+height = 22
 
 background = #aa000000
-foreground = #f3f4f5
-linecolor = #ffffff
+foreground = #c9ffff
+linecolor = #c9ffff
 bottom = true
 
-font-0 = System San Francisco Display:style=Thin:size=12;3
-#font-0 = Fire Code:style=Bold:size=12;3
+font-0 = Sanfrancisco:size=13;3
 font-1 = FontAwesome:style=Regular:size=13;3
-font-2 = Weather Icons:style=Regular:size=13;3
-modules-left = i3 
-modules-right = battery date cpu network
+
+modules-left = i3 network
+modules-center = date
+modules-right = volume battery gpu cpu memory
 module-margin = 3
 
 tray-position = right
@@ -61,30 +46,30 @@ index-sort = true
 
 label-focused = %index%
 ; label-focused-font = 0
-label-focused-foreground = #f3f4f5
-label-focused-background = #000000
+label-focused-foreground = #000000
+label-focused-background = #ffffff
 label-focused-padding = 1
 
 label-visible = %index%
-label-visible-foreground = #ffffff
-label-visible-background = #5f676a
+label-visible-foreground = #aaffffff
+label-visible-background = #aa000000
 label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
-label-unfocused-foreground = #333333
-label-unfocused-background = #000000
+label-unfocused-foreground = #aaffffff
+label-unfocused-background = #aa000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
 ; label-urgent-font = 0
-label-urgent-foreground = #ffffff
-label-urgent-background = #900000
+label-urgent-foreground = #aaffffff
+label-urgent-background = #aa000000
 label-urgent-padding = 1
 
 label-seperator = |
 label-seperator-padding = 1
-label-seperator-foreground = #ffffff
+label-seperator-foreground = #aaffffff
 
 ; Left modules
 [module/volume]
@@ -105,68 +90,25 @@ format-volume = <label-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-volume = VOL: %percentage%%
+label-volume = volume: %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
 label-muted = VOL: %percentage%% (muted)
 ; label-muted-foreground = #666
 
-[module/weather]
-type = custom/script
-exec = ~/polybar-forecast/target/release/polybar-forecast --api-key=fa3fd985867e2ef4441b9ba9c04155ad --city-id=3417195 --units=metric
-exec-if = ping openweathermap.org -c 1
-
-;label = %output:0:15:...%
-label = %output%
-interval = 10
-label-font = 2
-
-[module/i3-volume]
-type = custom/script
-tail = true
-label = %output%
-exec = ~/i3-volume/volume listen "%i %v %p\n"
-scroll-up = ~/i3-volume/volume up
-scroll-down = ~/i3-volume/volume down
-click-left = ~/i3-volume/volume mute
-click-right = exec pavucontrol &
-
-#[module/poweroff]
-#type=custom/script
-#exec=echo "  "
-#click-left=poweroff
-#click-right=reboot
-
 [module/battery]
 type=custom/script
 exec-if=~/.config/polybar/display-battery/target/release/display-battery --check
 exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
 tail=true
-format-prefix="BAT: "
-
-; [module/battery]
-; type = internal/battery
-;
-; battery = BAT0
-; adapter = AC
-;
-; full-at = 100
-;
-; label-full = %percentage%%
-; format-full = BAT:  <label-full>
-;
-; label-charging = %percentage%% (%time%)
-; format-charging = BAT:  <label-charging>
-;
-; label-discharging = %percentage%% (%time%)
-; format-discharging = BAT: <label-discharging>
+format-prefix="battery: "
 
 [module/network]
 type=custom/script
 exec=nice -n4 ~/.config/polybar/bandwidth
 tail=true
-format-prefix="NET: "
+format-prefix="internet: "
 
 [module/gpu]
 type=custom/script
@@ -195,7 +137,7 @@ format = <label>
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU: %percentage-sum%%
+label = cpu: %percentage-sum%%
 
 [module/memory]
 type=internal/memory
@@ -228,7 +170,7 @@ format = <label>
 ;   %gb_swap_total%
 ;   %gb_swap_free%
 ;   %gb_swap_used%
-label = MEM: %gb_used%/%gb_total%
+label = memory: %gb_used%/%gb_total%
 
 [module/filesystem]
 type=internal/fs

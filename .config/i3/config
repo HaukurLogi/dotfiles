@@ -1,7 +1,7 @@
 # vim: filetype=i3:et:ts=4:sts=4:sw=4:fdm=marker
 # - Variables -
 set $mod Mod4
-set $term --no-startup-id gnome-terminal
+set $term --no-startup-id alacritty
 
 #Font
 font pango: System San Francisco Display 10
@@ -20,7 +20,9 @@ font pango:monospace 12
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/Dione_wallpaper.jpg
+
+#exec_always --no-startup-id feh --bg-scale /home/haukur/Dione_wallpaper.jpg
+exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
 
 #Transparent Alacritty
 exec_always --no-startup-id compton
@@ -64,8 +66,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 #Pavucontrol
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
 
-bindsym XF86MonBrightnessUp exec sudo brightnessctl set 15%+ # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo brightnessctl set 15%- # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 15
+bindsym XF86MonBrightnessDown exec xbacklight -dec 15
 
 
 
