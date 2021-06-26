@@ -19,21 +19,25 @@ font pango:monospace 12
 # launching. So, if an application is not startup-notification aware (most GTK
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
-# Setting the background:
 
+#i3 gaps
+gaps inner 10
+gaps outer 30
+
+#setting background
 #exec_always --no-startup-id feh --bg-scale /home/haukur/Dione_wallpaper.jpg
 exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
 
 #Transparent Alacritty
-exec_always --no-startup-id compton
+exec_always --no-startup-id picom
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 #Bluetooth Applet
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 # Network Manager applet
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 # Polybar:
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Redshift is like f.lux

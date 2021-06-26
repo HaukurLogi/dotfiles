@@ -8,20 +8,32 @@ throttle-limit = 3
 [bar/top]
 monitor = ${env:MONITOR:}
 
-width = 100%
-height = 22
+line-size = 2
+enable-ipc=true
+width = 80%
+height = 30
+offset-x = 10%
+offset-y = 5
+radius = 15
+border-size = 0
+padding=2
+
+override-redirect = true
 
 background = #aa000000
-foreground = #c9ffff
-linecolor = #c9ffff
-bottom = true
+foreground = #ffffff
+linecolor = #ffffff
 
-font-0 = Sanfrancisco:size=13;3
-font-1 = FontAwesome:style=Regular:size=13;3
-
-modules-left = i3 network
+font-0=cherry:size=14;3
+font-1=Font Awesome 5 Free Solid:size=8;2
+font-2=Font Awesome 5 Free Regular:size=8;2
+font-3=Font Awesome 5 Brands:size=8;2
+font-4=font\-logos:size=10;2
+font-5=IPAGothic:size=11;2
+modules-left = i3
 modules-center = date
 modules-right = volume battery gpu cpu memory
+
 module-margin = 3
 
 tray-position = right
@@ -34,30 +46,30 @@ scroll-down = i3wm-wsprev
 wm-restack = i3
 
 ; Right modules
-[module/i3]
-type = internal/i3
 
 ; Only show workspaces defined on the same output as the bar.
-pin-workspaces = true
 
 ; Sort the workspaces by index instead of the default
 ; sorting that groups the workspaces by output.
-index-sort = true
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
 
 label-focused = %index%
 ; label-focused-font = 0
-label-focused-foreground = #000000
-label-focused-background = #ffffff
+label-focused-foreground = #ffffff
+label-focused-background = #aa000000
 label-focused-padding = 1
 
 label-visible = %index%
-label-visible-foreground = #aaffffff
+label-visible-foreground = #ffffff
 label-visible-background = #aa000000
 label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
-label-unfocused-foreground = #aaffffff
+label-unfocused-foreground = #b3b3b3
 label-unfocused-background = #aa000000
 label-unfocused-padding = 1
 
@@ -68,8 +80,6 @@ label-urgent-background = #aa000000
 label-urgent-padding = 1
 
 label-seperator = |
-label-seperator-padding = 1
-label-seperator-foreground = #aaffffff
 
 ; Left modules
 [module/volume]
@@ -214,14 +224,12 @@ exec = wh summary --now --duration
 interval = 5
 format-prefix = "WH: "
 
+
 [module/date]
 type = internal/date
-; Available tokens:
-;   %date%
-;   %time%
-; Default: %date%
-label = %date% %time%
+interval = 10
+format-margin = 0
+label = %date%, %time%
 
-date = %a %Y-%m-%d
 time = %H:%M:%S
-
+date = %d %b
