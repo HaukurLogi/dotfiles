@@ -1,25 +1,24 @@
-rofi.font: System San Francisco Display 18
-loginshell: true
-*selectToClipboard: true
-! Font
-*faceName: Fira Code
-*faceSize: 14
-*background:  #000000
-*foreground:  #ffffff
+! Black + DarkGrey
 *color0:  #000000
-*color1:  #ce5384
-*color2:  #2d957e
-*color3:  #b19527
-*color4:  #5d4d84
-*color5:  #a31dbb
-*color6:  #2aa1b8
-*color7:  #ffffff
-*color8:  #000000
-*color9:  #f22429
-*color10:  #86dc39
-*color11:  #dc7539
-*color12:  #4f97e1
-*color13:  #c56ecd
-*color14:  #28defa
-*color15:  #ffffff
-
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMagenta + Magenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff

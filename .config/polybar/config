@@ -25,20 +25,22 @@ foreground = #ffffff
 linecolor = #ffffff
 
 font-0=cherry:size=14;3
-font-1=Font Awesome 5 Free Solid:size=8;2
-font-2=Font Awesome 5 Free Regular:size=8;2
-font-3=Font Awesome 5 Brands:size=8;2
-font-4=font\-logos:size=10;2
-font-5=IPAGothic:size=11;2
-modules-left = i3
+font-1=FontAwesome5Free:style=Solid:size=10;4
+font-2=FontAwesome5Free:style=Regular:size=10;4
+font-3=FontAwesome5Brands:style=Regular:size=10;4
+font-4=font-logos:size=11;4 
+
+modules-left = alacritty i3 battery
 modules-center = date
-modules-right = volume battery gpu cpu memory
+modules-right = volume gpu cpu memory
 
 module-margin = 3
 
 tray-position = right
 tray-maxsize = 16
 tray-padding = 1
+tray-colour = #aa000000
+tray-radius = 15
 
 ; i3 stuff
 scroll-up = i3wm-wsnext
@@ -82,6 +84,7 @@ label-urgent-padding = 1
 label-seperator = |
 
 ; Left modules
+
 [module/volume]
 type=internal/pulseaudio
 interval=5
@@ -100,7 +103,7 @@ format-volume = <label-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-volume = volume: %percentage%%
+label-volume = 墳%percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -108,11 +111,102 @@ label-muted = VOL: %percentage%% (muted)
 ; label-muted-foreground = #666
 
 [module/battery]
-type=custom/script
-exec-if=~/.config/polybar/display-battery/target/release/display-battery --check
-exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
-tail=true
-format-prefix="battery: "
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = Charging %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = Discharging %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+
+
+
 
 [module/network]
 type=custom/script
@@ -147,7 +241,7 @@ format = <label>
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = cpu: %percentage-sum%%
+label =  %percentage-sum%%
 
 [module/memory]
 type=internal/memory
@@ -229,7 +323,7 @@ format-prefix = "WH: "
 type = internal/date
 interval = 10
 format-margin = 0
-label = %date%, %time%
+label = 鬒 %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
