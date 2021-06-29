@@ -29,7 +29,7 @@ gaps outer 30
 exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
 
 #Transparent Alacritty
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --experimental-backends
 # Start dunst for notifications:
 exec --no-startup-id dunst
 # Unclutter makes the mouse invisible after a brief period
@@ -106,7 +106,7 @@ bindsym $mod+shift+b exec blueman-manager
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -fullscreen
 
           
 
