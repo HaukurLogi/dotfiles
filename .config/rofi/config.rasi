@@ -1,4 +1,4 @@
-
+/* RASI Theme */
 
 * {
 
@@ -64,7 +64,7 @@
 
     border:     0;
 
-    padding:    500;
+    padding:    400;
 
     background-color: @background;
 
@@ -74,7 +74,7 @@
 
     border:  0;
 
-    padding: 100;
+    padding: 5;
 
 }
 
@@ -102,7 +102,7 @@
 
 #listview {
 
-    fixed-height: 0;
+    fixed-height: 1;
 
     border:       2px solid 0px 0px ;
 
@@ -225,3 +225,5 @@
 }
 
 // vim:ft=css
+
+
