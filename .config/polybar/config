@@ -17,6 +17,7 @@ offset-y = 5
 radius = 15
 border-size = 0
 padding=2
+bottom=true
 
 override-redirect = true
 
