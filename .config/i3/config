@@ -25,8 +25,8 @@ gaps inner 10
 gaps outer 30
 
 #setting background
-exec_always --no-startup-id feh --bg-scale /home/haukur/forrest.jpg
-#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/pixels10.gif
+#exec_always --no-startup-id feh --bg-scale /home/hauksi/forrest2.jpg
+exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/cat1920.gif
 
 #Transparent Alacritty
 exec_always --no-startup-id picom --experimental-backends
@@ -64,8 +64,11 @@ bindsym $mod+space              focus mode_toggle
 
 bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
 
 #Pavucontrol
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
@@ -179,14 +182,15 @@ bindsym $mod+Shift+9            move container to workspace $ws9
 bindsym $mod+Shift+0            move container to workspace $ws10
 
 # #---Arrow Keys---# #
-bindsym $mod+Left               focus left
-bindsym $mod+Down               focus down
-bindsym $mod+Up                 focus up
-bindsym $mod+Right              focus right
+#bindsym $mod+Left               focus left
+#bindsym $mod+Down               focus down
+#bindsym $mod+Up                 focus up
+#bindsym $mod+Right              focus right
 bindsym $mod+Shift+Left         move left
 bindsym $mod+Shift+Down         move down
 bindsym $mod+Shift+Up           move up
 bindsym $mod+Shift+Right        move right
+
 
 
 

@@ -10,18 +10,18 @@ monitor = ${env:MONITOR:}
 
 line-size = 2
 enable-ipc=true
-width = 80%
+width = 100%
 height = 30
 offset-x = 10%
 offset-y = 5
-radius = 15
+;radius = 15
 border-size = 0
 padding=2
 bottom=true
 
-override-redirect = true
+;override-redirect = true
 
-background = #aa000000
+background = aa000000
 foreground = #ffffff
 linecolor = #ffffff
 
@@ -33,7 +33,7 @@ font-4=font-logos:size=11;4
 
 modules-left = alacritty i3 battery
 modules-center = date
-modules-right = volume gpu cpu memory
+modules-right = volume cpu memory
 
 module-margin = 3
 
