@@ -26,7 +26,7 @@ gaps outer 30
 
 #setting background
 #exec_always --no-startup-id feh --bg-scale /home/hauksi/forrest2.jpg
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/cat1920.gif
+exec_always --no-startup-id $HOME/bin/mpvbg $HOME/cat1920.gif
 
 #Transparent Alacritty
 exec_always --no-startup-id picom --experimental-backends
