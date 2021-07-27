@@ -64,8 +64,8 @@ bindsym $mod+space              focus mode_toggle
 
 bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
