@@ -46,7 +46,7 @@ colors:
     white: '#ffffff'
     yellow: '#b19527'
   primary:
-    background: '#2f343f'
+    background: '#000000'
     foreground: '#f3f4f5'
 
 draw_bold_text_with_bright_colors: false
