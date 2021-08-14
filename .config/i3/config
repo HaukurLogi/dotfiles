@@ -8,8 +8,7 @@ font pango: cherry 10
 
 # #---Basic Definitions---# #
 #Needed for i3-gaps
-#for_window [class="^.*"] border pixel 2
-#font pango:cherry 10
+for_window [class="^.*"] border pixel 2
 
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
@@ -26,7 +25,7 @@ gaps outer 30
 
 #setting background
 exec_always --no-startup-id feh --bg-scale /home/haukur/.bg/dione-2560.jpg
-#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/cat2540.gif
+#exec_always --no-startup-id $HOME/bin/mpvbg /home/haukur/.bg/pixels102560.gif
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
@@ -37,6 +36,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
+#Conky
+exec_always --no-startup-id $HOME/.config/conky/conkystartup.sh
 #Transparent Alacritty
 exec_always --no-startup-id picom --experimental-backends
 # Start dunst for notifications:
