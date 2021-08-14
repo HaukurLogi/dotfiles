@@ -46,7 +46,7 @@ exec --no-startup-id unclutter
 #Bluetooth Applet
 #exec --no-startup-id blueman-applet
 # Network Manager applet
-#exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 # Polybar:
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Redshift is like f.lux
@@ -117,7 +117,7 @@ bindsym $mod+shift+b exec blueman-manager
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
-bindsym $mod+d exec rofi -show drun -fullscreen
+bindsym $mod+d exec rofi -show drun -show-icons
 
           
 

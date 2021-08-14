@@ -11,16 +11,17 @@ monitor = ${env:MONITOR:}
 line-size = 2
 enable-ipc=true
 width = 100%
-height = 33
+height = 30
 offset-x = 10%
 offset-y = 5
+;radius = 15
 border-size = 0
 padding=2
 bottom=true
 
 ;override-redirect = true
 
-background = #aa000000
+background = aa000000
 foreground = #ffffff
 linecolor = #ffffff
 
