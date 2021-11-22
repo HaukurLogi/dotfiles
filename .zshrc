@@ -36,6 +36,6 @@ gpg-connect-agent updatestartuptty /bye > /dev/null
 
 # Load prompt
 source "$HOME/.config/zsh/ps1.zsh"
-neofetch --ascii ~/cat-ascii-art.txt -ascii_colors 1 2 3 4 5 6
 source /home/haukur/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/haukur/zsh-autosuggestions/zsh-autosuggestions.zsh
+pfetch

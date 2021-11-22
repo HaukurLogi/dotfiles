@@ -3,6 +3,7 @@
 set $mod Mod4
 set $term --no-startup-id alacritty
 
+
 #Font
 font pango: Inconsoinco 12 
 
@@ -12,7 +13,7 @@ for_window [class="^.*"] border pixel 2
 
 # Setting refresh rate
 
-#exec always --nostartup-id xrandr --output DP-1 --mode 2560x1440 --rate 144.00
+exec xrandr --output HDMI-0 --rotate right
 
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
@@ -23,13 +24,21 @@ for_window [class="^.*"] border pixel 2
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
 
+#cat
+for_window [class="Kitty" instance="kitty"] floating enable
+
+exec_always --no-startup-id alacritty
+
 #i3 gaps
 gaps inner 10
 gaps outer 30
 
 #setting background
-#exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/demo.png
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/wallpaperd2.gif
+exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/anime-firl-lol-gay.png
+#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/wallpaperd2.gif
+
+#epic drop term
+bindsym $term+l exec i3-quickterm
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
@@ -73,8 +82,8 @@ focus_follows_mouse yes
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return             exec $term
 
-bindsym $mod+Shift+space        floating toggle
-bindsym $mod+space              focus mode_toggle
+bindsym $mod+space        floating toggle
+#bindsym $mod+space              focus mode_toggle
 
 bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
