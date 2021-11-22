@@ -12,7 +12,7 @@ for_window [class="^.*"] border pixel 2
 
 # Setting refresh rate
 
-exec always --nostartup-id xrandr --output DP-1 --mode 2560x1440 --rate 144.00
+#exec always --nostartup-id xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
