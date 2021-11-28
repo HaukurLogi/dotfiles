@@ -20,14 +20,14 @@ bell:
   duration: 0
 
 font:
-  size: 13
+  size: 18
   normal:
-    family: Jetbrains Mono
-    style: Regular
+    family: Fira Code
+    style: Bold
   bold:
-    family: Jetbrains Mono
+    family: Fira Code
   italic:
-    family: Jetbrains Mono
+    family: Fira Code
 
 colors:
   name: Dawn
