@@ -35,7 +35,7 @@ gaps outer 30
 
 #setting background
 #exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/wallpapaer.jpg
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/wallpaperd2.gif
+exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
 
 #epic drop term
 bindsym $term+l exec i3-quickterm
