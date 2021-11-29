@@ -34,7 +34,7 @@ gaps inner 10
 gaps outer 30
 
 #setting background
-#exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/anime-firl-lol-gay.png
+#exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/wallpapaer.jpg
 exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/wallpaperd2.gif
 
 #epic drop term
@@ -131,7 +131,7 @@ bindsym $mod+shift+b exec blueman-manager
 bindsym $mod+o                  workspace next
 bindsym $mod+Shift+o            move container to workspace next
 
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun fullscreen
 
 
           

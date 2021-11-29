@@ -2,25 +2,25 @@
 ! + Haukurs Very Epic Rofi color theme +
 ! +++++++++++++++++++++++++++++++++++++++
 
-rofi.color-enabled: true
+#rofi.color-enabled: true
 
 ! Window:           'background',  'border', 'separator'
-rofi.color-window: argb:cc000000,  #9575cd, argb:ffffffff
+#rofi.color-window: argb:cc000000,  #9575cd, argb:ffffffff
 
 !   State:              'bg',       'fg',   'altbg',        'hlbg',         hlfg
-rofi.color-normal: argb:00000000, #ffffff, argb:00252936, argb:009575cd, #ff9575cd
-rofi.color-active: argb:00000000, #252936, argb:00252936, argb:009575cd, #ffc000
-rofi.color-urgent: argb:00000000, #ff0000, argb:00252936, argb:00252936, #ff0000
+#rofi.color-normal: argb:00000000, #ffffff, argb:00252936, argb:009575cd, #ff9575cd
+#rofi.color-active: argb:00000000, #252936, argb:00252936, argb:009575cd, #ffc000
+#rofi.color-urgent: argb:00000000, #ff0000, argb:00252936, argb:00252936, #ff0000
 
-rofi.width: 100
-rofi.padding: 1000
-rofi.line-margin: 15
-rofi.lines: 3
-rofi.separator-style: none
-rofi.columns: 1
-rofi.font: Inconsolata Bold 22
-rofi.bw: 0
-rofi.eh: 1
-rofi.hide-scrollbar: true
-rofi.auto-select: true
-!rofi.display-drun:⚌
+#rofi.width: 100
+#rofi.padding: 1000
+#rofi.line-margin: 15
+#rofi.lines: 3
+#rofi.separator-style: none
+#rofi.columns: 1
+#rofi.font: Inconsolata Bold 22
+#rofi.bw: 0
+#rofi.eh: 1
+#rofi.hide-scrollbar: true
+#rofi.auto-select: true
+#!rofi.display-drun:⚌

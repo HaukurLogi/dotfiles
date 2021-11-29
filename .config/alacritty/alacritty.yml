@@ -22,40 +22,40 @@ bell:
 font:
   size: 18
   normal:
-    family: Fira Code
-    style: Bold
+    family: DejaVu Sans Mono
+    style: Book
   bold:
-    family: Fira Code
+    family: DejaVu Sans Mono
   italic:
-    family: Fira Code
+    family: DejaVu Sans Mono
 
 colors:
-  name: Dawn
-  author: Escapist
+  name: Unsifted Wheat
+  author: dkeg
   primary:
-    background: "#181B20"
-    foreground: "#9B9081"
+    background: "#111111"
+    foreground: "#d3d3d3"
   cursor:
-    text: "#181B20"
-    cursor: "#9B9081"
+    text: "#111111"
+    cursor: "#d3d3d3"
   normal:
-    black: "#353535"
-    red: "#744B40"
-    green: "#6D6137"
-    yellow: "#765636"
-    blue: "#61564B"
-    magenta: "#6B4A49"
-    cyan: "#435861"
-    white: "#B3B3B3"
+    black: "#382c2f"
+    red: "#48393a"
+    green: "#65534d"
+    yellow: "#79665a"
+    blue: "#836e5e"
+    magenta: "#8e7766"
+    cyan: "#917781"
+    white: "#9a846d"
   bright:
-    black: "#5F5F5F"
-    red: "#785850"
-    green: "#6F6749"
-    yellow: "#776049"
-    blue: "#696057"
-    magenta: "#6F5A59"
-    cyan: "#525F66"
-    white: "#CDCDCD"
+    black: "#ac9377"
+    red: "#baa17e"
+    green: "#bca282"
+    yellow: "#c1a67e"
+    blue: "#cfb48e"
+    magenta: "#d1baa3"
+    cyan: "#dfc39b"
+    white: "#eed8c4"
 
 draw_bold_text_with_bright_colors: false
 
@@ -253,3 +253,4 @@ key_bindings:
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
 background_opacity: 0.98
+theme: Dkeg - unsiftedwheat
