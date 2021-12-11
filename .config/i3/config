@@ -13,6 +13,7 @@ for_window [class="^.*"] border pixel 2
 
 # Setting refresh rate
 
+exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 
 # - External scripts -
