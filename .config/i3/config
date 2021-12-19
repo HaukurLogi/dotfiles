@@ -70,7 +70,7 @@ exec --no-startup-id redshift
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 
 # - Behaviour -
-# Don't focus windows with mouse
+# Yes focus windows with mouse
 focus_follows_mouse yes
 
 # - Borders -
@@ -83,8 +83,12 @@ focus_follows_mouse yes
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return             exec $term
 
-bindsym $mod+space        floating toggle
-#bindsym $mod+space              focus mode_toggle
+
+#Floating
+bindsym $mod+space floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+default_border none
+default_floating_border normal
+
 
 bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
