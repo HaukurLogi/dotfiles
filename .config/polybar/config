@@ -4,6 +4,7 @@
 [settings]
 throttle-ms = 50
 throttle-limit = 3
+#pseudo-transparency = true
 
 [bar/top]
 monitor = ${env:MONITOR:}
@@ -19,7 +20,9 @@ border-size = 0
 padding=2
 bottom=true
 
-;override-redirect = true
+;pseudo-transparency = true
+
+override-redirect = false
 
 background = aa000000
 foreground = #ffffff
@@ -37,10 +40,15 @@ modules-right = volume cpu memory
 
 module-margin = 3
 
-tray-position = left
+tray-offset-x = 0
+tray-offset-y = 50
+tray-detached = true
+tray-transparent = false
+tray-position = right
 tray-maxsize = 16
-tray-padding = 1
-tray-colour = #00000000
+;tray-scale = 1.0
+tray-padding = 5
+tray-background = #aa000000
 ;tray-radius = 15
 
 ; i3 stuff
@@ -328,3 +336,5 @@ label = 鬒 %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
+
+
