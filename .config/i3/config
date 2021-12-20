@@ -9,7 +9,7 @@ font pango: Inconsoinco 12
 
 # #---Basic Definitions---# #
 #Needed for i3-gaps
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 4
 
 # Setting refresh rate
 
@@ -31,8 +31,11 @@ for_window [class="Kitty" instance="kitty"] floating enable
 exec_always --no-startup-id alacritty
 
 #i3 gaps
-gaps inner 10
-gaps outer 30
+gaps inner 20
+gaps outer -2
+smart_gaps on
+smart_gaps on
+
 
 #setting background
 #exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/wallpapaer.jpg
@@ -42,9 +45,9 @@ exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
 bindsym $term+l exec i3-quickterm
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
-client.focused_inactive #333333 #222222 #e3e3e3 #292d2e   #222222
-client.unfocused        #141414 #141414 #2b2b2b #292d2e   #141414
+client.focused          #141414 #222222 #e3e3e3 #292d2e   #222222
+client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #222222
+client.unfocused        #333333 #141414 #2b2b2b #292d2e   #141414
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -94,8 +97,8 @@ bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?"
 
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 #Pavucontrol
 bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
@@ -119,17 +122,17 @@ bindsym $mod+f                  fullscreen toggle
 bindsym $mod+u                  workspace prev
 bindsym $mod+Shift+u            move container to workspace prev
 
-bindsym $mod+i                  focus up
-bindsym $mod+Shift+i            move up
+bindsym $mod+i                  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym $mod+Shift+i            move up
 
-bindsym $mod+j                  focus left
-bindsym $mod+Shift+j            move left
+#bindsym $mod+j                  focus left
+#bindsym $mod+Shift+j            move left
 
-bindsym $mod+k                  focus down
-bindsym $mod+Shift+k            move down
+bindsym $mod+k                  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym $mod+Shift+k            move down
 
-bindsym $mod+l                  focus right
-bindsym $mod+Shift+l            move right
+#bindsym $mod+l                  focus right
+#bindsym $mod+Shift+l            move right
 
 bindsym $mod+shift+b exec blueman-manager
 
@@ -210,14 +213,13 @@ bindsym $mod+Shift+9            move container to workspace $ws9
 bindsym $mod+Shift+0            move container to workspace $ws10
 
 # #---Arrow Keys---# #
-#bindsym $mod+Left               focus left
-#bindsym $mod+Down               focus down
-#bindsym $mod+Up                 focus up
-#bindsym $mod+Right              focus right
+bindsym $mod+Left               focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right              focus right
 bindsym $mod+Shift+Left         move left
 bindsym $mod+Shift+Down         move down
 bindsym $mod+Shift+Up           move up
 bindsym $mod+Shift+Right        move right
-
 
 
