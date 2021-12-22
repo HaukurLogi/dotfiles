@@ -9,10 +9,9 @@ font pango: Inconsoinco 12
 
 # #---Basic Definitions---# #
 #Needed for i3-gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 5
 
-# Setting refresh rate
-
+# Setting rate
 exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 
@@ -25,10 +24,8 @@ exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
 
-#cat
-for_window [class="Kitty" instance="kitty"] floating enable
-
-exec_always --no-startup-id alacritty
+#Alacritty on startup
+#exec_always --no-startup-id alacritty
 
 #i3 gaps
 gaps inner 20
@@ -41,13 +38,11 @@ smart_gaps on
 #exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/wallpapaer.jpg
 exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
 
-#epic drop term
-bindsym $term+l exec i3-quickterm
-
+#Border colour
 # class                 border  backgr. text    indicator child_border
-client.focused          #141414 #222222 #e3e3e3 #292d2e   #222222
-client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #222222
-client.unfocused        #333333 #141414 #2b2b2b #292d2e   #141414
+client.focused          #0f0f0f #5c5c5c #e3e3e3 #5c5c5c   #0f0f0f
+client.focused_inactive #262626 #222222 #e3e3e3 #5c5c5c   #262626
+client.unfocused        #262626 #5c5c5c #e3e3e3 #5c5c5c   #262626
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -79,8 +74,6 @@ focus_follows_mouse yes
 # - Borders -
 # Hide borders on workspaces with only one window
 #hide_edge_borders smart
-# Make border thin
-#default_border pixel 1
 
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
