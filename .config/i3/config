@@ -2,19 +2,17 @@
 # - Variables -
 set $mod Mod4
 set $term --no-startup-id alacritty
-
-
 #Font
 font pango: Inconsoinco 12 
 
 # #---Basic Definitions---# #
-#Needed for i3-gaps
-for_window [class="^.*"] border pixel 5
+# - Border -
+for_window [class="^.*"] border pixel 4
 
-# Setting rate
+# Setting refresh rate
+
 exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
-
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
 # particular exec command. With startup-notification, i3 can make sure that a
@@ -24,30 +22,34 @@ exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
 
-#Alacritty on startup
+# - Alacritty -
 #exec_always --no-startup-id alacritty
 
-#i3 gaps
+# - Gaps -
+gaps inner 10
+gaps outer 30
 gaps inner 20
 gaps outer -2
 smart_gaps on
 smart_gaps on
 
 
-#setting background
+# - Wallpaper -
 #exec_always --no-startup-id feh --bg-scale /home/haukur/wallpapers/wallpapaer.jpg
 exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
 
-#Border colour
+# - Colours -
 # class                 border  backgr. text    indicator child_border
-client.focused          #0f0f0f #5c5c5c #e3e3e3 #5c5c5c   #0f0f0f
-client.focused_inactive #262626 #222222 #e3e3e3 #5c5c5c   #262626
-client.unfocused        #262626 #5c5c5c #e3e3e3 #5c5c5c   #262626
+client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
+client.focused_inactive #333333 #222222 #e3e3e3 #292d2e   #222222
+client.unfocused        #141414 #141414 #2b2b2b #292d2e   #141414
+client.focused          #141414 #222222 #e3e3e3 #292d2e   #222222
+client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #222222
+client.unfocused        #333333 #141414 #2b2b2b #292d2e   #141414
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
-
 #Conky
 #exec_always --no-startup-id $HOME/.config/conky/conkystartup.sh
 #Transparent Alacritty
@@ -66,109 +68,88 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id redshift
 # Lock the screen when AFK
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
-
 # - Behaviour -
 # Yes focus windows with mouse
 focus_follows_mouse yes
-
 # - Borders -
 # Hide borders on workspaces with only one window
 #hide_edge_borders smart
-
+# Make border thin
+#default_border pixel 1
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
-bindsym $mod+Return             exec $term
+bindsym $mod+Return              exec $term
 
-
-#Floating
-bindsym $mod+space floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+# - Floating - 
+bindsym $mod+space               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
 default_border none
 default_floating_border normal
+bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
+# - Volume -
+#bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioLowerVolume    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym $mod+Up                 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym $mod+Down               exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-bindsym $mod+Shift+Escape       exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
-
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
-#Pavucontrol
-bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
-
-bindsym XF86MonBrightnessUp exec xbacklight -inc 15
-bindsym XF86MonBrightnessDown exec xbacklight -dec 15
-
-
-
-
+# - Pavucontrol -            
+bindsym XF86MonBrightnessUp      exec xbacklight -inc 15
+bindsym XF86MonBrightnessDown    exec xbacklight -dec 15
 
 # }}}
 # -- Letter key bindings -- {{{
 # 'quit'
-bindsym $mod+q                  kill
-bindsym $mod+Shift+q            kill
-
+bindsym $mod+q                   kill
+bindsym $mod+Shift+q             kill
 # 'large'
-bindsym $mod+f                  fullscreen toggle
+#bindsym $mod+f                   fullscreen toggle
+#bindsym $mod+u                   workspace prev
+#bindsym $mod+Shift+u             move container to workspace prev
 
-bindsym $mod+u                  workspace prev
-bindsym $mod+Shift+u            move container to workspace prev
+#bindsym $mod+i                   focus up
+#bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindsym $mod+i                  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym $mod+Shift+i            move up
 
+
+#bindsym $mod+Shift+j             move left
 #bindsym $mod+j                  focus left
-#bindsym $mod+Shift+j            move left
 
-bindsym $mod+k                  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym $mod+Shift+k            move down
 
-#bindsym $mod+l                  focus right
-#bindsym $mod+Shift+l            move right
+bindsym $mod+Shift+k             move down
+bindsym $mod+k                   exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+
+#bindsym $mod+l                   focus right
+#bindsym $mod+Shift+l             move right
+
 
 bindsym $mod+shift+b exec blueman-manager
 
-bindsym $mod+o                  workspace next
-bindsym $mod+Shift+o            move container to workspace next
-
-bindsym $mod+d exec rofi -show drun fullscreen
-
-
+bindsym $mod+o                   workspace next
+bindsym $mod+Shift+o             move container to workspace next
+bindsym $mod+d                   exec rofi -show drun fullscreen
           
-
 # 'tabbed'
-bindsym $mod+t                  layout tabbed
-
+bindsym $mod+t                   layout tabbed
 # 'normal'
-bindsym $mod+n                  layout toggle split
-
-bindsym $mod+h                  split horizontal
-
-bindsym $mod+shift+x            exec --no-startup-id ~/.config/i3/lock.sh
-
+bindsym $mod+n                   layout toggle split
+bindsym $mod+h                   split horizontal
+bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
 # 'chromium'
-bindsym $mod+c                  exec --no-startup-id firefox
-
-bindsym $mod+v                  split vertical
-
-bindsym $mod+comma                  resize shrink height 10 px or 10ppt
-
-bindsym $mod+Shift+r exec i3-msg restart
-
-bindsym $mod+Shift+comma            resize shrink width 10 px or 10ppt
-
-bindsym $mod+period                  resize grow height 10 px or 10ppt
-bindsym $mod+Shift+period            resize grow width 10 px or 10ppt
-
+bindsym $mod+c                   exec --no-startup-id firefox
+bindsym $mod+v                   split vertical
+bindsym $mod+comma               resize shrink height 10 px or 10ppt
+bindsym $mod+Shift+r             exec i3-msg restart
+bindsym $mod+Shift+comma         resize shrink width 10 px or 10ppt
+bindsym $mod+period              resize grow height 10 px or 10ppt
+bindsym $mod+Shift+period        resize grow width 10 px or 10ppt
 # }}}
 # -- Workspace bindings -- {{{
-bindsym $mod+Home               workspace $ws1
-bindsym $mod+Shift+Home         move container to workspace $ws1
-bindsym $mod+End                workspace $ws10
-bindsym $mod+Shift+End          move container to workspace $ws10
-bindsym $mod+Tab                workspace back_and_forth
-
+bindsym $mod+Home                workspace $ws1
+bindsym $mod+Shift+Home          move container to workspace $ws1
+bindsym $mod+End                 workspace $ws10
+bindsym $mod+Shift+End           move container to workspace $ws10
+bindsym $mod+Tab                 workspace back_and_forth
 # name workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -180,7 +161,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
 # switch to workspace
 bindsym $mod+1                  workspace $ws1
 bindsym $mod+2                  workspace $ws2
@@ -192,7 +172,6 @@ bindsym $mod+7                  workspace $ws7
 bindsym $mod+8                  workspace $ws8
 bindsym $mod+9                  workspace $ws9
 bindsym $mod+0                  workspace $ws10
-
 # move focused container to workspace
 bindsym $mod+Shift+1            move container to workspace $ws1
 bindsym $mod+Shift+2            move container to workspace $ws2
@@ -206,6 +185,10 @@ bindsym $mod+Shift+9            move container to workspace $ws9
 bindsym $mod+Shift+0            move container to workspace $ws10
 
 # #---Arrow Keys---# #
+#bindsym $mod+Lef               focus left
+#bindsym $mod+Dow               focus down
+#bindsym $mod+Up                focus up
+#bindsym $mod+Right             focus right
 bindsym $mod+Left               focus left
 bindsym $mod+Down               focus down
 bindsym $mod+Up                 focus up
