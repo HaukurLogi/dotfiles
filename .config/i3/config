@@ -6,13 +6,14 @@ set $term --no-startup-id alacritty
 font pango: Inconsoinco 12 
 
 # #---Basic Definitions---# #
+
 # - Border -
 for_window [class="^.*"] border pixel 4
 
-# Setting refresh rate
-
+# - Setting refresh rate -
 exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
+
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
 # particular exec command. With startup-notification, i3 can make sure that a
@@ -48,34 +49,44 @@ client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #222222
 client.unfocused        #333333 #141414 #2b2b2b #292d2e   #141414
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #ffffff
-#Conky
+
+# - Conky -
 #exec_always --no-startup-id $HOME/.config/conky/conkystartup.sh
-#Transparent Alacritty
+
+# - Transparent Alacritty -
 exec_always --no-startup-id picom --experimental-backends
-# Start dunst for notifications:
+
+# - Start dunst for notifications -
 exec --no-startup-id dunst
-# Unclutter makes the mouse invisible after a brief period
+
+# - Unclutter -
 exec --no-startup-id unclutter
-#Bluetooth Applet
+
+# - Bluetooth Applet -
 #exec --no-startup-id blueman-applet
-# Network Manager applet
+
+# - Network Manager applet -
 exec_always --no-startup-id nm-applet
-# Polybar:
+
+# - Polybar -
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# Redshift is like f.lux
+
+# - Redshift is like f.lux -
 exec --no-startup-id redshift
-# Lock the screen when AFK
+
+# - Lock the screen when AFK -
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
+
 # - Behaviour -
 # Yes focus windows with mouse
 focus_follows_mouse yes
+
 # - Borders -
 # Hide borders on workspaces with only one window
 #hide_edge_borders smart
-# Make border thin
 #default_border pixel 1
+
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return              exec $term
@@ -102,12 +113,12 @@ bindsym XF86MonBrightnessDown    exec xbacklight -dec 15
 bindsym $mod+q                   kill
 bindsym $mod+Shift+q             kill
 # 'large'
-#bindsym $mod+f                   fullscreen toggle
-#bindsym $mod+u                   workspace prev
-#bindsym $mod+Shift+u             move container to workspace prev
+bindsym $mod+f                   fullscreen toggle
+bindsym $mod+u                   workspace prev
+bindsym $mod+Shift+u             move container to workspace prev
 
 #bindsym $mod+i                   focus up
-#bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 
 
