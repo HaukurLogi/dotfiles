@@ -252,5 +252,5 @@ key_bindings:
   # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
-background_opacity: 0.98
+window.opacity: 0.97
 theme: Dkeg - unsiftedwheat
