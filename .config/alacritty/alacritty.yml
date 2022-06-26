@@ -20,7 +20,7 @@ bell:
   duration: 0
 
 font:
-  size: 8
+  size: 12
   normal:
     family: JetBrains Mono
     style: Regular
@@ -252,5 +252,5 @@ key_bindings:
   # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
-window.opacity: 0.97
+window.opacity: 0.90
 theme: Dkeg - unsiftedwheat
