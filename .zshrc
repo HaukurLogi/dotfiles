@@ -79,6 +79,7 @@ source "$HOME/.config/zsh/alias.zsh"
 
 # Exec
 colorscript -r
+pfetch
 
 # User configuration
 

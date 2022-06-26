@@ -20,7 +20,7 @@ border-size = 0
 padding=2
 bottom=true
 
-;pseudo-transparency = true
+pseudo-transparency = false
 
 override-redirect = false
 
@@ -40,16 +40,10 @@ modules-right = volume cpu memory
 
 module-margin = 3
 
-tray-offset-x = 0
-tray-offset-y = 50
-tray-detached = true
-tray-transparent = false
 tray-position = right
-tray-maxsize = 16
-;tray-scale = 1.0
 tray-padding = 5
-tray-background = #aa000000
-;tray-radius = 15
+tray-background = aa000000
+
 
 ; i3 stuff
 scroll-up = i3wm-wsnext
