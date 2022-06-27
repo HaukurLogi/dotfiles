@@ -36,8 +36,8 @@ smart_gaps on
 
 
 # - Wallpaper -
-#exec_always --no-startup-id feh --bg-scale $HOME/wallpapers/dione.jpg
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
+exec_always --no-startup-id feh --bg-scale $HOME/wallpapers/dione.jpg
+#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
 
 # - Colours -
 # class                 border  backgr. text    indicator child_border
@@ -64,7 +64,7 @@ exec --no-startup-id dunst
 exec --no-startup-id unclutter
 
 # - Bluetooth Applet -
-#exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 
 # - Network Manager applet -
 exec_always --no-startup-id nm-applet
@@ -92,7 +92,7 @@ focus_follows_mouse yes
 bindsym $mod+Return              exec $term
 
 # - Floating - 
-bindsym $mod+ctrl               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+bindsym $mod+m               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
 default_border none
 default_floating_border normal
 bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?" "i3-msg exit"

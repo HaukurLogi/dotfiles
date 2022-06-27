@@ -32,8 +32,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#282a36'
-    foreground: '#f8f8f2'
+    background: '#0a0a0a'
+    foreground: '#EEEEEE'
 
   # Normal colors
   normal:
@@ -252,5 +252,5 @@ key_bindings:
   # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
-window.opacity: 0.90
+window.opacity: 0.10
 theme: Dkeg - unsiftedwheat
