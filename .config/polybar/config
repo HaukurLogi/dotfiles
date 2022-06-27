@@ -29,12 +29,12 @@ foreground = #ffffff
 linecolor = #ffffff
 
 font-0=cherry:size=12;3
-font-1=FontAwesome5Free:style=Solid:size=10;4
-font-2=FontAwesome5Free:style=Regular:size=10;4
-font-3=FontAwesome5Brands:style=Regular:size=10;4
+font-1=FontAwesome6Free:style=Solid:size=10;4
+font-2=FontAwesome6Free:style=Regular:size=10;4
+font-3=FontAwesome6Brands:style=Regular:size=10;4
 font-4=font-logos:size=11;4 
 
-modules-left = alacritty i3 battery
+modules-left = alacritty i3 battery xkeyboard
 modules-center = date
 modules-right = volume cpu memory
 
@@ -88,6 +88,27 @@ label-seperator = |
 
 ; Left modules
 
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+layout-icon-0 = us;
+layout-icon-1 = is;
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
 [module/volume]
 type=internal/pulseaudio
 interval=5
@@ -96,22 +117,26 @@ interval=5
 ;   <label-volume> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
-format-volume = <label-volume>
+format-volume = <ramp-volume> <label-volume>
 
 ; Available tags:
 ;   <label-muted> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
-;format-muted = <label-muted>
+format-muted = <label-muted>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-volume = 墳%percentage%%
+label-volume = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = VOL: %percentage%% (muted)
+label-muted =  %percentage%%
 ; label-muted-foreground = #666
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/battery]
 type = internal/battery
@@ -277,7 +302,7 @@ format = <label>
 ;   %gb_swap_total%
 ;   %gb_swap_free%
 ;   %gb_swap_used%
-label = memory: %gb_used%/%gb_total%
+label =  %gb_used%/%gb_total%
 
 [module/filesystem]
 type=internal/fs

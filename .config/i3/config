@@ -92,10 +92,14 @@ focus_follows_mouse yes
 bindsym $mod+Return              exec $term
 
 # - Floating - 
-bindsym $mod+space               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+bindsym $mod+ctrl               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
 default_border none
 default_floating_border normal
 bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
+
+# - Keyboard Shortcut -
+exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
+
 
 # - Volume -
 #bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
