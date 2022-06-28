@@ -32,7 +32,8 @@ font-0=cherry:size=12;3
 font-1=FontAwesome6Free:style=Solid:size=10;4
 font-2=FontAwesome6Free:style=Regular:size=10;4
 font-3=FontAwesome6Brands:style=Regular:size=10;4
-font-4=font-logos:size=11;4 
+font-4=
+font-5=font-logos:size=11;4 
 
 modules-left = alacritty i3 battery xkeyboard
 modules-center = date

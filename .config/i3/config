@@ -98,7 +98,7 @@ default_floating_border normal
 bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
 # - Keyboard Shortcut -
-exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
+exec --no-startup-id "setxkbmap -layout 'us,is,qgmlwy' -option 'grp:alt_space_toggle'"
 
 
 # - Volume -
