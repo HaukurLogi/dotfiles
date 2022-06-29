@@ -19,6 +19,11 @@ ZSH_THEME="lukerandall"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Locale
+export LC_CTYPE=en_US.UTF-8
+
+
+
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
