@@ -1,20 +1,35 @@
-Run the following:
+# My dotfiles
+
+Example of what it looks like.
+
+![demo](https://github.com/HaukurLogi/dotfiles/blob/master/images/Example.png)
+
+### Install
+
 ```
 curl -Lks https://raw.githubusercontent.com/HaukurLogi/dotfiles/master/.config/install.sh | bash
 ```
+
+### Command to push
+
 ```
 config push https://<Token>@github.com/HaukurLogi/dotfiles.git
 ```
 
-Install oh-my-zsh and plugins:
+### Oh-my-zsh
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-zsh-autosuggestions
+
+###Zsh-autosuggestions
+
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
-zsh-syntax-highlighting
+
+### Zsh-syntax-highlighting
+
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
