@@ -22,7 +22,7 @@ config push https://<Token>@github.com/HaukurLogi/dotfiles.git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-###Zsh-autosuggestions
+### Zsh-autosuggestions
 
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
