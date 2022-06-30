@@ -12,7 +12,7 @@
     drac-red: #ff5555;
     drac-yel: #f1fa8c;
 
-    font: "Jetbrains Mono 15";
+    font: "Hurmit Nerd Font 15";
 
     foreground: @drac-fgd;
     background: @drac-bgd;
