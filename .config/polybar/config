@@ -29,13 +29,10 @@ foreground = #ffffff
 linecolor = #ffffff
 
 font-0=cherry:size=12;3
-font-1=FontAwesome6Free:style=Solid:size=10;4
-font-2=FontAwesome6Free:style=Regular:size=10;4
-font-3=FontAwesome6Brands:style=Regular:size=10;4
-font-4=
-font-5=font-logos:size=11;4 
+font-1=SymbolsNerdFont:size=12;3
+font-2=WeatherIcons:size=12;3
 
-modules-left = alacritty i3 battery xkeyboard
+modules-left = alacritty i3 battery xkeyboard weather
 modules-center = date
 modules-right = volume cpu memory
 
@@ -132,12 +129,13 @@ label-volume = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted =  %percentage%%
+label-muted =  %percentage%%
 ; label-muted-foreground = #666
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 =   
+ramp-volume-1 =    
+ramp-volume-2 =  
+ramp-volume-3 =    
 
 [module/battery]
 type = internal/battery
@@ -161,6 +159,7 @@ adapter = AC
 ; Default: 5
 poll-interval = 5
 
+; see "man date" for details on how to format the time string
 ; see "man date" for details on how to format the time string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 ; Default: %H:%M:%S
@@ -233,9 +232,12 @@ animation-discharging-4 = 
 ; Framerate in milliseconds
 animation-discharging-framerate = 500
 
-
-
-
+[module/weather]
+type=custom/script
+exec=~/Polybar-Forecast/polybar-forecast-linux-x86_64
+exec-if=ping openweathermap.org -c 1
+interval=600
+label-font=3
 
 [module/network]
 type=custom/script
@@ -270,7 +272,7 @@ format = <label>
 ;   %percentage-sum% - Cumulative load on all cores
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label =  %percentage-sum%%
+label =  %percentage-sum%%
 
 [module/memory]
 type=internal/memory
@@ -303,7 +305,7 @@ format = <label>
 ;   %gb_swap_total%
 ;   %gb_swap_free%
 ;   %gb_swap_used%
-label =  %gb_used%/%gb_total%
+label =  %gb_used%/%gb_total%
 
 [module/filesystem]
 type=internal/fs
@@ -313,7 +315,6 @@ mount-0 = /
 mount-1 = /home
 
 ; Available tags:
-;   <label-mounted> (default)
 ;   <bar-free>
 ;   <bar-used>
 ;   <ramp-capacity>
@@ -352,7 +353,7 @@ format-prefix = "WH: "
 type = internal/date
 interval = 1
 format-margin = 0
-label = 鬒 %date%, %time%
+label =  %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
