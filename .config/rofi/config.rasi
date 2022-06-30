@@ -1,29 +1,29 @@
 * {
     /* Dracula theme colour palette */
-    drac-bgd: #282a36;
-    drac-cur: #44475a;
-    drac-fgd: #f8f8f2;
-    drac-cmt: #6272a4;
-    drac-cya: #8be9fd;
-    drac-grn: #50fa7b;
-    drac-ora: #ffb86c;
-    drac-pnk: #ff79c6;
-    drac-pur: #bd93f9;
-    drac-red: #ff5555;
-    drac-yel: #f1fa8c;
+    sus-background: #000000;
+    sus-cursor: #44475a;
+    sus-foreground: #d0d0d0;
+    sus-cmt: #6272a4;
+    sus-cyan: #8be9fd;
+    sus-green: #33ff00;
+    sus-orange: #ffb86c;
+    sus-blue: #0066ff;
+    sus-pink: #cc00ff;
+    sus-red: #ff0000;
+    sus-yellow: #f1fa8c;
 
-    font: "Hurmit Nerd Font 15";
+    font: "Jetbrains Mono 15";
 
-    foreground: @drac-fgd;
-    background: @drac-bgd;
-    active-background: @drac-pnk;
-    urgent-background: @drac-red;
+    foreground: @sus-foreground;
+    background: @sus-backgound;
+    active-background: @sus-blue;
+    urgent-background: @sus-red;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #6272a4;
+    bordercolor: #333333;
 }
 
 #window {
@@ -117,11 +117,11 @@
 }
 #entry {
     spacing:    0;
-    text-color: @drac-cya;
+    text-color: @sus-cyan;
 }
 #prompt {
     spacing:    0;
-    text-color: @drac-grn;
+    text-color: @sus-green;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -130,5 +130,5 @@
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @drac-grn;
+    text-color: @sus-green;
 }

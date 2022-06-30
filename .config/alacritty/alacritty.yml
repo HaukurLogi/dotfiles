@@ -20,43 +20,42 @@ bell:
   duration: 0
 
 font:
-  size: 12.5
+  size: 13.5
   normal:
-    family: Hurmit Nerd Font
-    style: Regular
+    family: Ubuntu Mono
+    style: Medium
   bold:
-    family: Hurmit Nerd Font
+    family: Ubuntu Mono
   italic:
-    family: Hurmit Nerd Font
-
+    family: Ubuntu Mono
 
 colors:
-  # Default colors
+  name: Isotope (dark)
+  author: Chris Kempson
   primary:
-    background: '#0a0a0a'
-    foreground: '#EEEEEE'
-
-  # Normal colors
+    background: "#000000"
+    foreground: "#d0d0d0"
+  cursor:
+    text: "#000000"
+    cursor: "#d0d0d0"
   normal:
-    black: '#000000'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#caa9fa'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#bfbfbf'
-
-  # Bright colors
+    black: "#000000"
+    red: "#ff0000"
+    green: "#33ff00"
+    yellow: "#ff0099"
+    blue: "#0066ff"
+    magenta: "#cc00ff"
+    cyan: "#00ffff"
+    white: "#d0d0d0"
   bright:
-    black: '#575b70'
-    red: '#ff6e67'
-    green: '#5af78e'
-    yellow: '#f4f99d'
-    blue: '#caa9fa'
-    magenta: '#ff92d0'
-    cyan: '#9aedfe'
-    white: '#e6e6e6'
+    black: "#808080"
+    red: "#ff0000"
+    green: "#33ff00"
+    yellow: "#ff0099"
+    blue: "#0066ff"
+    magenta: "#cc00ff"
+    cyan: "#00ffff"
+    white: "#ffffff"
 
 draw_bold_text_with_bright_colors: false
 
@@ -254,4 +253,4 @@ key_bindings:
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
 window.opacity: 0.10
-theme: Dkeg - unsiftedwheat
+theme: Isotope.dark
