@@ -252,5 +252,5 @@ key_bindings:
   # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
-window.opacity: 0.10
+window.opacity: 0.90
 theme: Isotope.dark
