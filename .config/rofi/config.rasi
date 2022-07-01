@@ -2,7 +2,7 @@
     /* Dracula theme colour palette */
     sus-background: #000000;
     sus-cursor: #44475a;
-    sus-foreground: #d0d0d0;
+    sus-foreground: #ffffff;
     sus-cmt: #6272a4;
     sus-cyan: #8be9fd;
     sus-green: #33ff00;

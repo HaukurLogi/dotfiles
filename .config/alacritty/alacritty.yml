@@ -34,7 +34,7 @@ colors:
   author: Chris Kempson
   primary:
     background: "#000000"
-    foreground: "#d0d0d0"
+    foreground: "#ffffff"
   cursor:
     text: "#000000"
     cursor: "#d0d0d0"
@@ -252,5 +252,6 @@ key_bindings:
   # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
   # Alt + |
-window.opacity: 0.90
+window:
+  opacity: 1
 theme: Isotope.dark
