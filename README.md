@@ -2,7 +2,7 @@
 
 Example of what it looks like. 
 
-![demo](https://github.com/HaukurLogi/dotfiles/blob/master/images/Example.png)
+![demo](https://github.com/HaukurLogi/dotfiles/blob/master/images/Demo.gif)
 
 ### Disclaimer
 
