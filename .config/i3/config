@@ -84,7 +84,7 @@ focus_follows_mouse yes
 
 # - Borders -
 # Hide borders on workspaces with only one window
-#hide_edge_borders smart
+hide_edge_borders smart
 #default_border pixel 1
 
 # - Bindings -
