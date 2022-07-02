@@ -353,7 +353,7 @@ format-prefix = "WH: "
 type = internal/date
 interval = 1
 format-margin = 0
-label =  %date%, %time%
+label =  %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
