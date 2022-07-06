@@ -18,6 +18,6 @@ case "$arg" in
     done
     ;;
     *)
-echo "Headphones/Speakers"
+echo "Speakers/Headphones"
     ;;
 esac
