@@ -34,7 +34,7 @@ font-2=WeatherIcons:size=12;3
 
 modules-left = alacritty i3 battery xkeyboard weather
 modules-center = date
-modules-right = switch-volume-p volume cpu memory
+modules-right = switch-volume-m volume cpu memory
 
 module-margin = 3
 
