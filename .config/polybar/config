@@ -34,7 +34,7 @@ font-2=WeatherIcons:size=12;3
 
 modules-left = alacritty i3 battery xkeyboard weather
 modules-center = date
-modules-right = switch-volume volume cpu memory
+modules-right = switch-volume-p volume cpu memory
 
 module-margin = 3
 
@@ -107,12 +107,19 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/switch-volume]
+[module/switch-volume-p]
 type=custom/script
 interval=5
-exec = /home/haukur/.config/polybar/sink-switch.sh
-click-left  = /home/haukur/.config/polybar/sink-switch.sh --speakers &
-click-right = /home/haukur/.config/polybar/sink-switch.sh --headphones &
+exec=/home/haukur/.config/polybar/sink-switch-p.sh
+click-left=/home/haukur/.config/polybar/sink-switch-p.sh --speakers &
+click-right=/home/haukur/.config/polybar/sink-switch-p.sh --headphones &
+
+[module/switch-volume-m]
+type=custom/script
+interval=5
+exec=/home/haukur/.config/polybar/sink-switch-m.sh
+click-left=/home/haukur/.config/polybar/sink-switch-m.sh --speakers &
+click-right=/home/haukur/.config/polybar/sink-switch-m.sh --headphones &
 
 [module/volume]
 type=internal/pulseaudio
