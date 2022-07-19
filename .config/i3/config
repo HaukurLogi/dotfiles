@@ -146,7 +146,7 @@ bindsym $mod+shift+b exec blueman-manager
 
 bindsym $mod+o                   workspace next
 bindsym $mod+Shift+o             move container to workspace next
-bindsym $mod+d                   exec rofi -show-icons -show drun fullscreen
+bindsym $mod+d                   exec rofi -show drun fullscreen
           
 # 'tabbed'
 bindsym $mod+t                   layout tabbed
