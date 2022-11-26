@@ -27,7 +27,7 @@
 }
 
 #window {
-    background-color: @background;
+    background-color: #000000;
     border:           3;
     border-color: @bordercolor;
     padding:          5;
@@ -57,7 +57,7 @@
     padding: 1px ;
 }
 #element.normal.normal {
-    background-color: @background;
+    background-color: #000000;
     text-color:       @foreground;
 }
 #element.normal.urgent {
@@ -65,8 +65,8 @@
     text-color:       @urgent-foreground;
 }
 #element.normal.active {
-    background-color: @active-background;
-    text-color:       @background;
+    background-color: #0066ff;
+    text-color:       #000000;
 }
 #element.selected.normal {
     background-color: @selected-background;
@@ -77,11 +77,11 @@
     text-color:       @foreground;
 }
 #element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @background;
+    background-color: #0066ff;
+    text-color:       #000000;
 }
 #element.alternate.normal {
-    background-color: @background;
+    background-color: #000000;
     text-color:       @foreground;
 }
 #element.alternate.urgent {

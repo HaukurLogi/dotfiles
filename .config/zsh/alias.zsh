@@ -1,4 +1,4 @@
-alias vim="nvim"
+alias nvim="vim"
 alias ls="ls --color"
 alias grep="grep --color"
 alias diff="diff --color"

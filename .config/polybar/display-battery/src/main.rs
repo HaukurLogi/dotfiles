@@ -23,8 +23,8 @@ const BATTERY_75: char = '';
 const BATTERY_50: char = '';
 const BATTERY_25: char = '';
 const BATTERY_EMPTY: char = '';
-const QUESTION: char = '';
-const LIGHTNING: char = '';
+const QUESTION: char = '?';
+const LIGHTNING: char = 'Charging';
 
 quick_error! {
     /// An error type that wraps around the Battery and std::io error types
