@@ -28,10 +28,10 @@ background = aa000000
 foreground = #ffffff
 linecolor = #ffffff
 
-font-0=JetBrains Mono:size=10:3
+font-0=JetBrains Mono:size=14:3
 font-1=Font Awesome:size=12;
 
-modules-left = alacritty i3 xkeyboard network
+modules-left = alacritty i3 xkeyboard battery network
 modules-center = date
 modules-right = volume cpu filesystem memory border
 
@@ -155,14 +155,14 @@ type = internal/network
 ; Name of the network interface to display. You can get the names of the
 ; interfaces on your machine with `ip link`
 ; Wireless interfaces often start with `wl` and ethernet interface with `eno` or `eth`
-interface = eno1
+interface = wlan0
 
 ; If no interface is specified, polybar can detect an interface of the given type.
 ; If multiple are found, it will prefer running interfaces and otherwise just
 ; use the first one found.
 ; Either 'wired' or 'wireless'
 ; New in version 3.6.0
-interface-type = wired
+interface-type = wireless
 
 ; Seconds to sleep between updates
 ; Default: 1
@@ -224,7 +224,7 @@ format-disconnected = NET: <label-disconnected>
 
 ; Default: %ifname% %local_ip%
 label-connected = %essid% %downspeed:9%
-label-connected-foreground = #eefafa
+;label-connected-foreground = #eefafa
 
 ; Default: (none)
 label-disconnected = not connected
