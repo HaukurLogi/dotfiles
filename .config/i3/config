@@ -29,8 +29,8 @@ gaps outer -2
 smart_gaps on
 smart_gaps on
 # - Wallpaper -
-#exec_always --no-startup-id feh --bg-scale $HOME/wallpapers/dione.jpg
-exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/cat.gif
+exec_always --no-startup-id feh --bg-scale $HOME/wallpaper4.jpg
+#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/pixels10.gif
 # - Colours -
 # class                 border  backgr. text    indicator child_border
 client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
@@ -78,7 +78,7 @@ bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?
 # - Keyboard Shortcut -
 exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
 # - Screenshot -
-bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/Porn/$(date)"
+bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/$(date)"
 # - Volume -
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -108,7 +108,7 @@ bindsym $mod+shift+b exec blueman-manager
 
 bindsym $mod+o                   workspace next
 bindsym $mod+Shift+o             move container to workspace next
-bindsym $mod+d                   exec rofi -show-icons -show drun fullscreen
+bindsym $mod+d                   exec rofi -show drun fullscreen
 #bindsym $mod+d                   exec rofi -show drun fullscreen
 
 # 'tabbed'
