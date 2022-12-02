@@ -223,7 +223,7 @@ format-disconnected = NET: <label-disconnected>
 ;   %mac%       [wireless+wired] (New in version 3.6.0)
 
 ; Default: %ifname% %local_ip%
-label-connected = %essid% %downspeed:9%
+label-connected = ETH %downspeed:9%
 label-connected-foreground = #eefafa
 
 ; Default: (none)
