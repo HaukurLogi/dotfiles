@@ -68,7 +68,7 @@ focus_follows_mouse yes
 hide_edge_borders smart
 #default_border pixel 1
 # - Bindings -
-# -- Non-Letter key bindings -- {{{
+#  -- Non-Letter key bindings -- {{{
 bindsym $mod+Return              exec $term
 # - Floating - 
 bindsym $mod+m               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
