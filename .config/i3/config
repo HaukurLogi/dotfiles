@@ -10,7 +10,7 @@ for_window [class="^.*"] border pixel 3
 # - Setting refresh rate -
 exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-4 --mode 1920x1080 --rate 240.00
-#exec xrandr --output DP-0 --mode 2560x1440 --rate 144.00
+exec xrandr --output DP-1 --mode 2560x1440 --rate 144.00
 # - External scripts -
 # The --no-startup-id parameter disables startup-notification support for this
 # particular exec command. With startup-notification, i3 can make sure that a
@@ -29,7 +29,7 @@ gaps outer -2
 smart_gaps on
 smart_gaps on
 # - Wallpaper -
-exec_always --no-startup-id feh --bg-scale $HOME/wallpaper4.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Wallpaper/Retro.jpg
 #exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/pixels10.gif
 # - Colours -
 # class                 border  backgr. text    indicator child_border
