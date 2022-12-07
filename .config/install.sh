@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xe
 
-git clone --bare https://github.com/HaukurLogi/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:HaukurLogi/dotfiles.git $HOME/.dotfiles
 
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
