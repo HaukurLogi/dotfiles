@@ -49,7 +49,7 @@ exec_always --no-startup-id picom
 # - Start dunst for notifications -
 exec --no-startup-id dunst
 # - Keymapper - 
-key-mapper-control --command autoload
+exec --no-startup-id key-mapper-control --command autoload
 # - Unclutter -
 exec --no-startup-id unclutter
 # - Bluetooth Applet -
