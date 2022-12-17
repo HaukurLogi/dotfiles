@@ -16,7 +16,7 @@ height = 32
 ;offset-x = 10%
 ;offset-y = 5
 ;radius = 15
-border-size = 0
+border-size = 3
 padding=1
 bottom=true
 
