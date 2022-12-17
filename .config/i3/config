@@ -22,11 +22,8 @@ exec xrandr --output DP-0 --mode 2560x1440 --rate 144.00
 # - Alacritty -
 #exec_always --no-startup-id alacritty
 # - Gaps -
-gaps inner 10
-gaps outer 30
-gaps inner 20
-gaps outer -2
-smart_gaps on
+gaps inner 17
+gaps outer 7
 smart_gaps on
 # - Wallpaper -
 exec_always --no-startup-id feh --bg-scale $HOME/Wallpaper/Retro.jpg

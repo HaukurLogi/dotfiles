@@ -24,9 +24,10 @@ pseudo-transparency = false
 
 override-redirect = false
 
-background = aa000000
+background = cc000000
 foreground = #ffffff
-linecolor = #ffffff
+linecolor = #000000
+border-color = #141414
 
 font-0=JetBrains Mono:size=10:3
 font-1=Font Awesome:size=12;
@@ -39,7 +40,7 @@ module-margin = 3
 
 tray-position = right
 tray-padding = 5
-tray-background = aa000000
+tray-background = cc000000
 
 
 ; i3 stuff
@@ -61,24 +62,24 @@ pin-workspaces = true
 label-focused = %index%
 ; label-focused-font = 0
 label-focused-foreground = #ffffff
-label-focused-background = #aa000000
+label-focused-background = #cc000000
 label-focused-padding = 1
 
 label-visible = %index%
 label-visible-foreground = #ffffff
-label-visible-background = #aa000000
+label-visible-background = #cc000000
 label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
 label-unfocused-foreground = #b3b3b3
-label-unfocused-background = #aa000000
+label-unfocused-background = #cc000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
 ; label-urgent-font = 0
 label-urgent-foreground = #aaffffff
-label-urgent-background = #aa000000
+label-urgent-background = #ee000000
 label-urgent-padding = 1
 
 label-seperator = |
