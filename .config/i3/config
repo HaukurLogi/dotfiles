@@ -19,6 +19,8 @@ exec xrandr --output DP-0 --mode 2560x1440 --rate 144.00
 # launching. So, if an application is not startup-notification aware (most GTK
 # and Qt using applications seem to be, though), you will end up with a watch
 # cursor for 60 seconds.
+# - Sound Switcher - 
+exec_always --no-startup-id indicator-sound-switcher
 # - Alacritty -
 #exec_always --no-startup-id alacritty
 # - Gaps -

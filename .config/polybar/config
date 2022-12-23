@@ -78,8 +78,8 @@ label-unfocused-padding = 1
 
 label-urgent = %index%
 ; label-urgent-font = 0
-label-urgent-foreground = #aaffffff
-label-urgent-background = #ee000000
+label-urgent-foreground = #ffffff
+label-urgent-background = #ccaa0000
 label-urgent-padding = 1
 
 label-seperator = |
