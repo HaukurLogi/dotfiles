@@ -99,11 +99,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source "$HOME/.config/zsh/alias.zsh"
 
 if echo $OSTYPE | grep 'linux'; then
-	source "$HOME/.config/zsh/alias.zsh"
 	colorscript -r
+else
+	eval $(/opt/homebrew/bin/brew shellenv)
 fi
 
 pfetch
-
