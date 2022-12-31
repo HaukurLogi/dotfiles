@@ -1,8 +1,4 @@
-
 #!/bin/sh
 
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-
-xset r rate 250 30
+xsetroot -cursor_name left_ptr
 exec i3
