@@ -12,24 +12,24 @@ monitor = ${env:MONITOR:}
 line-size = 2
 enable-ipc=true
 width = 100%
-height = 35
+height = 25
 ;offset-x = 10%
 ;offset-y = 5
 ;radius = 15
 border-size = 0
 padding=1
-bottom=true
+
 
 pseudo-transparency = false
 
 override-redirect = false
 
-background = cc000000
+background = 000000
 foreground = #ffffff
 linecolor = #000000
 border-color = #141414
 
-font-0=JetBrains Mono:size=10:3
+font-0=cherry:size=13:3
 font-1=Font Awesome:size=12;
 
 modules-left = alacritty i3 xkeyboard network-eik network-sja
@@ -40,7 +40,7 @@ module-margin = 3
 
 tray-position = right
 tray-padding = 5
-tray-background = cc000000
+tray-background = 000000
 
 
 ; i3 stuff
@@ -62,24 +62,24 @@ pin-workspaces = true
 label-focused = %index%
 ; label-focused-font = 0
 label-focused-foreground = #ffffff
-label-focused-background = #cc000000
+label-focused-background = #000000
 label-focused-padding = 1
 
 label-visible = %index%
 label-visible-foreground = #ffffff
-label-visible-background = #cc000000
+label-visible-background = #000000
 label-visible-padding = 1
 
 label-unfocused = %index%
 ; label-unfocused-font = 0
 label-unfocused-foreground = #b3b3b3
-label-unfocused-background = #cc000000
+label-unfocused-background = #000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
 ; label-urgent-font = 0
 label-urgent-foreground = #ffffff
-label-urgent-background = #ccaa0000
+label-urgent-background = #aa0000
 label-urgent-padding = 1
 
 label-seperator = |

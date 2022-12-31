@@ -24,23 +24,23 @@ exec_always --no-startup-id indicator-sound-switcher
 # - Alacritty -
 #exec_always --no-startup-id alacritty
 # - Gaps -
-gaps inner 17
-gaps outer 7
+gaps inner 15
+gaps outer 3
 smart_gaps on
 # - Wallpaper -
-exec_always --no-startup-id feh --bg-scale $HOME/Wallpaper/Retro.jpg
-#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/wallpapers/pixels10.gif
+#exec_always --no-startup-id feh --bg-scale $HOME/Wallpaper/Retro.jpg
+#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/animated14.gif
 # - Colours -
 # class                 border  backgr. text    indicator child_border
-client.focused          #333333 #222222 #e3e3e3 #292d2e   #222222
-client.focused_inactive #333333 #222222 #e3e3e3 #292d2e   #222222
-client.unfocused        #141414 #141414 #2b2b2b #292d2e   #141414
-client.focused          #141414 #222222 #e3e3e3 #292d2e   #222222
-client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #222222
-client.unfocused        #333333 #141414 #2b2b2b #292d2e   #141414
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #ffffff
+client.focused          #141414 #222222 #e3e3e3 #292d2e   #141414
+client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #141414
+client.unfocused        #0d0d0d #141414 #2b2b2b #292d2e   #0d0d0d
+client.focused          #0d0d0d #222222 #e3e3e3 #292d2e   #141414
+client.focused_inactive #0d0d0d #222222 #e3e3e3 #292d2e   #141414
+client.unfocused        #0d0d0d #141414 #2b2b2b #292d2e   #0d0d0d
+client.urgent           #333333 #900000 #ffffff #900000   #333333
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
+client.background       #000000
 # - Conky -
 #exec_always --no-startup-id $HOME/.config/conky/conkystartup.sh
 # - Transparent Alacritty -
@@ -69,7 +69,7 @@ focus_follows_mouse yes
 hide_edge_borders smart
 #default_border pixel 1
 # - Bindings -
-#  -- Non-Letter key bindings -- {{{
+# -- Non-Letter key bindings -- {{{
 bindsym $mod+Return              exec $term
 # - Floating - 
 bindsym $mod+m               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
