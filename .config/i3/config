@@ -3,8 +3,7 @@
 # - Variables -
 set $mod Mod1
 set $term --no-startup-id alacritty
-#Font
-font pango: Inconsoinco 12 
+
 # #---Basic Definitions---# #
 
 # - Border -
@@ -84,14 +83,8 @@ exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 # Yes focus windows with mouse
 focus_follows_mouse yes
 
-# - Borders -
-# Hide borders on workspaces with only one window
-#hide_edge_borders smart
-default_border pixel 1
-
 # - Bindings -
-
-# -- Non-Letter key bindings -- {{{
+# -- Non-Lette r key bindings -- {{{
 bindsym $mod+Return              exec $term
 
 # - Floating - 
@@ -116,7 +109,6 @@ bindsym XF86AudioLowerVolume      exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86MonBrightnessUp       exec xbacklight -inc 15
 bindsym XF86MonBrightnessDown     exec xbacklight -dec 15
 # }}}
-
 # -- Letter key bindings -- {{{
 # 'quit'
 bindsym $mod+q                    kill
