@@ -81,18 +81,11 @@ exec --no-startup-id redshift
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 
 # - Behaviour -
-# Yes focus windows with mouse
 focus_follows_mouse yes
 
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
 bindsym $mod+Return              exec $term
-
-# - Floating - 
-bindsym $mod+m               floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
-default_border none
-default_floating_border normal
-bindsym $mod+Shift+Escape        exec prompt "Are you sure you want to leave i3?" "i3-msg exit"
 
 # - Keyboard Shortcut -
 exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
@@ -109,12 +102,13 @@ bindsym XF86AudioLowerVolume      exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # - Pavucontrol -            
 bindsym XF86MonBrightnessUp       exec xbacklight -inc 15
 bindsym XF86MonBrightnessDown     exec xbacklight -dec 15
-# }}}
+# }}} 
 # -- Letter key bindings -- {{{
-# 'quit'
+# - Quit bindings
 bindsym $mod+q                    kill
 bindsym $mod+Shift+q              kill
-# 'large'
+
+# - Large -
 bindsym $mod+f                    fullscreen toggle
 bindsym $mod+u                    workspace prev
 bindsym $mod+Shift+u              move container to workspace prev
@@ -130,11 +124,11 @@ bindsym $mod+shift+b exec blueman-manager
 
 # - Floating Window -
 bindsym $mod+m                    floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+default_border none
+default_floating_border normal
 
-bindsym $mod+o                    workspace next
-bindsym $mod+Shift+o              move container to workspace next
+# - Rofi -
 bindsym $mod+d                    exec rofi -show drun fullscreen
-#bindsym $mod+d                   exec rofi -show drun fullscreen
 
 # - Tabbed mode -
 bindsym $mod+t                   layout tabbed
