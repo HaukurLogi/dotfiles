@@ -9,6 +9,10 @@ font pango:monospace 12
 
 # - Border -
 for_window [class="^.*"] border pixel 3
+# Hide borders on workspaces with only one window
+hide_edge_borders smart
+# Make border thin
+default_border pixel 1
 
 # - Setting refresh rate -
 exec_always --no-startup-id xset r rate 250 30
@@ -41,15 +45,12 @@ exec_always --no-startup-id indicator-sound-switcher
 
 # - Colours -
 # class                 border  backgr. text    indicator child_border
-client.focused          #141414 #222222 #e3e3e3 #292d2e   #141414
-client.focused_inactive #141414 #222222 #e3e3e3 #292d2e   #141414
-client.unfocused        #000000 #141414 #2b2b2b #292d2e   #0d0d0d
-client.focused          #000000 #222222 #e3e3e3 #292d2e   #141414
-client.focused_inactive #000000 #222222 #e3e3e3 #292d2e   #141414
-client.unfocused        #000000 #141414 #2b2b2b #292d2e   #000000
-client.urgent           #333333 #900000 #ffffff #900000   #333333
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
-client.background       #000000
+client.focused          #ffffff #000000 #ffffff #2e9ef4   #ffffff
+client.focused_inactive #333333 #000000 #ffffff #484e50   #5f676a
+client.unfocused        #333333 #000000 #888888 #292d2e   #222222
+client.urgent           #2f343a #000000 #ffffff #900000   #900000
+client.placeholder      #000000 #000000 #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 # - Conky -
 #exec_always --no-startup-id $HOME/.config/conky/conkystartup.sh

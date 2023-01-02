@@ -1,23 +1,24 @@
 * {
-    /* Dracula theme colour palette */
-    sus-background: #000000;
-    sus-cursor: #44475a;
-    sus-foreground: #ffffff;
-    sus-cmt: #6272a4;
-    sus-cyan: #8be9fd;
-    sus-green: #33ff00;
-    sus-orange: #ffb86c;
-    sus-blue: #0066ff;
-    sus-pink: #cc00ff;
-    sus-red: #ff0000;
-    sus-yellow: #f1fa8c;
+    /* Haukur's Rofi Theme */
+
+    rofi-background: #000000;
+    rofi-cursor: #44475a;
+    rofi-foreground: #ffffff;
+    rofi-cmt: #6272a4;
+    rofi-cyan: #8be9fd;
+    rofi-green: #33ff00;
+    rofi-orange: #ffb86c;
+    rofi-blue: #0066ff;
+    rofi-pink: #cc00ff;
+    rofi-red: #ff0000;
+    rofi-yellow: #f1fa8c;
 
     font: "Jetbrains Mono 15";
 
-    foreground: @sus-foreground;
-    background: @sus-backgound;
-    active-background: @sus-blue;
-    urgent-background: @sus-red;
+    foreground: @rofi-foreground;
+    background: @rofi-backgound;
+    active-background: @rofi-blue;
+    urgent-background: @rofi-red;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
@@ -117,11 +118,11 @@
 }
 #entry {
     spacing:    0;
-    text-color: @sus-cyan;
+    text-color: @rofi-cyan;
 }
 #prompt {
     spacing:    0;
-    text-color: @sus-green;
+    text-color: @rofi-green;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -130,5 +131,5 @@
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @sus-green;
+    text-color: @rofi-green;
 }
