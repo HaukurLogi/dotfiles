@@ -84,7 +84,7 @@ exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 focus_follows_mouse yes
 
 # - Bindings -
-# -- Non-Lette r key bindings -- {{{
+# -- Non-Letter key bindings -- {{{
 bindsym $mod+Return              exec $term
 
 # - Floating - 
@@ -144,7 +144,7 @@ bindsym $mod+h                   split horizontal
 bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
 
 # - Chromium -
-binsym $mod+c                    exec --no-startup-id chromium
+bindsym $mod+c                    exec --no-startup-id chromium
 bindsym $mod+v                   split vertical
 bindsym $mod+comma               resize shrink height 10 px or 10ppt
 bindsym $mod+Shift+r             exec i3-msg restart
