@@ -21,11 +21,12 @@ linecolor = #000000
 border-color = #141414
 
 ; Fonts
-font-0=cherry:size=13:3
-font-1=Font Awesome:size=12;
+font-0=cherry:size=12:3
+font-1=FontAwesome:size=9;3
+font-2=SymbolsNerdFont:size=13;3
 
 ; Modules
-modules-left = alacritty i3 xkeyboard network-eik network-sja
+modules-left = alacritty i3 i3-window-title xkeyboard network-eik network-sja
 modules-center = date
 modules-right = volume cpu filesystem memory border
 module-margin = 3
@@ -65,6 +66,13 @@ label-urgent-foreground = #ffffff
 label-urgent-background = #aa0000
 label-urgent-padding = 1
 
+[module/i3-window-title]
+type = custom/script
+exec = bin/i3-window-title
+format-prefix = "APP: "
+
+tail = true
+
 [module/xkeyboard]
 type = internal/xkeyboard
 
@@ -84,26 +92,7 @@ label-layout-underline = ${colors.secondary}
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/volume]
-type=internal/pulseaudio
-interval=5
-
-format-volume = <ramp-volume> <label-volume>
-format-muted = <ramp-volume> <label-muted>
-
-ramp-volume-0 =   
-ramp-volume-1 =   
-
-label-volume = VOL: %percentage%%
-
-[module/battery]
-type=custom/script
-exec-if=~/.config/polybar/display-battery/target/release/display-battery --check
-exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
-tail=true
-format-prefix="BAT: "
+label-indicator-underline = ${colors.secondary
 
 [module/network-sja]
 type = internal/network
@@ -154,6 +143,18 @@ time = %H:%M:%S
 date = %d %b
 
 ; Right modules
+[module/volume]
+type=internal/pulseaudio
+interval=5
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = <ramp-volume> <label-muted>
+
+ramp-volume-0 =  
+ramp-volume-1 =  
+
+label-volume = VOL: %percentage%%
+
 [module/gpu]
 #type=custom/script
 #exec-if=nvidia-smi -h

@@ -8,7 +8,7 @@ font pango:monospace 12
 # #---Basic Definitions---# #
     
 # - Border -
-#for_window [class="^.*"] border pixel 1 
+for_window [class="^.*"] border pixel 1 
 hide_edge_borders smart
 
 # - Setting refresh rate -

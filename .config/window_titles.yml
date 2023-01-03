@@ -1,0 +1,35 @@
+padding: 1
+capitalize: true
+
+workspace:
+  enabled: true 
+  title: Desktop
+
+mappings:
+- class: chromium
+  title: Chromium
+  icon: 
+- class: Pcmanfm
+  title: PCManFM
+  icon: 
+- class: alacritty
+  title: Alacritty
+  icon: 
+- class: discord
+  title: Discord
+  icon: ﭮ
+- class: steam
+  title: Steam
+  icon: 
+- class: code
+  title: VSCode
+  icon: 
+- class: qbittorrent
+  title: qBittorrent
+  icon: qB
+
+#  show_native_title: true
+
+native_title_separators:
+  start: " [ "
+  end: " ] "
