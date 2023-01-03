@@ -6,27 +6,15 @@ set $term --no-startup-id alacritty
 font pango:monospace 12
 
 # #---Basic Definitions---# #
-
+    
 # - Border -
-for_window [class="^.*"] border pixel 3
-# Hide borders on workspaces with only one window
+#for_window [class="^.*"] border pixel 1 
 hide_edge_borders smart
-# Make border thin
-default_border pixel 1
 
 # - Setting refresh rate -
 exec_always --no-startup-id xset r rate 250 30
 exec xrandr --output DP-4 --mode 1920x1080 --rate 240.00
 exec xrandr --output DP-0 --mode 2560x1440 --rate 144.00
-
-# - External scripts -
-# The --no-startup-id parameter disables startup-notification support for this
-# particular exec command. With startup-notification, i3 can make sure that a
-# window appears on the workspace on which you used the exec command. Also, it
-# will change the X11 cursor to watch (a clock) while the application is
-# launching. So, if an application is not startup-notification aware (most GTK
-# and Qt using applications seem to be, though), you will end up with a watch
-# cursor for 60 seconds.
 
 # - Sound Switcher - 
 exec_always --no-startup-id indicator-sound-switcher
@@ -46,7 +34,7 @@ exec_always --no-startup-id indicator-sound-switcher
 # - Colours -
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #000000 #ffffff #2e9ef4   #ffffff
-client.focused_inactive #333333 #000000 #ffffff #484e50   #5f676a
+client.focused_inactive #333333 #000000 #ffffff #484e50   #333333
 client.unfocused        #333333 #000000 #888888 #292d2e   #222222
 client.urgent           #2f343a #000000 #ffffff #900000   #900000
 client.placeholder      #000000 #000000 #ffffff #000000   #0c0c0c
@@ -81,8 +69,9 @@ exec --no-startup-id redshift
 # - Lock the screen when AFK -
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 
-# - Behaviour -
+# - Focus -
 focus_follows_mouse yes
+focus_on_window_activation none
 
 # - Bindings -
 # -- Non-Letter key bindings -- {{{
@@ -94,15 +83,15 @@ exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
 # - Screenshot -
 bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/$(date)"
 
+# - Exiting i3 -
+bindsym $mod+Shift+Escape         exec i3-msg exit
+
 # - Volume -
 bindsym XF86AudioRaiseVolume      exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume      exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 #bindsym $mod+Up                  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 #bindsym $mod+Down                exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-# - Pavucontrol -            
-bindsym XF86MonBrightnessUp       exec xbacklight -inc 15
-bindsym XF86MonBrightnessDown     exec xbacklight -dec 15
 # }}} 
 # -- Letter key bindings -- {{{
 # - Quit bindings
@@ -125,8 +114,6 @@ bindsym $mod+shift+b exec blueman-manager
 
 # - Floating Window -
 bindsym $mod+m                    floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
-default_border none
-default_floating_border normal
 
 # - Rofi -
 bindsym $mod+d                    exec rofi -show drun fullscreen
