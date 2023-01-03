@@ -93,6 +93,9 @@ interval=5
 format-volume = <ramp-volume> <label-volume>
 format-muted = <ramp-volume> <label-muted>
 
+ramp-volume-0 =   
+ramp-volume-1 =   
+
 label-volume = VOL: %percentage%%
 
 [module/battery]
