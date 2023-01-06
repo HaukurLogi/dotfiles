@@ -154,6 +154,7 @@ ramp-volume-0 =  
 ramp-volume-1 =  
 
 label-volume = VOL: %percentage%%
+label-muted  = MUT: 0%
 
 [module/gpu]
 #type=custom/script

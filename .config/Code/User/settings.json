@@ -26,6 +26,17 @@
         "editorCursor.foreground": "#33ff00"
     },
     "editor.cursorStyle": "block",
-    "workbench.colorTheme": "Just Black"
+    "workbench.colorTheme": "Just Black",
+    "python.autoComplete.extraPaths": [
+        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
+        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/micropython"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
+        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/micropython"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.autoSearchPaths": true,
+    "python.linting.enabled": true
 }
 
