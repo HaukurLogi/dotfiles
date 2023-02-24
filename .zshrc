@@ -103,7 +103,7 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source "$HOME/.config/zsh/alias.zsh"
 
-if echo $OSTYPE | grep 'linux'; then
+if echo $OSTYPE | grep 'linux' >/dev/null; then
 	colorscript -r
 else
 	eval $(/opt/homebrew/bin/brew shellenv)
