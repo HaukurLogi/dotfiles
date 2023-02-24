@@ -1,34 +1,31 @@
 * {
     /* Haukur's Rofi Theme */
 
-    rofi-background: #000000;
-    rofi-cursor: #44475a;
-    rofi-foreground: #ffffff;
-    rofi-cmt: #6272a4;
-    rofi-cyan: #8be9fd;
-    rofi-green: #33ff00;
-    rofi-orange: #ffb86c;
-    rofi-blue: #0066ff;
-    rofi-pink: #cc00ff;
-    rofi-red: #ff0000;
-    rofi-yellow: #f1fa8c;
+    rofi-background: #111111;
+    rofi-cursor: #adadad;
+    rofi-foreground: #b0b0b0;
+    rofi-white: #ffffff;
+    rofi-black: #000000;
+    rofi-gray: #333333;
 
-    font: "Jetbrains Mono 15";
+    font: "Ubuntu Mono 17";
 
     foreground: @rofi-foreground;
     background: @rofi-backgound;
-    active-background: @rofi-blue;
-    urgent-background: @rofi-red;
-    
+    active-background: @rofi-white;
+    active-foreground: @rofi-black;
+    urgent-background: @rofi-white;
+    urgent-forground: @rofi-black; 
+ 
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #333333;
+    bordercolor: @rofi-gray;
 }
 
 #window {
-    background-color: #000000;
+    background-color: @rofi-black;
     border:           3;
     border-color: @bordercolor;
     padding:          5;
@@ -43,22 +40,22 @@
     padding:      1px ;
 }
 #textbox {
-    text-color: @foreground;
+    text-color: @rofi-gray;
 }
 #listview {
     fixed-height: 0;
     border:       2px dash 0px 0px ;
     border-color: @bordercolor;
-    spacing:      2px ;
+    spacing:      0px ;
     scrollbar:    false;
-    padding:      2px 0px 0px ;
+    padding:      0px 0px 0px ;
 }
 #element {
     border:  0;
     padding: 1px ;
 }
 #element.normal.normal {
-    background-color: #000000;
+    background-color: @rofi-black;
     text-color:       @foreground;
 }
 #element.normal.urgent {
@@ -67,22 +64,22 @@
 }
 #element.normal.active {
     background-color: #0066ff;
-    text-color:       #000000;
+    text-color:       @rofi-black;
 }
 #element.selected.normal {
     background-color: @selected-background;
-    text-color:       @foreground;
+    text-color:       @active-foreground;
 }
 #element.selected.urgent {
     background-color: @selected-urgent-background;
-    text-color:       @foreground;
+    text-color:       @active-foreground;
 }
 #element.selected.active {
     background-color: #0066ff;
-    text-color:       #000000;
+    text-color:       @rofi-black;
 }
 #element.alternate.normal {
-    background-color: #000000;
+    background-color: @rofi-black;
     text-color:       @foreground;
 }
 #element.alternate.urgent {
@@ -109,20 +106,20 @@
 }
 #inputbar {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @rofi-gray;
     padding:    1px ;
 }
 #case-indicator {
     spacing:    0;
-    text-color: @foreground;
+    text-color: @rofi-gray;
 }
 #entry {
     spacing:    0;
-    text-color: @rofi-cyan;
+    text-color: @rofi-foreground;
 }
 #prompt {
     spacing:    0;
-    text-color: @rofi-green;
+    text-color: @rofi-white;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -131,5 +128,5 @@
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @rofi-green;
+    text-color: @rofi-white;
 }

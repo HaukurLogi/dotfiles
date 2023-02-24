@@ -1,32 +1,6 @@
 {
-    "workbench.editor.enablePreview": false,
-    "workbench.colorCustomizations": {
-        "titleBar.activeForeground": "#33ff00",
-        "titleBar.border": "#141414",
-        "activityBar.foreground": "#00ffff",
-        "activityBar.inactiveForeground": "#0066ff",
-        "activityBar.activeBackground": "#111111",
-        "activityBar.border": "#141414",
-        "activityBar.activeBorder": "#333333",
-        "sideBar.background": "#000000",
-        "sideBar.foreground": "#ffffff",
-        "sideBarSectionHeader.background": "#000000",
-        "sideBarSectionHeader.foreground": "#33ff00",
-        "list.activeSelectionBackground": "#111111",
-        "list.activeSelectionForeground": "#ff0000",
-        "statusBar.foreground": "#0066ff",
-        "statusBar.border": "#141414",
-        "panel.border": "#141414",
-        "panelTitle.activeBorder": "#333333",
-        "panelTitle.activeForeground": "#ff0000",
-        "panelTitle.inactiveForeground": "#ffffff",
-        "terminalCursor.foreground": "#33ff00",
-        "terminal.foreground": "#ffffff",
-        "editorLineNumber.foreground": "#ff0000",
-        "editorCursor.foreground": "#33ff00"
-    },
-    "editor.cursorStyle": "block",
-    "workbench.colorTheme": "Just Black",
+    "workbench.colorTheme": "White Night",
+    "editor.fontFamily": "'ubuntu mono', ubuntu mono",
     "python.autoComplete.extraPaths": [
         "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
         "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/micropython"
@@ -37,6 +11,9 @@
     ],
     "python.languageServer": "Pylance",
     "python.analysis.autoSearchPaths": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.fontSize": 17
 }
-
