@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "White Night",
     "editor.fontFamily": "'ubuntu mono', ubuntu mono",
     "python.autoComplete.extraPaths": [
         "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
@@ -15,5 +14,6 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "editor.fontSize": 17
+    "editor.fontSize": 17,
+    "workbench.colorTheme": "Cookies 'n Cream"
 }

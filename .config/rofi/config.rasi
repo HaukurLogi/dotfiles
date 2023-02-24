@@ -1,20 +1,22 @@
 * {
     /* Haukur's Rofi Theme */
 
-    rofi-background: #111111;
+    rofi-background: #000000;
     rofi-cursor: #adadad;
-    rofi-foreground: #b0b0b0;
+    rofi-foreground: #d4d4d4;
     rofi-white: #ffffff;
     rofi-black: #000000;
     rofi-gray: #333333;
+    rofi-grayer: #0d0d0d;
 
     font: "Ubuntu Mono 17";
 
     foreground: @rofi-foreground;
     background: @rofi-backgound;
+    alternate-background: @rofi-grayer;
     active-background: @rofi-white;
     active-foreground: @rofi-black;
-    urgent-background: @rofi-white;
+    urgent-background: @rofi-grayer;
     urgent-forground: @rofi-black; 
  
     selected-background: @active-background;
@@ -25,7 +27,7 @@
 }
 
 #window {
-    background-color: @rofi-black;
+    background-color: @rofi-background;    
     border:           3;
     border-color: @bordercolor;
     padding:          5;
@@ -40,11 +42,11 @@
     padding:      1px ;
 }
 #textbox {
-    text-color: @rofi-gray;
+    text-color: @rofi-white;
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       0px dash 0px 0px ;
     border-color: @bordercolor;
     spacing:      0px ;
     scrollbar:    false;
@@ -55,8 +57,8 @@
     padding: 1px ;
 }
 #element.normal.normal {
-    background-color: @rofi-black;
-    text-color:       @foreground;
+    background-color: @rofi-background;
+    text-color:       @rofi-white;
 }
 #element.normal.urgent {
     background-color: @urgent-background;
@@ -79,7 +81,7 @@
     text-color:       @rofi-black;
 }
 #element.alternate.normal {
-    background-color: @rofi-black;
+    background-color: @rofi-grayer;
     text-color:       @foreground;
 }
 #element.alternate.urgent {
@@ -115,7 +117,7 @@
 }
 #entry {
     spacing:    0;
-    text-color: @rofi-foreground;
+    text-color: @rofi-white;
 }
 #prompt {
     spacing:    0;
