@@ -47,7 +47,7 @@ wm-restack = i3
 type = internal/i3
 pin-workspaces = true
 label-focused = %index%
-label-focused-foreground = #33ff00
+label-focused-foreground = #fe0100
 label-focused-background = #000000
 label-focused-padding = 1
 
@@ -57,7 +57,7 @@ label-visible-background = #000000
 label-visible-padding = 1
 
 label-unfocused = %index%
-label-unfocused-foreground = #198000
+label-unfocused-foreground = #800000
 label-unfocused-background = #000000
 label-unfocused-padding = 1
 
@@ -83,16 +83,17 @@ layout-icon-0 = us;
 layout-icon-1 = is;
 
 format-prefix = "KEY: "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #33ff00
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
+label-layout-foreground = #33ff00
 label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary
+label-indicator-background = #000000
+label-indicator-underline = ${colors.secondary}
 
 [module/network-sja]
 type = internal/network
@@ -147,15 +148,10 @@ date = %d %b
 type=internal/pulseaudio
 interval=5
 
-format-volume = <ramp-volume> <label-volume>
-format-volume-prefix = VOL:
+format-volume = <label-volume>
 format-muted = <label-muted>
 
-ramp-volume-0 = %{F#33ff00}
-ramp-volume-1 = %{F#feff00}
-ramp-volume-2 = %{F#fe0100} 
-
-label-volume = %percentage%%
+label-volume = VOL: %percentage%%
 label-muted  = MUT: 0%
 
 
