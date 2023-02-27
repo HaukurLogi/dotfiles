@@ -1,25 +1,28 @@
 * {
     /* Haukur's Rofi Theme */
 
-    rofi-background: #000000;
-    rofi-cursor: #adadad;
-    rofi-foreground: #d4d4d4;
-    rofi-white: #ffffff;
     rofi-black: #000000;
     rofi-gray: #333333;
-    rofi-grayer: #0d0d0d;
+    rofi-grayer: #101010;
+    rofi-red: #fe0100;
+    rofi-green: #33ff00;
+    rofi-yellow: #feff00;
+    rofi-blue: #0066ff;
+    rofi-magenta: #cc00ff;
+    rofi-cyan: #00ffff;
+    rofi-white: #ffffff;
 
     font: "Ubuntu Mono 17";
 
-    foreground: @rofi-foreground;
-    background: @rofi-backgound;
+    foreground: @rofi-white;
+    background: @rofi-black;
     alternate-background: @rofi-grayer;
-    active-background: @rofi-white;
+    active-background: @rofi-green;
     active-foreground: @rofi-black;
-    urgent-background: @rofi-grayer;
+    urgent-background: @rofi-red;
     urgent-forground: @rofi-black; 
  
-    selected-background: @active-background;
+    selected-background: @rofi-cyan;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
@@ -27,7 +30,7 @@
 }
 
 #window {
-    background-color: @rofi-background;    
+    background-color: @rofi-black; 
     border:           3;
     border-color: @bordercolor;
     padding:          5;
@@ -57,7 +60,7 @@
     padding: 1px ;
 }
 #element.normal.normal {
-    background-color: @rofi-background;
+    background-color: @rofi-black;
     text-color:       @rofi-white;
 }
 #element.normal.urgent {
@@ -121,7 +124,7 @@
 }
 #prompt {
     spacing:    0;
-    text-color: @rofi-white;
+    text-color: @rofi-green;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];

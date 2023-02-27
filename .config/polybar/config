@@ -47,7 +47,7 @@ wm-restack = i3
 type = internal/i3
 pin-workspaces = true
 label-focused = %index%
-label-focused-foreground = #ffffff
+label-focused-foreground = #33ff00
 label-focused-background = #000000
 label-focused-padding = 1
 
@@ -57,12 +57,12 @@ label-visible-background = #000000
 label-visible-padding = 1
 
 label-unfocused = %index%
-label-unfocused-foreground = #b3b3b3
+label-unfocused-foreground = #198000
 label-unfocused-background = #000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
-label-urgent-foreground = #ffffff
+label-urgent-foreground = #0066ff
 label-urgent-background = #aa0000
 label-urgent-padding = 1
 
@@ -108,10 +108,10 @@ format-connected = NET: <label-connected>
 format-disconnected = NET: <label-disconnected>
 
 label-connected = ETH %downspeed:9%
-label-connected-foreground = #eefafa
+label-connected-foreground = #0066ff
 
 label-disconnected = not connected
-label-disconnected-foreground = #66ffff
+label-disconnected-foreground = #fe0100
 
 [module/network-eik]
 type = internal/network
@@ -127,10 +127,10 @@ format-connected = NET: <label-connected>
 format-disconnected = NET: <label-disconnected>
 
 label-connected = ETH %downspeed:9%
-label-connected-foreground = #eefafa
+label-connected-foreground = #33ff00
 
 label-disconnected = not connected
-label-disconnected-foreground = #66ffff
+label-disconnected-foreground = #fe0100
 
 ; Center modules
 [module/date]
@@ -148,13 +148,16 @@ type=internal/pulseaudio
 interval=5
 
 format-volume = <ramp-volume> <label-volume>
-format-muted = <ramp-volume> <label-muted>
+format-volume-prefix = VOL:
+format-muted = <label-muted>
 
-ramp-volume-0 =  
-ramp-volume-1 =  
+ramp-volume-0 = %{F#33ff00}
+ramp-volume-1 = %{F#feff00}
+ramp-volume-2 = %{F#fe0100} 
 
-label-volume = VOL: %percentage%%
+label-volume = %percentage%%
 label-muted  = MUT: 0%
+
 
 [module/gpu]
 #type=custom/script
@@ -166,6 +169,7 @@ label-muted  = MUT: 0%
 [module/cpu]
 type=internal/cpu
 interval = 1
+
 format = <label>
 label = CPU: %percentage-sum%%
 
@@ -173,9 +177,9 @@ label = CPU: %percentage-sum%%
 type = internal/fs
 interval = 25
 mount-0 = /
+
 label-mounted = %mountpoint%: %free%/%total%
 label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/memory]
 type=internal/memory
