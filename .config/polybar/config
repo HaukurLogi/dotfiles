@@ -66,13 +66,6 @@ label-urgent-foreground = #0066ff
 label-urgent-background = #aa0000
 label-urgent-padding = 1
 
-[module/i3-window-title]
-type = custom/script
-exec = bin/i3-window-title
-format-prefix = "APP: "
-
-tail = true
-
 [module/xkeyboard]
 type = internal/xkeyboard
 
@@ -107,6 +100,9 @@ unknown-as-up = true
 
 format-connected = NET: <label-connected>
 format-disconnected = NET: <label-disconnected>
+format-connected-foreground = 0066ff
+format-disconnected-foreground = fe0100
+
 
 label-connected = ETH %downspeed:9%
 label-connected-foreground = #0066ff
