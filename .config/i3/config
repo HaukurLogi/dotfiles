@@ -28,8 +28,8 @@ exec_always --no-startup-id indicator-sound-switcher
 #smart_gaps on
 
 # - Wallpaper -
-#exec_always --no-startup-id feh --bg-scale $HOME/Wallpaper/Retro.jpg
-#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/animated14.gif
+exec_always --no-startup-id feh --bg-scale $HOME/.bg/still/linux.png
+#exec_always --no-startup-id $HOME/bin/mpvbg $HOME/.bg/animated/animated14.gif
 
 # - Colours -
 # class                 border  backgr. text    indicator child_border

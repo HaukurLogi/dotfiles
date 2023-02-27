@@ -12,7 +12,7 @@ monitor = ${env:MONITOR:}
 line-size = 2
 enable-ipc=true
 width = 100%
-height = 25
+height = 21
 border-size = 0
 padding=1
 background = #000000
@@ -47,7 +47,7 @@ wm-restack = i3
 type = internal/i3
 pin-workspaces = true
 label-focused = %index%
-label-focused-foreground = #fe0100
+label-focused-foreground = #ffffff
 label-focused-background = #000000
 label-focused-padding = 1
 
@@ -57,7 +57,7 @@ label-visible-background = #000000
 label-visible-padding = 1
 
 label-unfocused = %index%
-label-unfocused-foreground = #800000
+label-unfocused-foreground = #bbbbbb
 label-unfocused-background = #000000
 label-unfocused-padding = 1
 
@@ -76,17 +76,11 @@ layout-icon-0 = us;
 layout-icon-1 = is;
 
 format-prefix = "KEY: "
-format-prefix-foreground = #33ff00
-format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-foreground = #33ff00
-label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = #000000
-label-indicator-underline = ${colors.secondary}
 
 [module/network-sja]
 type = internal/network
@@ -100,15 +94,9 @@ unknown-as-up = true
 
 format-connected = NET: <label-connected>
 format-disconnected = NET: <label-disconnected>
-format-connected-foreground = 0066ff
-format-disconnected-foreground = fe0100
-
 
 label-connected = ETH %downspeed:9%
-label-connected-foreground = #0066ff
-
 label-disconnected = not connected
-label-disconnected-foreground = #fe0100
 
 [module/network-eik]
 type = internal/network
@@ -124,7 +112,6 @@ format-connected = NET: <label-connected>
 format-disconnected = NET: <label-disconnected>
 
 label-connected = ETH %downspeed:9%
-label-connected-foreground = #33ff00
 
 label-disconnected = not connected
 label-disconnected-foreground = #fe0100
