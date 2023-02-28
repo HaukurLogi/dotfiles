@@ -32,10 +32,12 @@
         "editorLineNumber.foreground": "#ffffff",
         "editorCursor.foreground": "#ffffff",
         "editor.background": "#000000",
+        "editorGroupHeader.tabsBorder": "#333333",
+        "editorGroupHeader.tabsBackground": "#000000",
         "tab.activeBackground": "#ffffff",
         "tab.activeForeground": "#000000",
         "tab.inactiveBackground": "#000000",
-        "tab.inactiveForeground": "#ffffff"
+        "tab.inactiveForeground": "#ffffff"  
     },
         "editor.tokenColorCustomizations": {
             "functions": "#00ffff",
