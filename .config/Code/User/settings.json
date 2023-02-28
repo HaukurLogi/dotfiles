@@ -48,4 +48,8 @@
             "strings": "#cc00ff",
             "comments": "#333333",
         },
+        "[python]": {
+            "editor.formatOnType": true
+        },
+        "workbench.iconTheme": null,
 }
