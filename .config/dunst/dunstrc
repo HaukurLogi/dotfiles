@@ -53,7 +53,7 @@
 
     # Colours
     background = "#000000"
-    foreground = "#c9ffff"
+    foreground = "#ffffff"
 
     # Sort messages by urgency.
     sort = yes

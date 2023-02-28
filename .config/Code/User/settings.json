@@ -1,19 +1,49 @@
 {
     "editor.fontFamily": "'ubuntu mono', ubuntu mono",
-    "python.autoComplete.extraPaths": [
-        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
-        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/micropython"
-    ],
-    "python.analysis.extraPaths": [
-        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/lib",
-        "/home/haukur/.vscode/extensions/electropol-fr.microbit-explorer-0.2.5/stubs-electropol-en/micropython"
-    ],
-    "python.languageServer": "Pylance",
-    "python.analysis.autoSearchPaths": true,
-    "python.linting.enabled": true,
-    "[python]": {
-        "editor.formatOnType": true
-    },
     "editor.fontSize": 17,
-    "workbench.colorTheme": "Cookies 'n Cream"
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#ffffff",
+        "titleBar.activeForeground": "#000000",
+        "titleBar.inactiveBackground": "#000000",
+        "titleBar.inactiveForeground": "#ffffff",
+        "titleBar.border": "#333333",
+        "activityBar.foreground": "#000000",
+        "activityBar.inactiveForeground": "#ffffff",
+        "activityBar.background": "#000000",
+        "activityBar.activeBackground": "#ffffff",
+        "activityBar.border": "#333333",
+        "activityBar.activeBorder": "#ffffff",
+        "sideBar.background": "#000000",
+        "sideBar.foreground": "#ffffff",
+        "sideBarSectionHeader.background": "#000000",
+        "sideBarSectionHeader.foreground": "#ffffff",
+        "sideBar.border": "#333333",
+        "list.activeSelectionBackground": "#ffffff",
+        "list.activeSelectionForeground": "#000000",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.background": "#000000",
+        "statusBar.border": "#333333",
+        "panel.border": "#333333",
+        "panelTitle.activeBorder": "#ffffff",
+        "panelTitle.activeForeground": "#ffffff",
+        "panelTitle.inactiveForeground": "#ffffff",
+        "terminalCursor.foreground": "#ffffff",
+        "terminal.foreground": "#ffffff",
+        "editorLineNumber.foreground": "#ffffff",
+        "editorCursor.foreground": "#ffffff",
+        "editor.background": "#000000",
+        "tab.activeBackground": "#ffffff",
+        "tab.activeForeground": "#000000",
+        "tab.inactiveBackground": "#000000",
+        "tab.inactiveForeground": "#ffffff"
+    },
+        "editor.tokenColorCustomizations": {
+            "functions": "#00ffff",
+            "variables": "#0066ff",
+            "numbers": "#fe0100",
+            "types": "#feff00",
+            "keywords": "#fe0100",
+            "strings": "#cc00ff",
+            "comments": "#333333",
+        },
 }
