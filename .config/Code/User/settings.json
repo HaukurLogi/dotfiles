@@ -32,24 +32,32 @@
         "editorLineNumber.foreground": "#ffffff",
         "editorCursor.foreground": "#ffffff",
         "editor.background": "#000000",
+        "editorWidget.background": "#000000",
+        "editorWidget.foreground": "#ffffff",
+        "editorSuggestWidget.highlightForeground": "#ffffff",
+        "editorSuggestWidget.selectedIconForeground": "#000000",
+        "editorSuggestWidget.focusHighlightForeground": "#000000",
+        "editorWidget.border": "#333333",
+        "editorGutter.modifiedBackground": "#33ff00",
+        "editorGutter.deletedBackground": "#ff0000",
         "editorGroupHeader.tabsBorder": "#333333",
         "editorGroupHeader.tabsBackground": "#000000",
         "tab.activeBackground": "#ffffff",
         "tab.activeForeground": "#000000",
         "tab.inactiveBackground": "#000000",
-        "tab.inactiveForeground": "#ffffff"  
+        "tab.inactiveForeground": "#ffffff"
     },
         "editor.tokenColorCustomizations": {
-            "functions": "#00ffff",
-            "variables": "#0066ff",
+            "functions": "#0066ff",
+            "variables": "#00ffff",
             "numbers": "#fe0100",
-            "types": "#feff00",
+            "types": "#cc00ff",
             "keywords": "#fe0100",
             "strings": "#cc00ff",
-            "comments": "#333333",
+            "comments": "#333333"
         },
         "[python]": {
             "editor.formatOnType": true
         },
-        "workbench.iconTheme": null,
+        "workbench.iconTheme": null
 }
