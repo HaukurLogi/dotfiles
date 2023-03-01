@@ -5,8 +5,6 @@
     "workbench.colorCustomizations": {
         "titleBar.activeBackground": "#ffffff",
         "titleBar.activeForeground": "#000000",
-        "editorBracketHighlight.foreground1": "#33ff00",
-        "editorBracketHighlight.foreground2": "#23b000",
         "titleBar.inactiveBackground": "#000000",
         "titleBar.inactiveForeground": "#ffffff",
         "titleBar.border": "#333333",
@@ -32,7 +30,6 @@
         "panelTitle.inactiveForeground": "#ffffff",
         "terminalCursor.foreground": "#ffffff",
         "terminal.foreground": "#ffffff",
-        "editorLineNumber.foreground": "#ffffff",
         "editorCursor.foreground": "#ffffff",
         "editor.background": "#000000",
         "editorWidget.background": "#000000",
@@ -45,6 +42,8 @@
         "editorGutter.deletedBackground": "#ff0000",
         "editorGutter.addedBackground": "#33ff00",
         "editorGroupHeader.tabsBorder": "#333333",
+        "editorLineNumber.activeForeground": "#ffffff",
+        "editorLineNumber.foreground": "#dddddd",
         "tab.activeBackground": "#ffffff",
         "tab.activeForeground": "#000000",
         "tab.inactiveBackground": "#000000",
@@ -53,10 +52,10 @@
         "editor.tokenColorCustomizations": {
             "functions": "#0066ff",
             "variables": "#00ffff",
-            "numbers": "#fe0100",
-            "types": "#cc00ff",
+            "numbers": "#33ff00",
+            "types": "#f133ff",
             "keywords": "#fe0100",
-            "strings": "#cc00ff",
+            "strings": "#f133ff",
             "comments": "#333333"
         },
         "[python]": {
@@ -64,3 +63,4 @@
         },
         "workbench.iconTheme": null
 }
+
