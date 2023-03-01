@@ -1,9 +1,12 @@
 {
+    "editor.bracketPairColorization.enabled": false,
     "editor.fontFamily": "'ubuntu mono', ubuntu mono",
     "editor.fontSize": 17,
     "workbench.colorCustomizations": {
         "titleBar.activeBackground": "#ffffff",
         "titleBar.activeForeground": "#000000",
+        "editorBracketHighlight.foreground1": "#33ff00",
+        "editorBracketHighlight.foreground2": "#23b000",
         "titleBar.inactiveBackground": "#000000",
         "titleBar.inactiveForeground": "#ffffff",
         "titleBar.border": "#333333",
@@ -40,8 +43,8 @@
         "editorWidget.border": "#333333",
         "editorGutter.modifiedBackground": "#33ff00",
         "editorGutter.deletedBackground": "#ff0000",
+        "editorGutter.addedBackground": "#33ff00",
         "editorGroupHeader.tabsBorder": "#333333",
-        "editorGroupHeader.tabsBackground": "#000000",
         "tab.activeBackground": "#ffffff",
         "tab.activeForeground": "#000000",
         "tab.inactiveBackground": "#000000",
