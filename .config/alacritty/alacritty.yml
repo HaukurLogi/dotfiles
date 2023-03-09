@@ -1,12 +1,14 @@
 font:
   size: 13.5
   normal:
-    family: Ubuntu Mono
+    family: JetBrains Mono
     style: Regular
   bold:
-    family: Ubuntu Mono
+    family: JetBrains Mono
+    style: Bold
   italic:
-    family: Ubuntu Mono
+    family: JetBrains Mono
+    style: Italic
 
 items: null
 colors:
