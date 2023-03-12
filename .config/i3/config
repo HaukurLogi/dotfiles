@@ -46,6 +46,9 @@ client.background       #ffffff
 # - Transparent Alacritty -
 exec_always --no-startup-id picom 
 
+# - Discord Overlay - 
+exec_always --no-startup-id discover-overlay
+
 # - Start dunst for notifications -
 exec --no-startup-id dunst
 
