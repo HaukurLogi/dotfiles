@@ -34,8 +34,7 @@ module-margin = 3
 ; Tray
 tray-position = right
 tray-padding = 5
-tray-background = #0d0d0d
-
+tray-background = #000000
 
 ; i3 stuff
 scroll-up = i3wm-wsnext
