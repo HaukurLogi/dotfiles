@@ -57,6 +57,7 @@ exec --no-startup-id key-mapper-control --command autoload
 
 # - Unclutter -
 exec --no-startup-id unclutter
+
 # - Bluetooth Applet -
 exec --no-startup-id blueman-applet
 

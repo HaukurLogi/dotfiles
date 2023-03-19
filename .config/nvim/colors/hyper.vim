@@ -1,5 +1,6 @@
 " Hyper Theme v1.0
 "
+"
 " https://github.com/jdsimcoe/hyper.vim
 "
 " Copyright 2017, All rights reserved
@@ -36,7 +37,7 @@ hi Folded ctermfg=24 ctermbg=235 cterm=NONE guifg=#cc00ff guibg=#000000 gui=NONE
 hi SignColumn ctermfg=246 ctermbg=235 cterm=NONE guifg=#333333 guibg=#000000 gui=NONE
 hi FoldColmun ctermfg=246 ctermbg=235 cterm=NONE guifg=#333333 guibg=#000000 gui=NONE
 hi Normal guifg=#ffffff guibg=#000000 gui=NONE
-hi Boolean ctermfg=56 ctermbg=NONE cterm=NONE guifg=#cc00ff guibg=NONE gui=NONE
+hi Boolean ctermfg=56 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi Character ctermfg=56 ctermbg=NONE cterm=NONE guifg=#cc00ff guibg=NONE gui=NONE
 hi Comment ctermfg=238 ctermbg=NONE cterm=NONE guifg=#808080 guibg=NONE gui=NONE
 hi Conditional ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
@@ -52,7 +53,7 @@ hi Float ctermfg=56 ctermbg=NONE cterm=NONE guifg=#cc00ff guibg=NONE gui=NONE
 hi Function ctermfg=70 ctermbg=NONE cterm=NONE guifg=#0066ff guibg=NONE gui=NONE
 hi Identifier ctermfg=37 ctermbg=NONE cterm=NONE guifg=#33ff00 guibg=NONE gui=italic
 hi Keyword ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
-hi Label ctermfg=178 ctermbg=NONE cterm=NONE guifg=#ffff00 guibg=NONE gui=NONE
+hi Label ctermfg=178 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi NonText ctermfg=231 ctermbg=NONE cterm=NONE guifg=#333333 guibg=#000000 gui=NONE
 hi Number ctermfg=56 ctermbg=NONE cterm=NONE guifg=#cc00ff guibg=NONE gui=NONE
 hi Operator ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
@@ -61,7 +62,7 @@ hi Special ctermfg=231 ctermbg=NONE cterm=NONE guifg=#ffffff guibg=NONE gui=NONE
 hi SpecialKey ctermfg=231 ctermbg=235 cterm=NONE guifg=#333333 guibg=#000000 gui=NONE
 hi Statement ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi StorageClass ctermfg=37 ctermbg=NONE cterm=NONE guifg=#33ff00 guibg=NONE gui=italic
-hi String ctermfg=178 ctermbg=NONE cterm=NONE guifg=#ffff00 guibg=NONE gui=NONE
+hi String ctermfg=178 ctermbg=NONE cterm=NONE guifg=#0066ff guibg=NONE gui=NONE
 hi Tag ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#ffffff guibg=NONE gui=bold
 hi Todo ctermfg=24 ctermbg=NONE cterm=inverse,bold guifg=#cc00ff guibg=NONE gui=inverse,bold
