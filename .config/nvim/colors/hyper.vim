@@ -62,7 +62,7 @@ hi Special ctermfg=231 ctermbg=NONE cterm=NONE guifg=#ffffff guibg=NONE gui=NONE
 hi SpecialKey ctermfg=231 ctermbg=235 cterm=NONE guifg=#333333 guibg=#000000 gui=NONE
 hi Statement ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi StorageClass ctermfg=37 ctermbg=NONE cterm=NONE guifg=#33ff00 guibg=NONE gui=italic
-hi String ctermfg=178 ctermbg=NONE cterm=NONE guifg=#0066ff guibg=NONE gui=NONE
+hi String ctermfg=178 ctermbg=NONE cterm=NONE guifg=#ffff00 guibg=NONE gui=NONE
 hi Tag ctermfg=96 ctermbg=NONE cterm=NONE guifg=#ff0000 guibg=NONE gui=NONE
 hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#ffffff guibg=NONE gui=bold
 hi Todo ctermfg=24 ctermbg=NONE cterm=inverse,bold guifg=#cc00ff guibg=NONE gui=inverse,bold

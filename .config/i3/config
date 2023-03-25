@@ -130,8 +130,9 @@ bindsym $mod+n                   layout toggle split
 bindsym $mod+h                   split horizontal
 bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
 
-# - Chromium -
-bindsym $mod+c                    exec --no-startup-id chromium
+# - Browser -
+bindsym $mod+c                   exec --no-startup-id qutebrowser
+
 bindsym $mod+v                   split vertical
 bindsym $mod+comma               resize shrink height 10 px or 10ppt
 bindsym $mod+Shift+r             exec i3-msg restart
