@@ -17,9 +17,9 @@ body {
 }
 
 #clock {
-    font-family: Ubunto Mono;
+    font-family: Ubuntu;
     font-size: 4.0rem;
-    font-family: "Anton";
+    font-family: "Ubuntu";
     color: #fff;
     margin-bottom: 0 auto;
 }
@@ -42,7 +42,7 @@ body {
     box-sizing: border-box;
     background-color: #000000;
     border: solid 0px #000000;
-    font-family: "Ubunto Mono";
+    font-family: "Ubuntu Mono";
     font-size: 4rem;
     color: #f2f2f2;
     outline: none;
@@ -56,7 +56,7 @@ body {
     background-color: #000000;
     padding: 1em;
     border-radius: 3px;
-    font-family: "Ubunto Mono";
+    font-family: "Ubuntu Mono";
     font-size: 1.2rem;
     color: #fff;
     text-align: center;
@@ -94,7 +94,7 @@ body {
     padding: 1em;
     background-color: #000000;
     border-radius: 3px;
-    font-family: "Ubunto Mono";
+    font-family: "Ubuntu Mono";
     font-size: .85rem;
     width: 25%;
     height: 16em;
@@ -106,7 +106,7 @@ body {
     vertical-align: top;
 }
 .bookmark-title {
-    font-family: "Ubunto Mono";
+    font-family: "Ubuntu Mono";
     font-size: 1.2rem;
     font-weight: 600;
     color: #ededed;
