@@ -85,7 +85,7 @@ bindsym $mod+Return              exec $term
 exec --no-startup-id "setxkbmap -layout 'us,is' -option 'grp:alt_space_toggle'"
 
 # - Screenshot -
-bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/$(date)"
+bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/$(date).png"
 
 # - Exiting i3 -
 bindsym $mod+Shift+Escape         exec i3-msg exit

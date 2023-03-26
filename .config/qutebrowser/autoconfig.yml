@@ -17,7 +17,7 @@ settings:
   colors.completion.odd.bg:
     global: '#0d0d0d'
   colors.statusbar.insert.bg:
-    global: '#ffff00'
+    global: '#0066ff'
   colors.statusbar.insert.fg:
     global: '#000000'
   colors.statusbar.normal.bg:
