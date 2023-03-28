@@ -1,6 +1,13 @@
+import os 
+
+# Determines if your on mac or linux
+if os.popen('echo $OSTYPE').read() == 'linux-gnu\n':
+    user_dir = 'home'
+else:
+    user_dir = 'Users'
+
 # load_autoconfig
 config.load_autoconfig(False)
-
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 config.set('content.cookies.accept', 'all', 'devtools://*')
@@ -19,8 +26,8 @@ config.set('content.notifications.enabled', False, 'https://www.youtube.com')
 config.set('content.notifications.enabled', False, 'https://www.reddit.com')
 
 # start_pages
-c.url.default_page = 'file:///Users/haukur/.config/qutebrowser/default_page/index.html'
-c.url.start_pages = 'file:///Users/haukur/.config/qutebrowser/default_page/index.html'
+c.url.default_page = f'file:///{user_dir}/haukur/.config/qutebrowser/default_page/index.html'
+c.url.start_pages = f'file:///{user_dir}/haukur/.config/qutebrowser/default_page/index.html'
 
 # searchengine
 c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
