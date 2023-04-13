@@ -202,6 +202,11 @@ c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = 'file:///Users/haukur/.config/qutebrowser/default_page/index.html'
 
+# Text color of the completion widget. May be a single color to use for
+# all columns or a list of three colors, one for each column.
+# Type: List of QtColor, or QtColor
+c.colors.completion.fg = ['gray', 'gray', 'gray']
+
 # Background color of the completion widget for odd rows.
 # Type: QssColor
 c.colors.completion.odd.bg = '#0d0d0d'
@@ -220,11 +225,19 @@ c.colors.completion.item.selected.bg = '#ffffff'
 
 # Foreground color of the matched text in the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.match.fg = '#ff0000'
+c.colors.completion.item.selected.match.fg = '#000000'
 
 # Foreground color of the matched text in the completion.
 # Type: QtColor
-c.colors.completion.match.fg = '#ff0000'
+c.colors.completion.match.fg = '#ffffff'
+
+# Text color for the keyhint widget.
+# Type: QssColor
+c.colors.keyhint.fg = '#ffffff'
+
+# Highlight color for keys to complete the current keychain.
+# Type: QssColor
+c.colors.keyhint.suffix.fg = '#ffff00'
 
 # Foreground color of the statusbar.
 # Type: QssColor
@@ -270,11 +283,16 @@ c.colors.tabs.bar.bg = '#121212'
 
 # Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.bg = '#121212'
+c.colors.tabs.odd.bg = '#242424'
 
 # Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.bg = '#121212'
+c.colors.tabs.even.bg = '#242424'
+
+# Background color for webpages if unset (or empty to use the theme's
+# color).
+# Type: QtColor
+c.colors.webpage.bg = '#000000'
 
 # Value to use for `prefers-color-scheme:` for websites. The "light"
 # value is only available with QtWebEngine 5.15.2+. On older versions,
@@ -310,12 +328,23 @@ c.colors.webpage.darkmode.enabled = True
 #   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 
+# Which images to apply dark mode to. With QtWebEngine 5.15.0, this
+# setting can cause frequent renderer process crashes due to a
+# https://codereview.qt-project.org/c/qt/qtwebengine-
+# chromium/+/304211[bug in Qt].
+# Type: String
+# Valid values:
+#   - always: Apply dark mode filter to all images.
+#   - never: Never apply dark mode filter to any images.
+#   - smart: Apply dark mode based on image content. Not available with Qt 5.15.0.
+c.colors.webpage.darkmode.policy.images = 'smart'
+
 # Threshold for inverting text with dark mode. Text colors with
 # brightness below this threshold will be inverted, and above it will be
 # left as in the original, non-dark-mode page. Set to 256 to always
 # invert text color or to 0 to never invert text color.
 # Type: Int
-c.colors.webpage.darkmode.threshold.text = 150
+c.colors.webpage.darkmode.threshold.text = 256
 
 # Threshold for inverting background elements with dark mode. Background
 # elements with brightness above this threshold will be inverted, and
@@ -323,4 +352,4 @@ c.colors.webpage.darkmode.threshold.text = 150
 # 256 to never invert the color or to 0 to always invert it. Note: This
 # behavior is the opposite of `colors.webpage.darkmode.threshold.text`!
 # Type: Int
-c.colors.webpage.darkmode.threshold.background = 100
+c.colors.webpage.darkmode.threshold.background = 0
