@@ -1,3 +1,12 @@
+import os 
+
+# Determines if your on mac or linux
+if os.popen('echo $OSTYPE').read() == 'linux-gnu\n':
+    user_dir = 'home'
+else:
+    user_dir = 'Users'
+
+
 config.load_autoconfig(False)
 
 # Other
@@ -19,9 +28,9 @@ config.set('content.notifications.enabled', False, 'https://www.reddit.com')
 
 # Colors
 c.tabs.favicons.show = 'never'
-c.url.default_page = 'file:///$HOME/.config/qutebrowser/default_page/index.html'
+c.url.default_page = f'file:///{user_dir}/haukur/.config/qutebrowser/default_page/index.html'
 c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
-c.url.start_pages = 'file:///$HOME/.config/qutebrowser/default_page/index.html'
+c.url.start_pages = f'file:///{user_dir}/haukur/.config/qutebrowser/default_page/index.html'
 c.colors.completion.fg = ['gray', 'gray', 'gray']
 c.colors.completion.odd.bg = '#0d0d0d'
 c.colors.completion.even.bg = '#000000'
