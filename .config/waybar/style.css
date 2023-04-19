@@ -1,0 +1,128 @@
+* {
+    border: none;
+    border-radius: 4px;
+    font-family: "Roboto Mono Medium", "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #000000;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.9);
+    color: #e5e9f0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 0 0.4em;
+    background: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #121212;
+    border-bottom: 3px solid #e5e9f0;
+}
+
+#workspaces button.urgent {
+    background-color: #ff0000;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#clock {
+    color: #ffffff;
+}
+
+#battery {
+    color: #e5e9f0;
+}
+
+#battery.charging {
+    color: #e5e9f0;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #e5e9f0;
+}
+
+#memory {
+    color: #e5e9f0;
+}
+
+#backlight {
+    color: #e5e9f0;
+}
+
+#network {
+    color: #e5e9f0;
+}
+
+#network.disconnected {
+    color: #e5e9f0;
+}
+
+#pulseaudio {
+    color: #e5e9f0;
+}
+
+#pulseaudio.muted {
+    color: #e5e9f0;
+}
+
+#custom-media {
+    color: #2a5c45;
+}
+
+.custom-spotify {
+    background: #66cc99;
+}
+
+.custom-vlc {
+    background: #ffa000;
+}
+
+#temperature {
+    background: #f0932b;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
+}
+
+#tray {
+    color: #e5e9f0;
+}
+
+#idle_inhibitor { 
+    color: #e5e9f0
+}
+
+#idle_inhibitor.activated {
+    color: #2d3436;
+}
