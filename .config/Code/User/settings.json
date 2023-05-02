@@ -67,6 +67,7 @@
         "[python]": {
             "editor.formatOnType": true
         },
-        "workbench.iconTheme": null
+        "workbench.iconTheme": null,
+        "window.zoomLevel": 1,
+        "explorer.confirmDragAndDrop": false
 }
-

@@ -14,25 +14,18 @@ client.urgent           #2f343a #000000 #ffffff #900000   #900000
 client.placeholder      #000000 #000000 #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-bar {
-        swaybar_command waybar 
-    }
-
 # - Border -
 for_window [class="^.*"] border pixel 1 
 hide_edge_borders smart
 # - Setting Keyboard Speed - 
 exec --no-startup-id xset r rate 250 30
-# - Setting refresh rate -
-output DP-3 mode 1920x1080@239.757Hz
-# - Setting Duel Monitors -
-output HDMI-A-1 transform 270 mode 1280x720@60.000HZ
+# - Configuring Monitors - 
+exec --no-startup-id $HOME/.screenlayout/dualmonitor.sh
+exec --no-startup-id nvidia-settings -a "AllowFlipping=0"
 # - Sound Switcher - 
 exec --no-startup-id indicator-sound-switcher
 # - Wallpaper -
-exec --no-startup-id feh --bg-scale $HOME/.bg/still/linux.png
-exec --no-startup-id swaybg -i /home/haukur/.bg/still/linux.png
-#exec --no-startup-id $HOME/bin/mpvbg $HOME/.bg/animated/animated14.gif
+exec --no-startup-id nitrogen --restore
 # - Fix Mic -
 exec python3 $HOME/src/fix-mic/fix-mic.py
 # - Transparent Alacritty -
@@ -50,7 +43,7 @@ exec --no-startup-id blueman-applet
 # - Network Manager applet -
 exec --no-startup-id nm-applet
 # - Polybar -
-#exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 # - Redshift is like f.lux -
 exec --no-startup-id redshift
 # - Lock the screen when AFK -
@@ -117,7 +110,7 @@ bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
 bindsym $mod+c                   exec --no-startup-id firefox
 
 # Restart i3
-bindsym $mod+Shift+r             exec swaymsg reload
+bindsym $mod+Shift+r             exec i3-msg restart
 
 # }}}
 # -- Workspace bindings -- {{{
