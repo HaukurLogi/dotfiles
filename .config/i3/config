@@ -20,7 +20,7 @@ hide_edge_borders smart
 # - Setting Keyboard Speed - 
 exec --no-startup-id xset r rate 250 30
 # - Configuring Monitors - 
-exec --no-startup-id $HOME/.screenlayout/dualmonitor.sh
+exec --no-startup-id $HOME/.config/screenconfiguration/screens.sh
 exec --no-startup-id nvidia-settings -a "AllowFlipping=0"
 # - Sound Switcher - 
 exec --no-startup-id indicator-sound-switcher
@@ -49,7 +49,7 @@ exec --no-startup-id redshift
 # - Lock the screen when AFK -
 exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
 # - Keyboard Layout -
-exec --no-startup-id setxkbmap -layout qgmlwy
+exec --no-startup-id setxkbmap qgmlwy
 
 # - Focus -
 focus_follows_mouse yes
