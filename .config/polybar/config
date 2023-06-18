@@ -1,47 +1,36 @@
 ; vim: ft=dosini
 ; This config uses the new syntax (which isn't merged upstream)
 
-[settings]
-throttle-ms = 50
-throttle-limit = 3
-
 [bar/top]
 monitor = ${env:MONITOR:}
 
-; Bar settings
+; Bar settings 
 line-size = 2
-enable-ipc=true
 width = 100%
 height = 21
-border-size = 0
-padding=1
 background = #000000
 foreground = #ffffff
-linecolor = #000000
-border-color = #141414
 
-; Fonts
+; Font
 font-0=cherry:size=12:3
-font-1=FontAwesome:size=9;3
-font-2=SymbolsNerdFont:size=13;3
-
-; Modules
-modules-left = alacritty i3 i3-window-title xkeyboard network-eik network-sja
-modules-center = date
-modules-right = volume cpu filesystem memory border
-module-margin = 3
 
 ; Tray
 tray-position = right
-tray-padding = 5
 tray-background = #000000
 
-; i3 stuff
+; Modules 
+modules-left = i3 xkeyboard filesystem
+modules-center = date
+modules-right = volume gpu cpu memory
+
+module-margin = 3
+
+; Left modules
+; i3 stuff 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 wm-restack = i3
 
-; Left modules
 [module/i3]
 type = internal/i3
 pin-workspaces = true
@@ -61,8 +50,8 @@ label-unfocused-background = #000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
-label-urgent-foreground = #0066ff
-label-urgent-background = #aa0000
+label-urgent-foreground = #000000
+label-urgent-background = #ffffff
 label-urgent-padding = 1
 
 [module/xkeyboard]
@@ -71,49 +60,18 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-layout-icon-0 = us;
-layout-icon-1 = is;
-
 format-prefix = "KEY: "
 
 label-layout = %layout%
 
-label-indicator-padding = 2
-label-indicator-margin = 1
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
 
-[module/network-sja]
-type = internal/network
-interface = eno1
-interface-type = wired
+label-mounted = %mountpoint%: %free%/%total%
+label-unmounted = %mountpoint%: not mounted
 
-interval = 3.0
-udspeed-minwidth = 5
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = NET: <label-connected>
-format-disconnected = NET: <label-disconnected>
-
-label-connected = ETH %downspeed:9%
-label-disconnected = not connected
-
-[module/network-eik]
-type = internal/network
-interface = enp3s0
-interface-type = wired
-
-interval = 3.0
-udspeed-minwidth = 5
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = NET: <label-connected>
-format-disconnected = NET: <label-disconnected>
-
-label-connected = ETH %downspeed:9%
-
-label-disconnected = not connected
-label-disconnected-foreground = #fe0100
 
 ; Center modules
 [module/date]
@@ -136,13 +94,12 @@ format-muted = <label-muted>
 label-volume = VOL: %percentage%%
 label-muted  = MUT: 0%
 
-
 [module/gpu]
-#type=custom/script
-#exec-if=nvidia-smi -h
-#exec=~/.config/polybar/display-nvidia-mem/target/release/display-nvidia-mem
-#tail=true
-#format-prefix="GPU: "
+type=custom/script
+exec-if=nvidia-smi -h
+exec=~/.config/polybar/display-nvidia-mem/target/release/display-nvidia-mem
+tail=true
+format-prefix="GPU: "
 
 [module/cpu]
 type=internal/cpu
@@ -150,14 +107,6 @@ interval = 1
 
 format = <label>
 label = CPU: %percentage-sum%%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-
-label-mounted = %mountpoint%: %free%/%total%
-label-unmounted = %mountpoint%: not mounted
 
 [module/memory]
 type=internal/memory
