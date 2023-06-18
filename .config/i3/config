@@ -2,9 +2,24 @@
 
 # - Variables -
 set $mod Mod1
-set $term --no-startup-id alacritty
-font pango:monospace 12
 
+# - Workspace Outputs -
+workspace 1 output DP-4
+workspace 2 output DP-4
+workspace 3 output DP-4
+workspace 4 output DP-4
+workspace 5 output DP-4
+workspace 6 output DP-4
+workspace 7 output DP-4
+workspace 8 output DP-4
+workspace 9 output HDMI-0
+workspace 10 output HDMI-0
+
+# -- Settings -- {{{
+
+# - Border -
+for_window [class="^.*"] border pixel 1 
+hide_edge_borders smart
 # - Colours -
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #000000 #ffffff #2e9ef4   #ffffff
@@ -13,54 +28,63 @@ client.unfocused        #333333 #000000 #888888 #292d2e   #222222
 client.urgent           #2f343a #000000 #ffffff #900000   #900000
 client.placeholder      #000000 #000000 #ffffff #000000   #0c0c0c
 client.background       #ffffff
-
-# - Border -
-for_window [class="^.*"] border pixel 1 
-hide_edge_borders smart
-# - Setting Keyboard Speed - 
-exec --no-startup-id xset r rate 250 30
 # - Configuring Monitors - 
-exec --no-startup-id $HOME/.config/screenconfiguration/screens.sh
-exec --no-startup-id nvidia-settings -a "AllowFlipping=0"
-# - Sound Switcher - 
-exec --no-startup-id indicator-sound-switcher
-# - Wallpaper -
-exec --no-startup-id nitrogen --restore
-# - Fix Mic -
-exec python3 $HOME/src/fix-mic/fix-mic.py
-# - Transparent Alacritty -
-exec --no-startup-id picom 
-# - Discord Overlay - 
-exec --no-startup-id discover-overlay
-# - Start dunst for notifications -
-exec --no-startup-id dunst
-# - Keymapper - 
-exec --no-startup-id key-mapper-control --command autoload
-# - Unclutter -
-exec --no-startup-id unclutter
-# - Bluetooth Applet -
-exec --no-startup-id blueman-applet
-# - Network Manager applet -
-exec --no-startup-id nm-applet
-# - Polybar -
-exec --no-startup-id $HOME/.config/polybar/launch.sh
-# - Redshift is like f.lux -
-exec --no-startup-id redshift
-# - Lock the screen when AFK -
-exec --no-startup-id $HOME/.config/i3/lock_daemon.sh
-# - Keyboard Layout -
-exec --no-startup-id setxkbmap qgmlwy
-
+exec --no-startup-id             $HOME/.config/screenconfiguration/screens.sh
 # - Focus -
-focus_follows_mouse yes
-focus_on_window_activation none
+focus_follows_mouse              yes
+focus_on_window_activation       none
+# - Keyboard Layout -
+exec                             setxkbmap qgmlwy
+# - Nvidia Settings -
+exec --no-startup-id             nvidia-settings -a "AllowFlipping=0" && nvidia-settings -a "DigitalVibrance=716"
+# - Setting Keyboard Speed - 
+exec                             xset r rate 250 30
 
-# - Bindings -
+# }}}
+
+# -- Run At Startup -- {{{
+
+# - Discord Overlay - 
+exec --no-startup-id             discover-overlay
+# - Dunst -
+exec --no-startup-id             dunst
+# - Fix Mic -
+exec --no-startup-id             python3 $HOME/src/fix-mic/fix-mic.py
+# - Keymapper - 
+exec --no-startup-id             inpur-remapper-control --command autoload
+# - Polybar -
+exec --no-startup-id             $HOME/.config/polybar/launch.sh
+# - Redshift -
+exec --no-startup-id             redshift
+# - Sound Switcher - 
+exec --no-startup-id             indicator-sound-switcher
+# - Transparency -
+exec --no-startup-id             picom 
+# - Unclutter -
+exec --no-startup-id             unclutter
+# - Wallpaper -
+exec --no-startup-id             nitrogen --restore
+
+# -- Applications -- {{{
+
+assign                           [class="Alacritty"] 3
+assign                           [class="steam"] 9
+assign                           [class="discord"] 10 
+
+exec --no-startup-id             alacritty
+exec --no-startup-id             steam 
+exec --no-startup-id             discord 
+
+# }}}
+
+# }}}
+
 # -- Non-Letter key bindings -- {{{
-bindsym $mod+Return              exec $term
+
+bindsym $mod+Return              exec --no-startup-id alacritty
 
 # - Exiting i3 -
-bindsym $mod+Shift+Escape         exec i3-msg exit
+bindsym $mod+Shift+Escape        exec i3-msg exit
 
 # Resizing
 bindsym $mod+Shift+comma         resize shrink width 10 px or 10ppt
@@ -69,51 +93,42 @@ bindsym $mod+comma               resize shrink height 10 px or 10ppt
 bindsym $mod+period              resize grow height 10 px or 10ppt
 
 # }}} 
+
 # -- Letter key bindings -- {{{
-# - Quit bindings
-bindsym $mod+q                    kill
-bindsym $mod+Shift+q              kill
 
-# - Screenshot
-bindsym $mod+s exec --no-startup-id maim --select "/home/$USER/$(date).png"
-
-# - Large -
-bindsym $mod+f                    fullscreen toggle
-bindsym $mod+u                    workspace prev
-bindsym $mod+Shift+u              move container to workspace prev
-
-# Volume
-bindsym $mod+i                    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $mod+k                    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
-# Bluetooth
-bindsym $mod+shift+b exec blueman-manager
-
+# - Browser -
+bindsym $mod+c                   exec --no-startup-id firefox
 # - Floating Window -
-bindsym $mod+m                    floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
-
+bindsym $mod+m                   floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
+# - Large -
+bindsym $mod+f                   fullscreen toggle
+bindsym $mod+u                   workspace prev
+bindsym $mod+Shift+u             move container to workspace prev
+# - Lock -
+bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
+# - Quit -
+bindsym $mod+q                   kill
+bindsym $mod+Shift+q             kill
+# - Restart i3 -
+bindsym $mod+Shift+r             exec i3-msg restart
 # - Rofi -
-bindsym $mod+d                    exec rofi -show drun fullscreen
-
-# - Tabbed mode -
-bindsym $mod+t                   layout tabbed
-
+bindsym $mod+d                   exec --no-startup-id rofi -show drun fullscreen
+# - Screenshot -
+bindsym $mod+s                   exec --no-startup-id maim --select "/home/$USER/$(date).png"
 # - Split -
 bindsym $mod+n                   layout toggle split
 bindsym $mod+v                   split vertical
 bindsym $mod+h                   split horizontal
-
-# Lock
-bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
-
-# - Browser -
-bindsym $mod+c                   exec --no-startup-id firefox
-
-# Restart i3
-bindsym $mod+Shift+r             exec i3-msg restart
+# - Tabbed mode -
+bindsym $mod+t                   layout tabbed
+# - Volume -
+bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+k                   exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # }}}
+
 # -- Workspace bindings -- {{{
+
 # - All workspace bindings - 
 bindsym $mod+Home                workspace $ws1
 bindsym $mod+Shift+Home          move container to workspace $ws1
@@ -132,34 +147,35 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 # - Switch to Workspace -
-bindsym $mod+1                  workspace $ws1
-bindsym $mod+2                  workspace $ws2
-bindsym $mod+3                  workspace $ws3
-bindsym $mod+4                  workspace $ws4
-bindsym $mod+5                  workspace $ws5
-bindsym $mod+6                  workspace $ws6
-bindsym $mod+7                  workspace $ws7
-bindsym $mod+8                  workspace $ws8
-bindsym $mod+9                  workspace $ws9
-bindsym $mod+0                  workspace $ws10
+bindsym $mod+1                   workspace $ws1
+bindsym $mod+2                   workspace $ws2
+bindsym $mod+3                   workspace $ws3
+bindsym $mod+4                   workspace $ws4
+bindsym $mod+5                   workspace $ws5
+bindsym $mod+6                   workspace $ws6
+bindsym $mod+7                   workspace $ws7
+bindsym $mod+8                   workspace $ws8
+bindsym $mod+9                   workspace $ws9
+bindsym $mod+0                   workspace $ws10
 # - Move Focused Container to Workspace -
-bindsym $mod+Shift+1            move container to workspace $ws1
-bindsym $mod+Shift+2            move container to workspace $ws2
-bindsym $mod+Shift+3            move container to workspace $ws3
-bindsym $mod+Shift+4            move container to workspace $ws4
-bindsym $mod+Shift+5            move container to workspace $ws5
-bindsym $mod+Shift+6            move container to workspace $ws6
-bindsym $mod+Shift+7            move container to workspace $ws7
-bindsym $mod+Shift+8            move container to workspace $ws8
-bindsym $mod+Shift+9            move container to workspace $ws9
-bindsym $mod+Shift+0            move container to workspace $ws10
+bindsym $mod+Shift+1             move container to workspace $ws1
+bindsym $mod+Shift+2             move container to workspace $ws2
+bindsym $mod+Shift+3             move container to workspace $ws3
+bindsym $mod+Shift+4             move container to workspace $ws4
+bindsym $mod+Shift+5             move container to workspace $ws5
+bindsym $mod+Shift+6             move container to workspace $ws6
+bindsym $mod+Shift+7             move container to workspace $ws7
+bindsym $mod+Shift+8             move container to workspace $ws8
+bindsym $mod+Shift+9             move container to workspace $ws9
+bindsym $mod+Shift+0             move container to workspace $ws10
 # - Arrow Keys -
-bindsym $mod+Left               focus left
-bindsym $mod+Down               focus down
-bindsym $mod+Up                 focus up
-bindsym $mod+Right              focus right
-bindsym $mod+Shift+Left         move left
-bindsym $mod+Shift+Down         move down
-bindsym $mod+Shift+Up           move up
-bindsym $mod+Shift+Right        move right
+bindsym $mod+Left                focus left
+bindsym $mod+Down                focus down
+bindsym $mod+Up                  focus up
+bindsym $mod+Right               focus right
+bindsym $mod+Shift+Left          move left
+bindsym $mod+Shift+Down          move down
+bindsym $mod+Shift+Up            move up
+bindsym $mod+Shift+Right         move right
 
+# }}}
