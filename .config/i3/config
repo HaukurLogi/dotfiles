@@ -62,16 +62,12 @@ exec --no-startup-id             indicator-sound-switcher
 exec --no-startup-id             picom 
 # - Unclutter -
 exec --no-startup-id             unclutter
-# - Wallpaper -
-exec --no-startup-id             nitrogen --restore
 
 # -- Applications -- {{{
 
-assign                           [class="Alacritty"] 3
-assign                           [class="discord"] 9 
-assign                           [class="steam"] 10
+for_window [class="steam"] move container to workspace 9
+for_window [class="discord"] move container to workspace 10
 
-exec --no-startup-id             alacritty
 exec --no-startup-id             steam 
 exec --no-startup-id             discord 
 
