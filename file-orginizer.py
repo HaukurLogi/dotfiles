@@ -2,10 +2,10 @@ import os
 from pathlib import Path
 
 SUBDIR = {
-        "Audio":[".m4a",".m4b",".mp3"],
-        "Images":[".jpg",".jpeg",".png"],
-        "Python":[".py"],
-        "Json":[".json"]
+        "audio":[".m4a",".m4b",".mp3"],
+        "images":[".jpg",".jpeg",".png"],
+        "python":[".py"],
+        "json":[".json"]
 }
 
 def pickDir(value):
