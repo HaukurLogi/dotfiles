@@ -2,6 +2,28 @@ import random
 from dataclasses import dataclass
 import collections
 
+# Bools
+yourTurn = True
+start = True
+
+# Integers
+cardCount = 0
+
+# Lists
+cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
+suits = ['Spades','Hearts','Diamonds','Leaves']
+deck = []
+yourBooks = []
+opponentBooks = []
+yourInventory = []
+opponentInventory = []
+
+stealingFrom = opponentInventory
+stealingTo = yourInventory
+
+# Strings
+border = "--------------"
+
 @dataclass(eq=True, frozen=True)
 class Card:
         number: str
@@ -10,28 +32,20 @@ class Card:
         def __str__(self):
                 return f"{self.number} {self.suit}"
 
-# Lists
-cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
-suits = ['Spades','Hearts','Diamonds','Leaves']
-deck = []
-yourBooks = []
-opponentBooks = []
-duplicates = []
-yourInventory = []
-opponentInventory = []
+class InventoryInfo:
+        def __init__(self, inventory):
+                self.numbers = [c.number for c in inventory] # An array of your cards name e.g. ['Ace', 'Seven', 'Six', 'Five', 'Jack']
+                self.dict = collections.Counter([c.number for c in inventory]) # A dictionary of all card names and amounts e.g. {'Ace': '1', 'Seven': '1', 'Six': '1', 'Five': '1', 'Jack': '1'}
+                self.list = [f"{key}, x{value}" for key, value in collections.Counter([c.number for c in inventory]).items()] # An array of all of your cards e.g. ['Ace x1', 'Seven x1', 'Six x1', 'Five x1', 'Jack x1']
+                self.card = [key for key, value in collections.Counter([c.number for c in inventory]).items()] # A card is the name of the card e.g. "Ace"
+                self.amount = [value for key, value in collections.Counter([c.number for c in inventory]).items()] # Amount is the amount of a card e.g. "1"
+                self.books = [key for key, value in collections.Counter([c.number for c in inventory]).items() if value >= 4] # A book is the key which has the value of or above 4
 
 for card in cards:
         for suit in suits:
                 deck.append(Card(card, suit))
 
 random.shuffle(deck) # Shuffle
-
-# Bools
-yourTurn = True
-start = True
-
-# Other variables
-border = "--------------"
 
 def drawCard(): # Draws a card
     randomCard = random.randint(0,len(deck) - 1)
@@ -47,38 +61,35 @@ def drawCard(): # Draws a card
             opponentInventory.append(deck[randomCard])
             deck.remove(deck[randomCard])
 
-for i in range(10): # Gives the players cards
-        drawCard()
-        if len(yourInventory) == 10:
-                opponentInventory = yourInventory[:5]
-                del yourInventory[:5] 
-                start = not start
-
-def turns():
-        global stealingFrom
-        global notstealingFrom
-
-        if yourTurn:
-                stealingFrom = opponentInventory
-                notstealingFrom = yourInventory
-        else:
-                stealingFrom = yourInventory
-                notstealingFrom = opponentInventory
+if start:
+        for i in range(10): # Gives the players cards
+                drawCard()
+                if len(yourInventory) == 10:
+                        opponentInventory = yourInventory[:5]
+                        del yourInventory[:5] 
+                        start = not start
 
 def stealing():
         global yourTurn
+        global cardCount
+        global stealingFrom
+        global stealingTo
+
+        if not start and len(opponentInventory) == 0:
+                print("You Win!")
+        elif not start and len(yourInventory) == 0:
+                print("You Lose!")
 
         if yourTurn:
-                InventoryNumbers = [c.number for c in notstealingFrom]
-                counterDict = collections.Counter(InventoryNumbers)
-                counterList = [f"{key}, x{value}" for key, value in counterDict.items()]
-
-                for value in counterDict.items():
-                        if value == 4:
-                                print("You have book")
+                for cardAmount in yourInventoryInfo.amount:
+                                cardCount += 1
+                                if cardAmount == 4:
+                                        print("You got a book!")
+                                        
+                                
                 print(f"Opponent Books: {'   '.join(opponentBooks)}")
-                print(f"Your Books: {'   '.join(yourBooks)}")
-                print(f"Your inventory : {'   '.join(map(str, counterList))}")
+                print(f"Your Books: {'   '.join(yourInventoryInfo.books)}")
+                print(f"Your inventory : {'   '.join(map(str, yourInventoryInfo.list))}")
                 print(border)
                 
                 asked = input("Please write the card you want to steal : ")
@@ -91,22 +102,21 @@ def stealing():
                 print(f'AI: {asked}')
                 print(border)
 
-
-        if any([asked.capitalize() == card.number for card in notstealingFrom]):
+        if any([asked.capitalize() == card.number for card in stealingTo]):
                 if checkCard:
                         if yourTurn:
                                 print("He had the card!")
                                 print(border)
                         for x in stealingFrom:
                                 if asked.capitalize() == x.number:
-                                        notstealingFrom.append(x)
+                                        stealingTo.append(x)
                                         stealingFrom.remove(x)
                 else:
                         if yourTurn:
                                 print("He didn't have the card. Go fish!")
                                 print(border)
                         drawCard()
-                        newCard = notstealingFrom[len(notstealingFrom) - 1].number
+                        newCard = stealingTo[len(stealingTo) - 1].number
 
                         if newCard == asked.capitalize():
                                 if yourTurn:
@@ -117,10 +127,21 @@ def stealing():
                                         print(border)
                         else:
                                 yourTurn = not yourTurn
+
+                                if yourTurn:
+                                        stealingFrom, stealingTo = opponentInventory, yourInventory
+                                else:
+                                        stealingFrom, stealingTo = yourInventory, opponentInventory
         else:
                 print("Please enter a card that you have :/")
                 print(border)        
         
-while True:
-        turns()
+while True: 
+        # Objects
+        yourInventoryInfo = InventoryInfo(yourInventory) # Your Inventory Info Object
+        opponentInventoryInfo = InventoryInfo(opponentInventory) # Your Opponents Inventory Info Object
+
+        print(yourInventoryInfo.amount, yourInventoryInfo.card)
+
+        # Calls
         stealing()

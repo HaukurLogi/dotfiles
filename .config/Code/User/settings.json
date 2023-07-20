@@ -69,5 +69,8 @@
         },
         "workbench.iconTheme": null,
         "window.zoomLevel": 1,
-        "explorer.confirmDragAndDrop": false
+        "explorer.confirmDragAndDrop": false,
+        "files.associations": {
+            "*.py": "python"
+        }
 }
