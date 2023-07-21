@@ -2,14 +2,8 @@ import random
 from dataclasses import dataclass
 import collections
 
-# Bools
-yourTurn = True
-start = True
 
-# Integers
-cardCount = 0
-
-# Lists
+# Arrays
 cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
 suits = ['Spades','Hearts','Diamonds','Leaves']
 deck = []
@@ -17,12 +11,19 @@ yourBooks = []
 opponentBooks = []
 yourInventory = []
 opponentInventory = []
-
 stealingFrom = opponentInventory
 stealingTo = yourInventory
 
+# Bools
+yourTurn = True
+start = True
+
+# Integers
+cardCount = 0
+
 # Strings
 border = "--------------"
+
 
 @dataclass(eq=True, frozen=True)
 class Card:

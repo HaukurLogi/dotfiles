@@ -1,11 +1,15 @@
 import random
 def main():
+
+    
     astronauts = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
     everyone = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
     imposters = ['','','','','','','','']
 
+
     imposter1 = random.randint(0,9)
     imposter2 = random.randint(0,9)
+
 
     if imposter1 != imposter2:
         imposter = astronauts[imposter1]   
