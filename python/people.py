@@ -1,37 +1,46 @@
 import os 
 import json
-import gc
 
 class PersonalInformation:
-    def __init__(self, name: str, age: int, phone: int):
+    def __init__(self, name: str, age: int, phone: int, email: str):
         self.name = name
         self.age = age
         self.phone = phone
+        self.email = email
         self.dict = {"name": self.name,
                     "age": self.age,
-                    "phone": self.phone}
+                    "phone": self.phone,
+                    "email": self.email}
 
 
 # Arrays
-listObj = []
+newFile = []
 
 # Inputs
-newFile = bool(input("Possible answers: True or False\nDo you wish to create a new file? : "))
-people = int(input("Possible answers: Interger\nHow many people do you wish to add? : "))
+createNewFile = bool(int(input("Possible answers: 0 and 1\nDo you wish to create a new file? : ")))
+peopleToAppend = int(input("Possible answers: Interger\nHow many people do you wish to add? : "))
 
 # Strings
-jsonFile = 'people.json'
+path = 'people.json'
 
 
-for i in range(people - 1):
+if os.path.exists(path) and not createNewFile:
+    with open(path, 'r') as file:
+        newFile = json.load(file)
+        originalNumberOfPeopleInFile = len(newFile)
+
+def writeJson(info, list):
+    with open(path, 'w') as file:
+        list.append(info.dict)
+        if createNewFile and len(list) == peopleToAppend:
+            json.dump(list, file, indent=4, separators=(',',': '))
+        elif not createNewFile and len(list) == peopleToAppend + originalNumberOfPeopleInFile:
+            json.dump(list, file, indent=4, separators=(',',': '))
+
+for i in range(peopleToAppend):
     personName = str(input(f"Name of person {i + 1} : "))
     personAge = int(input(f"Age of {personName} : "))
     personPhone = int(input(f"Phone number of {personName} : "))
-    globals()[personName] = PersonalInformation(personName, personAge, personPhone)
-
-with open(jsonFile, 'w') as file:
-    for obj in gc.get_objects():
-        if isinstance(obj, PersonalInformation):
-            listObj.append(obj.dict)
-            if len(listObj) == people:
-                json.dump(listObj, file, indent=4, separators=(',',': '))
+    personEmail = str(input(f"Email of {personName} : "))
+    personInfo = PersonalInformation(personName, personAge, personPhone, personEmail)
+    writeJson(personInfo, newFile)
