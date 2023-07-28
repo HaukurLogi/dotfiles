@@ -23,7 +23,7 @@ def main():
     else:
         print("The imposters we're the same please try again :/")
 
-    print(f'{imposter} and {other_imposter} are the imposters.')
+    print(f"{imposter} and {other_imposter} are the imposters.")
     while True:
         vote = True
         person_to_vote = random.randint(0,len(everyone) - 1)
