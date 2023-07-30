@@ -35,8 +35,6 @@ focus_follows_mouse              yes
 focus_on_window_activation       none
 # - Keyboard Layout -
 exec                             setxkbmap qgmlwy
-# - Nvidia Settings -
-exec                             nvidia-settings -a "AllowFlipping=0"
 # - Setting Keyboard Speed - 
 exec                             xset r rate 250 30
 
