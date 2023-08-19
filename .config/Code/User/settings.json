@@ -72,5 +72,6 @@
         "explorer.confirmDragAndDrop": false,
         "files.associations": {
             "*.py": "python"
-        }
+        },
+        "security.workspace.trust.untrustedFiles": "open"
 }
