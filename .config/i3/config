@@ -42,8 +42,8 @@ exec                             xset r rate 250 30
 
 # -- Run At Startup -- {{{
 
-# - Digital Vibrance -
-exec --no-startup-id             $HOME/bin/nvidiadv
+# - Digital Vibrance and resolution for CS -
+exec --no-startup-id             $HOME/bin/csgo-startup
 # - Discord Overlay - 
 exec --no-startup-id             discover-overlay
 # - Dunst -
