@@ -18,9 +18,7 @@ class Card:
         def __str__(self):
                 return f"{self.number} {self.suit}"
 
-
 deck = []
-
 
 for card in cards:
         for suit in suits:
