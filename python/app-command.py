@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 
 while True:
-    time.sleep(10) # Wait 10 seconds before checking again
+    time.sleep(1) # Wait 1 second before checking again
     if os.popen(f'pgrep {args.app}').read() != '': # Check if program is running
         if not isRunning: # Makes sure runningmcd only runs once
             print(f"Program running; executing {args.runningcmd}...")
