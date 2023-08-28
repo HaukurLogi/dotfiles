@@ -14,7 +14,7 @@ Switch to Next Keyboard Layout=Alt+Space
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+]; Ctrl+PgDown
+Activate Next Tab=Ctrl+PgDown; Ctrl+]
 Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=
 AddBookmark=Ctrl+B
@@ -52,7 +52,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=
-Home=Home Page; Alt+Home
+Home=Alt+Home; Home Page
 KeyBindings=
 Mail=
 MoveToTrash=Del
@@ -119,11 +119,11 @@ display=
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
 
 [kmix][Global Shortcuts]
-decrease_microphone_volume=Alt+Shift+K; Microphone Volume Down
-decrease_volume=Alt+K; Volume Down
+decrease_microphone_volume=Microphone Volume Down; Alt+Shift+K
+decrease_volume=Volume Down; Alt+K
 increase_microphone_volume=Microphone Volume Up; Alt+Shift+I
 increase_volume=Alt+I; Volume Up
-mic_mute=Meta+Volume Mute; Microphone Mute
+mic_mute=Microphone Mute; Meta+Volume Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
