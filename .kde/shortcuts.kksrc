@@ -1,5 +1,6 @@
 [ActivityManager][Global Shortcuts]
 switch-to-activity-0cd6cca9-d251-4fbc-8867-4b83f08f0ab1=
+switch-to-activity-8a8e1809-6ce4-402a-92d0-92b4caf9192c=
 
 [Alacritty.desktop][Global Shortcuts]
 New=
@@ -14,7 +15,7 @@ Switch to Next Keyboard Layout=Alt+Space
 AboutApp=
 AboutKDE=
 Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+[; Ctrl+PgUp
+Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=
 AddBookmark=Ctrl+B
 Back=Back
@@ -51,7 +52,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=
 Mail=
 MoveToTrash=Del
@@ -69,7 +70,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=Refresh; F5
+Reload=F5; Refresh
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -118,11 +119,11 @@ display=
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
 
 [kmix][Global Shortcuts]
-decrease_microphone_volume=Microphone Volume Down; Alt+Shift+K
+decrease_microphone_volume=Alt+Shift+K; Microphone Volume Down
 decrease_volume=Alt+K; Volume Down
-increase_microphone_volume=Alt+Shift+I; Microphone Volume Up
-increase_volume=Volume Up; Alt+I
-mic_mute=Microphone Mute; Meta+Volume Mute
+increase_microphone_volume=Microphone Volume Up; Alt+Shift+I
+increase_volume=Alt+I; Volume Up
+mic_mute=Meta+Volume Mute; Microphone Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
@@ -144,6 +145,7 @@ ExposeClass=
 ExposeClassCurrentDesktop=
 Increase Opacity=
 Kill Window=
+Move Tablet to Next Output=
 MoveMouseToCenter=
 MoveMouseToFocus=
 MoveZoomDown=
@@ -202,7 +204,7 @@ Switch to Screen to the Right=
 TILING-I3: Set Normal Mode=
 TILING-I3: Set Wrap Horizontal Mode=
 TILING-I3: Set Wrap Vertical Mode=
-TILING: Cycle Rotations=
+TILING: Cycle Rotations=Meta+Shift+R
 TILING: Decrease Number Of Masters=
 TILING: Dump Clients=
 TILING: Focus next tile=
@@ -215,17 +217,17 @@ TILING: Move Window To New Desktop=
 TILING: Move Window Up=Alt+Shift+Up
 TILING: Next Tiling Layout=
 TILING: Previous Tiling Layout=
-TILING: Resize Active Window To The Bottom=
+TILING: Resize Active Window To The Bottom=Meta+Alt+J
 TILING: Resize Active Window To The Left=
-TILING: Resize Active Window To The Right=
-TILING: Resize Active Window To The Top=
+TILING: Resize Active Window To The Right=Meta+Alt+L
+TILING: Resize Active Window To The Top=Meta+Alt+K
 TILING: Swap Window With Master=
 TILING: Swap with next tile=
 TILING: Swap with previous tile=
 TILING: Tile now=
 TILING: Toggle Border for all=
 TILING: Toggle Floating=Alt+M
-TILING: Toggle Tiling=
+TILING: Toggle Tiling=Meta+Shift+F11
 Toggle=
 Toggle Night Color=
 Toggle Window Raise/Lower=
@@ -331,6 +333,14 @@ stopmedia=Media Stop
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=
 
+[org.kde.kcalc.desktop][Global Shortcuts]
+_launch=
+
+[org.kde.konsole.desktop][Global Shortcuts]
+NewTab=
+NewWindow=
+_launch=
+
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=
 _launch=
@@ -338,16 +348,25 @@ _launch=
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=
 
+[org.kde.spectacle.desktop][Global Shortcuts]
+ActiveWindowScreenShot=Meta+Print
+CurrentMonitorScreenShot=
+FullScreenScreenShot=Shift+Print
+OpenWithoutScreenshot=
+RectangularRegionScreenShot=Meta+Shift+Print
+WindowUnderCursorScreenShot=Meta+Ctrl+Print
+_launch=Print
+
 [org_kde_powerdevil][Global Shortcuts]
 Decrease Keyboard Brightness=
-Decrease Screen Brightness=
+Decrease Screen Brightness=Monitor Brightness Down
 Hibernate=
 Increase Keyboard Brightness=
-Increase Screen Brightness=
+Increase Screen Brightness=Monitor Brightness Up
 PowerDown=
 PowerOff=
 Sleep=
-Toggle Keyboard Backlight=
+Toggle Keyboard Backlight=Launch (C)
 Turn Off Screen=
 
 [plasmashell][Global Shortcuts]
@@ -379,6 +398,9 @@ stop current activity=
 switch to next activity=
 switch to previous activity=
 toggle do not disturb=
+
+[rofi-2.desktop][Global Shortcuts]
+_launch=Alt+D
 
 [rofi-3.desktop][Global Shortcuts]
 _launch=Alt+D

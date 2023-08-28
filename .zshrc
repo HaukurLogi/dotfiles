@@ -22,15 +22,8 @@ export LANG=en_US.UTF-8
 # Aliases 
 source "$HOME/.config/zsh/alias.zsh"
 
-# Colorscripts only appear on Linux
-if echo $OSTYPE | grep 'linux' >/dev/null; then
-	colorscript -r
-else
-	eval $(/opt/homebrew/bin/brew shellenv)
-fi
-
-# Pfetch
-pfetch
+# Neofetch
+neofetch
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
