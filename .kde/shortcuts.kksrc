@@ -14,8 +14,8 @@ Switch to Next Keyboard Layout=Alt+Space
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+PgDown; Ctrl+]
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Next Tab=Ctrl+]; Ctrl+PgDown
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=
 AddBookmark=Ctrl+B
 Back=Back
@@ -61,7 +61,7 @@ Next=PgDown
 NextCompletion=
 Open=Ctrl+O
 OpenRecent=
-Paste=Ctrl+V; Shift+Ins
+Paste=Shift+Ins; Ctrl+V
 Paste Selection=Ctrl+Shift+Ins
 Preferences=
 PrevCompletion=Ctrl+Up
@@ -349,13 +349,13 @@ _launch=
 _launch=
 
 [org.kde.spectacle.desktop][Global Shortcuts]
-ActiveWindowScreenShot=Meta+Print
+ActiveWindowScreenShot=
 CurrentMonitorScreenShot=
-FullScreenScreenShot=Shift+Print
+FullScreenScreenShot=
 OpenWithoutScreenshot=
-RectangularRegionScreenShot=Meta+Shift+Print
-WindowUnderCursorScreenShot=Meta+Ctrl+Print
-_launch=Print
+RectangularRegionScreenShot=
+WindowUnderCursorScreenShot=
+_launch=
 
 [org_kde_powerdevil][Global Shortcuts]
 Decrease Keyboard Brightness=
