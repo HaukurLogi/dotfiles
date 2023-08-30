@@ -3,18 +3,6 @@
 # - Variables -
 set $mod Mod1
 
-# - Workspace Outputs -
-workspace 1 output DP-4
-workspace 2 output DP-4
-workspace 3 output DP-4
-workspace 4 output DP-4
-workspace 5 output DP-4
-workspace 6 output DP-4
-workspace 7 output DP-4
-workspace 8 output DP-4
-workspace 9 output HDMI-0
-workspace 10 output HDMI-0
-
 # -- Settings -- {{{
 
 # - Border -
@@ -33,6 +21,9 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 # - Focus -
 focus_follows_mouse              yes
 focus_on_window_activation       none
+# - i3 Gaps -
+gaps inner 5 
+gaps outer 10
 # - Keyboard Layout -
 exec                             setxkbmap qgmlwy
 # - Setting Keyboard Speed -  
@@ -42,18 +33,8 @@ exec                             xset r rate 250 30
 
 # -- Run At Startup -- {{{
 
-# - Digital Vibrance and resolution for CS -
-exec --no-startup-id             $HOME/bin/csgo-startup
-# - Discord Overlay - 
-exec --no-startup-id             discover-overlay
 # - Dunst -
 exec --no-startup-id             dunst
-# - Fix Mic -
-exec --no-startup-id             python3 $HOME/src/fix-mic/fix-mic.py
-# - Keymapper - 
-exec --no-startup-id             inpur-remapper-control --command autoload
-# - Polybar -
-exec --no-startup-id             $HOME/.config/polybar/launch.sh
 # - Redshift -
 exec --no-startup-id             redshift
 # - Sound Switcher - 
@@ -61,7 +42,28 @@ exec --no-startup-id             indicator-sound-switcher
 # - Transparency -
 exec --no-startup-id             picom 
 # - Unclutter -
-exec --no-startup-id             unclutter
+exec --no-startup-id             unclutter 
+
+# -- Plasma Integration -- {{{
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+for_window [class="yakuake"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt
+no_focus [class="plasmashell" window_type="notification"]
+
+# }}}
 
 # -- Applications -- {{{
 
@@ -104,17 +106,12 @@ bindsym $mod+Shift+u             move container to workspace prev
 bindsym $mod+shift+x             exec --no-startup-id ~/.config/i3/lock.sh
 # - Quit -
 bindsym $mod+q                   kill
-bindsym $mod+Shift+q             kill
 # - Restart i3 -
 bindsym $mod+Shift+r             exec i3-msg restart
 # - Rofi -
 bindsym $mod+d                   exec --no-startup-id rofi -show drun fullscreen
 # - Screenshot -
 bindsym $mod+s                   exec --no-startup-id maim --select "/home/$USER/$(date).png"
-# - Split -
-bindsym $mod+n                   layout toggle split
-bindsym $mod+v                   split vertical
-bindsym $mod+h                   split horizontal
 # - Tabbed mode -
 bindsym $mod+t                   layout tabbed
 # - Volume -
