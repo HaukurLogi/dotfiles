@@ -5,21 +5,22 @@
 monitor = ${env:MONITOR:}
 
 ; Bar settings 
+dpi=192
 line-size = 2
 width = 100%
-height = 21
+height = 40
 background = #000000
 foreground = #ffffff
 
 ; Font
-font-0=terminus:size=16:32
+font-0=cherry:size=14
 
 ; Tray
 tray-position = right
 tray-background = #000000
 
 ; Modules 
-modules-left = i3 xkeyboard filesystem
+modules-left = i3 xkeyboard filesystem battery
 modules-center = date
 modules-right = volume gpu cpu memory
 
@@ -72,6 +73,12 @@ mount-0 = /
 label-mounted = %mountpoint%: %free%/%total%
 label-unmounted = %mountpoint%: not mounted
 
+[module/battery]
+type=custom/script
+exec-if=~/.config/polybar/display-battery/target/release/display-battery --check
+exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
+tail=true
+format-prefix="BAT: "
 
 ; Center modules
 [module/date]

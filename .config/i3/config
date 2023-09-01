@@ -60,10 +60,14 @@ exec --no-startup-id             discord
 
 # -- Non-Letter key bindings -- {{{
 
+# Alacritty
 bindsym $mod+Return              exec --no-startup-id alacritty
 
 # - Exiting i3 -
 bindsym $mod+Shift+Escape        exec i3-msg exit
+
+# - Layout -
+bindsym $mod+Space               exec setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll qgmlwy, is
 
 # Resizing
 bindsym $mod+Shift+comma         resize shrink width 10 px or 10ppt
