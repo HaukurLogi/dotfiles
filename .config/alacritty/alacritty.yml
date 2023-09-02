@@ -42,3 +42,5 @@ colors:
     cyan: '#00ffff'
     white: '#FFFFFF'
 theme: Hyper
+window:
+  opacity: 0.8
