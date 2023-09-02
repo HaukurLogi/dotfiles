@@ -12,8 +12,8 @@ height = 36
 background = #000000
 foreground = #ffffff
 
-; Font
-font-0=gomme:size=20
+; Font 
+font-0=tamzen:pixelsize=18;0
 
 ; Tray
 tray-position = right

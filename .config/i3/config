@@ -21,10 +21,6 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 # - Focus -
 focus_follows_mouse              yes
 focus_on_window_activation       none
-# - i3 Gaps -
-smart_gaps on 
-gaps inner 15 
-gaps outer 20
 # - Keyboard Layout -
 exec                             setxkbmap qgmlwy
 # - Setting Keyboard Speed -  
