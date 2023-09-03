@@ -21,10 +21,16 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 # - Focus -
 focus_follows_mouse              yes
 focus_on_window_activation       none
+# - Gaps -
+smart_gaps true
+gaps outer 25 
+gaps inner 15
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -
 exec                             feh --bg-scale $HOME/.bg/still/linux-mac.png
+# xkbmap
+exec "setxkbmap -option 'grp:switch,grp:alt_shift_toggle' -layout qgmlwy,us"
 
 # }}}
 
@@ -58,13 +64,10 @@ exec --no-startup-id             discord
 # -- Non-Letter key bindings -- {{{
 
 # Alacritty
-bindsym $mod+Return              exec --no-startup-id alacritty
+bindsym $mod+Return              exec alacritty
 
 # - Exiting i3 -
 bindsym $mod+Shift+Escape        exec i3-msg exit
-
-# - Layout -
-bindsym $mod+Space               exec setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll qgmlwy, is
 
 # Resizing
 bindsym $mod+Shift+comma         resize shrink width 10 px or 10ppt
@@ -77,7 +80,7 @@ bindsym $mod+period              resize grow height 10 px or 10ppt
 # -- Letter key bindings -- {{{
 
 # - Browser -
-bindsym $mod+c                   exec --no-startup-id firefox
+bindsym $mod+c                   exec firefox
 # - Floating Window -
 bindsym $mod+m                   floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal
 # - Large -
@@ -91,9 +94,9 @@ bindsym $mod+q                   kill
 # - Restart i3 -
 bindsym $mod+Shift+r             exec i3-msg restart
 # - Rofi -
-bindsym $mod+d                   exec --no-startup-id rofi -show drun fullscreen
+bindsym $mod+d                   exec rofi -show drun fullscreen
 # - Screenshot -
-bindsym $mod+s                   exec --no-startup-id maim --select "/home/$USER/$(date).png"
+bindsym $mod+s                   exec maim --select "/home/$USER/$(date).png"
 # - Tabbed mode -
 bindsym $mod+t                   layout tabbed
 # - Volume -
