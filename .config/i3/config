@@ -21,8 +21,6 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 # - Focus -
 focus_follows_mouse              yes
 focus_on_window_activation       none
-# - Keyboard Layout -
-exec                             setxkbmap qgmlwy
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -
