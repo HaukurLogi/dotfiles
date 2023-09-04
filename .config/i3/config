@@ -30,7 +30,7 @@ exec                             xset r rate 250 30
 # - Wallpaper -
 exec                             feh --bg-scale $HOME/.bg/still/linux-mac.png
 # xkbmap
-exec "setxkbmap -option 'grp:switch,grp:alt_shift_toggle' -layout qgmlwy,us"
+exec "setxkbmap -option 'grp:switch,grp:alt_space_toggle' -layout qgmlwy,us"
 
 # }}}
 
@@ -105,7 +105,7 @@ bindsym $mod+k                   exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # }}}
 
-# -- Workspace bindings -- {{{
+# -- Workspace bindings -- 
 
 # - All workspace bindings - 
 bindsym $mod+Home                workspace $ws1
@@ -156,4 +156,4 @@ bindsym $mod+Shift+Down          move down
 bindsym $mod+Shift+Up            move up
 bindsym $mod+Shift+Right         move right
 
-# }}}
+# 
