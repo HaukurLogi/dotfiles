@@ -22,13 +22,12 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 focus_follows_mouse              yes
 focus_on_window_activation       none
 # - Gaps -
-smart_gaps true
-gaps outer 25 
-gaps inner 15
+gaps outer 20
+gaps inner 10
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -
-exec                             feh --bg-scale $HOME/.bg/still/linux-mac.png
+exec                             $HOME/bin/mpvbg $HOME/.bg/animated/animated13.gif 
 # xkbmap
 exec "setxkbmap -option 'grp:switch,grp:alt_space_toggle' -layout qgmlwy,us"
 

@@ -36,8 +36,8 @@ wm-restack = i3
 type = internal/i3
 pin-workspaces = true
 label-focused = %index%
-label-focused-foreground = #ffffff
-label-focused-background = #000000
+label-focused-foreground = #000000
+label-focused-background = #ffffff
 label-focused-padding = 1
 
 label-visible = %index%
@@ -46,7 +46,7 @@ label-visible-background = #000000
 label-visible-padding = 1
 
 label-unfocused = %index%
-label-unfocused-foreground = #bbbbbb
+label-unfocused-foreground = #ffffff
 label-unfocused-background = #000000
 label-unfocused-padding = 1
 
