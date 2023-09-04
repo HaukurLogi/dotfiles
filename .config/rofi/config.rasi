@@ -9,7 +9,7 @@
     rofi-gray: #333333;
     rofi-grayer: rgba ( 25, 25, 25, 25 % );
 
-    font: "Ubuntu Mono 16";
+    font: "Jetbrains Mono 16";
 
     foreground: @rofi-foreground;
     background: @rofi-backgound;
