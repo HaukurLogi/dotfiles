@@ -1,13 +1,13 @@
 * {
     /* Haukur's Rofi Theme */
 
-    rofi-background: rgba ( 0, 0, 0, 60 % );
+    rofi-background: rgba ( 0, 0, 0, 75 % );
     rofi-cursor: #adadad;
     rofi-foreground: #d4d4d4;
     rofi-white: #ffffff;
     rofi-black: #000000;
     rofi-gray: #333333;
-    rofi-grayer: rgba ( 25, 25, 25, 25 % );
+    rofi-grayer: rgba ( 13, 13, 13, 75 % );
 
     font: "Jetbrains Mono 16";
 
