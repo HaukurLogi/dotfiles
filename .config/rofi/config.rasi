@@ -1,15 +1,15 @@
 * {
     /* Haukur's Rofi Theme */
 
-    rofi-background: #000000;
+    rofi-background: rgba ( 0, 0, 0, 60 % );
     rofi-cursor: #adadad;
     rofi-foreground: #d4d4d4;
     rofi-white: #ffffff;
     rofi-black: #000000;
     rofi-gray: #333333;
-    rofi-grayer: #0d0d0d;
+    rofi-grayer: rgba ( 25, 25, 25, 25 % );
 
-    font: "Ubuntu Mono 17";
+    font: "Ubuntu Mono 16";
 
     foreground: @rofi-foreground;
     background: @rofi-backgound;

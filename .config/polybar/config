@@ -9,15 +9,11 @@ dpi=-1
 line-size = 2
 width = 100%
 height = 18
-background = #000000
+background = #aa000000
 foreground = #ffffff
 
 ; Font 
 font-0=Jetbrains Mono:size=6
-
-; Tray
-tray-position = right
-tray-background = #000000
 
 ; Modules 
 modules-left = i3 xkeyboard filesystem battery
@@ -42,17 +38,17 @@ label-focused-padding = 1
 
 label-visible = %index%
 label-visible-foreground = #ffffff
-label-visible-background = #000000
+label-visible-background = #aa000000
 label-visible-padding = 1
 
 label-unfocused = %index%
 label-unfocused-foreground = #ffffff
-label-unfocused-background = #000000
+label-unfocused-background = #aa000000
 label-unfocused-padding = 1
 
 label-urgent = %index%
 label-urgent-foreground = #000000
-label-urgent-background = #ffffff
+label-urgent-background = #aaff0000
 label-urgent-padding = 1
 
 [module/xkeyboard]
