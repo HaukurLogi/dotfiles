@@ -7,7 +7,6 @@ set $mod Mod1
 
 # - Border -
 for_window [class="^.*"] border pixel 1 
-hide_edge_borders smart
 # - Colours -
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #000000 #ffffff #2e9ef4   #ffffff
@@ -22,8 +21,8 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 focus_follows_mouse              yes
 focus_on_window_activation       none
 # - Gaps -
-gaps outer 10
-gaps inner 5
+gaps outer 12
+gaps inner 8
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -

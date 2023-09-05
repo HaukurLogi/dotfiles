@@ -23,7 +23,9 @@ export LANG=en_US.UTF-8
 source "$HOME/.config/zsh/alias.zsh"
 
 # Neofetch
-neofetch
+if ps -e | grep 'alacritty' | wc -l | grep '1'; then 
+    neofetch
+fi 
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
