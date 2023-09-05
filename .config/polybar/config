@@ -6,9 +6,8 @@ monitor = ${env:MONITOR:}
 
 ; Bar settings 
 dpi=-1
-line-size = 2
 width = 100%
-height = 18
+height = 26
 background = #aa000000
 foreground = #ffffff
 

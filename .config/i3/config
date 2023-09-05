@@ -22,8 +22,8 @@ exec                             $HOME/.config/screenconfiguration/screens.sh
 focus_follows_mouse              yes
 focus_on_window_activation       none
 # - Gaps -
-gaps outer 20
-gaps inner 10
+gaps outer 10
+gaps inner 5
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -
