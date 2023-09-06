@@ -26,7 +26,7 @@ gaps inner 6
 # - Setting Keyboard Speed -  
 exec                             xset r rate 250 30
 # - Wallpaper -
-exec                             $HOME/bin/mpvbg $HOME/.bg/animated/animated13.gif 
+exec                             $HOME/.config/wallpaper/wallpaper.sh 
 # xkbmap
 exec "setxkbmap -option 'grp:switch,grp:alt_space_toggle' -layout qgmlwy,is"
 
