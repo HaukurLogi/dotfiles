@@ -1,7 +1,6 @@
 #!/bin/sh 
 
-if hostnamectl | grep 'arm64'; then
-    picom --backend xrender
-else
+if hostnamectl | grep 'x86_64'; then
     picom
 fi
+
