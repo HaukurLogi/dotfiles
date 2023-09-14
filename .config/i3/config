@@ -28,7 +28,7 @@ exec                             xset r rate 250 30
 # - Wallpaper -
 exec                             $HOME/.config/wallpaper/wallpaper.sh 
 # xkbmap
-exec "setxkbmap -option 'grp:switch,grp:alt_space_toggle' -layout qgmlwy,is"
+exec                             setxkbmap qgmlwy
 
 # }}}
 
