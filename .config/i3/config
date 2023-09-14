@@ -95,8 +95,6 @@ bindsym $mod+Shift+r             exec i3-msg restart
 bindsym $mod+d                   exec rofi -show drun fullscreen
 # - Screenshot -
 bindsym $mod+s                   exec maim --select "/home/$USER/$(date).png"
-# - Tabbed mode -
-bindsym $mod+t                   layout tabbed
 # - Volume -
 bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+k                   exec pactl set-sink-volume @DEFAULT_SINK@ -5%
