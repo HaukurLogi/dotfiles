@@ -18,7 +18,7 @@ font-1=FontAwesome:size=6;2
 ; Modules 
 modules-left = i3 xkeyboard filesystem battery
 modules-center = date
-modules-right = volume gpu cpu memory
+modules-right = volume gpu cpu temperature memory
 
 module-margin = 3
 
@@ -110,6 +110,16 @@ interval = 1
 
 format = <label>
 label = CPU: %percentage-sum%%
+
+[module/temperature]
+type = internal/temperature
+format-prefix="TEM: "
+
+interval = 0.5
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+base-temperature = 20
+warn-temperature = 60
 
 [module/memory]
 type=internal/memory
