@@ -97,13 +97,6 @@ format-muted = <label-muted>
 label-volume = VOL: %percentage%%
 label-muted  = MUT: 0%
 
-[module/gpu]
-type=custom/script
-exec-if=nvidia-smi -h
-exec=~/.config/polybar/display-nvidia-mem/target/release/display-nvidia-mem
-tail=true
-format-prefix="GPU: "
-
 [module/cpu]
 type=internal/cpu
 interval = 1
