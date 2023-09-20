@@ -105,14 +105,11 @@ format = <label>
 label = CPU: %percentage-sum%%
 
 [module/temperature]
-type = internal/temperature
-format-prefix="TEM: "
+type = custom/script
+exec = ~/bin/cpu-temp.sh
 
-interval = 0.5
-thermal-zone = 0
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
-base-temperature = 20
-warn-temperature = 60
+format-prefix = "TEM: "
+interval = 1
 
 [module/memory]
 type=internal/memory
