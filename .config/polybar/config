@@ -1,32 +1,39 @@
-; vim: ft=dosini
-; This config uses the new syntax (which isn't merged upstream)
+; vim: filetype=polybar:et:ts=4:sts=4:sw=4:fdm=marker
 
 [bar/top]
 monitor = ${env:MONITOR:}
 
-; Bar settings 
-dpi=-1
+# -- Settings -- {{{
+
+dpi = -1
 width = 100%
 height = 20
 background = #aa000000
 foreground = #ffffff
 
-; Font 
-font-0=Jetbrains Mono:size=5;2
-font-1=FontAwesome:size=6;2
-
-; Modules 
-modules-left = i3 xkeyboard filesystem battery
-modules-center = date
-modules-right = volume gpu cpu temperature memory
-
-module-margin = 3
-
-; Left modules
 ; i3 stuff 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 wm-restack = i3
+
+# -- Fonts -- {{{
+
+font-0=Jetbrains Mono:size=5;2
+font-1=FontAwesome:size=6;2
+
+# }}}
+
+# }}}
+
+# -- Modules -- {{{
+
+modules-left = i3 xkeyboard filesystem volume battery
+modules-center = date
+modules-right = cpu gpu temperatures memory
+
+module-margin = 3
+
+# -- Left -- {{{
 
 [module/i3]
 type = internal/i3
@@ -57,62 +64,84 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-format-prefix = "KEY: "
-
 label-layout = %layout%
+
+format-prefix = "KEY: "
 
 [module/filesystem]
 type = internal/fs
-interval = 25
 mount-0 = /
 
 label-mounted = %mountpoint%: %free%/%total%
 label-unmounted = %mountpoint%: not mounted
 
+interval = 25
+
+[module/volume]
+type=internal/pulseaudio
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-volume = VOL: %percentage%%
+label-muted  = MUT: 0%
+
+interval = 5
+
 [module/battery]
 type=custom/script
-exec-if=~/.config/polybar/display-battery/target/release/display-battery --check
-exec=nice -n10 ~/.config/polybar/display-battery/target/release/display-battery
-tail=true
-format-prefix="BAT: "
+exec-if = ~/.config/polybar-scripts/display-battery/target/release/display-battery --check
+exec = ~/.config/polybar-scripts/display-battery/target/release/display-battery
+tail = true
 
-; Center modules
+internal = 1
+format-prefix = "BAT: "
+
+# }}}
+
+# -- Centre -- {{{
+
 [module/date]
 type = internal/date
-interval = 1
 format-margin = 0
 label = %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
 
-; Right modules
-[module/volume]
-type=internal/pulseaudio
-interval=5
-
-format-volume = <label-volume>
-format-muted = <label-muted>
-
-label-volume = VOL: %percentage%%
-label-muted  = MUT: 0%
-
-[module/cpu]
-type=internal/cpu
 interval = 1
 
+# }}}
+
+# -- Right -- {{{
+
+[module/cpu]
+type = internal/cpu
 format = <label>
-label = CPU: %percentage-sum%%
+label = %percentage-sum%%
 
-[module/temperature]
+interval = 1
+format-prefix = "CPU: "
+
+[module/gpu]
+type = custom/script 
+exec = ~/.config/polybar-scripts/radeon.py
+
+interval = 1
+format-prefix = "GPU: "
+
+[module/temperatures]
 type = custom/script
-exec = ~/bin/cpu-temp.sh
+exec = ~/.config/polybar-scripts/temps.sh
 
-format-prefix = "TEM: "
 interval = 1
 
 [module/memory]
-type=internal/memory
-interval = 1
+type = internal/memory
 format = <label>
-label = MEM: %gb_used%/%gb_total%
+label = %gb_used%/%gb_total%
+
+interval = 1
+format-prefix = "MEM: "
+
+# }}}
+
+# }}}
