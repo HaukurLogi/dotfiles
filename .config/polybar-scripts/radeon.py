@@ -31,5 +31,6 @@ if __name__ == "__main__":
     rtop = radeontop()
     radeontop_fields = ["gpu"]
     result = rtop.get_multiple_usages(radeontop_fields)
-    format_string = f"{round(float(result['gpu'][0]), 1)}%"
+    format_string = f"{int(round(float(result['gpu'][0]), 0))}%"
     print(format_string)
+
