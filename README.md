@@ -13,12 +13,6 @@ I'm changing this constantly, so if you install this beware that it may not look
 curl -Lks https://raw.githubusercontent.com/HaukurLogi/dotfiles/master/.config/install.sh | bash
 ```
 
-### Command to push
-
-```
-config push https://<Token>@github.com/HaukurLogi/dotfiles.git
-```
-
 ### Oh-my-zsh
 
 ```
