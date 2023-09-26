@@ -41,7 +41,10 @@ def placeNumber(level):
     y = int(input("Y : ")) - 1
     number = int(input("Number : "))
 
-    level[y][x] = number # Places number in level
+    if level[y][x] == 0:
+        level[y][x] = number # Places number in level
+    else:
+        print("Invalid placement! :/")
 
     seenX = []
     seenY = []
@@ -51,18 +54,19 @@ def placeNumber(level):
             if number != 0:
                 if number not in seenX: # Check Row
                     seenX.append(number)
+                    return level
                 if (column, number) not in seenY: # Check Column
                     seenY.append((column, number))
-                else:
+                    return level
+                if number in seenX or (column, number) in seenY:
                     print("You lost!")
-                    return 0
+                    return False
 
     printLevel(level)
-    return level # Return edited level
 
 level = makeValidTable(defaultGrid) # Create valid sudoku table
 
 while True:
     level = placeNumber(level)
-    if level == 0:
+    if not level:
         break
