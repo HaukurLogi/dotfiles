@@ -94,8 +94,8 @@ bindsym $mod+d                   exec rofi -show drun fullscreen
 # - Screenshot -
 bindsym $mod+s                   exec maim --select "/home/$USER/$(date).png"
 # - Volume -
-bindsym $mod+i                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $mod+k                   exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+i                   exec amixer -D pipewire sset Master 5%+ 
+bindsym $mod+k                   exec amixer -D pipewire sset Master 5%-
 
 # }}}
 
