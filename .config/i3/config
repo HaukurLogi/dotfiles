@@ -42,8 +42,6 @@ exec --no-startup-id             $HOME/.config/polybar/launch.sh
 exec --no-startup-id             redshift
 # - Sound Switcher - 
 exec --no-startup-id             indicator-sound-switcher
-# - Transparency -
-exec --no-startup-id             $HOME/bin/picom.sh  
 # - Unclutter -
 exec --no-startup-id             unclutter 
 
