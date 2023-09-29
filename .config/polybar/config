@@ -81,6 +81,7 @@ interval = 25
 type=custom/script
 exec = ~/.config/polybar-scripts/pipewire-volume.sh
 
+interval = 0.1
 format-prefix = "VOL: "
 
 [module/battery]
@@ -89,7 +90,7 @@ exec-if = ~/.config/polybar-scripts/display-battery/target/release/display-batte
 exec = ~/.config/polybar-scripts/display-battery/target/release/display-battery
 tail = true
 
-internal = 1
+interval = 1
 format-prefix = "BAT: "
 
 # }}}
