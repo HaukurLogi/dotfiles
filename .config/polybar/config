@@ -68,6 +68,15 @@ label-layout = %layout%
 
 format-prefix = "KEY: "
 
+[module/volume]
+type=internal/pulseaudio
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-volume = VOL: %percentage%%
+label-muted  = MUT: 0%
+
+interval = 5
+
 [module/filesystem]
 type = internal/fs
 mount-0 = /
@@ -77,21 +86,11 @@ label-unmounted = %mountpoint%: not mounted
 
 interval = 25
 
-[module/volume]
-type=custom/script
-exec = ~/.config/polybar-scripts/pipewire-volume.sh
+[module/pulseaudio]
+type = internal/pulseaudio
 
-interval = 0.1
+interval = 5
 format-prefix = "VOL: "
-
-[module/battery]
-type=custom/script
-exec-if = ~/.config/polybar-scripts/display-battery/target/release/display-battery --check
-exec = ~/.config/polybar-scripts/display-battery/target/release/display-battery
-tail = true
-
-interval = 1
-format-prefix = "BAT: "
 
 # }}}
 
