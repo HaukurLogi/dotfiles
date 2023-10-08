@@ -1,4 +1,5 @@
 import argparse
+import colorist
 import cv2
 import moviepy.editor as mp
 import time 
@@ -27,27 +28,34 @@ elif args.fill_type == 3:
 else:
     print("Invalid syntax. :/ ")
 
-def convert_row_to_ascii(row):
-    letter_length = len(LETTER) - 1
-    return tuple(LETTER[int(x / (255 / letter_length))] for x in row)[::-1]
+def getColor(row, column, source):
+    return source[row, column]
 
-def convert_to_ascii(input_grays):
-    return tuple(convert_row_to_ascii(row) for row in input_grays)
+def convertRowToAscii(row):    
+    letterLength = len(LETTER) - 1    
+    return tuple(LETTER[int(x / (255 / letterLength))] for x in row)
 
-def print_array(input_ascii_array):
-    print('\n'.join((''.join(row) for row in input_ascii_array)), end='')
+def convertToAscii(source):
+    return tuple(convertRowToAscii(row) for row in source)
+
+def printArray(inputAsciiArray):
+    print('\n'.join((''.join(row) for row in inputAsciiArray)), end='')
 
 while (True):
+    width = 160
+    height = 45
+
     ret, frame = video.read()
     if ret:
         time.sleep(0.041666) # 24 fps in seconds
         frameCounter += 1
 
         if frameCounter == video.get(cv2.CAP_PROP_FRAME_COUNT):
-            frameCounter = 0 #Or whatever as long as it is the same as next line
+            frameCounter = 0
             video.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        reduced = cv2.resize(gray, (int(80), int(45)))
-        converted = convert_to_ascii(reduced)
-        print_array(converted)
+        colored = frame
+        monocrome = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        reducedColored = cv2.resize(colored, (width, height))
+        reducedMono = cv2.resize(monocrome, (width, height)) # for 16:9 aspect ratio use 2x the amount of x pixels
+        printArray(convertToAscii(reducedMono))
