@@ -120,14 +120,14 @@ format-prefix = "CPU: "
 
 [module/gpu]
 type = custom/script 
-exec = ~/.config/polybar-scripts/radeon.py
+exec = ~/.config/polybar-scripts/python/radeon.py
 
 interval = 1
 format-prefix = "GPU: "
 
 [module/temperatures]
 type = custom/script
-exec = ~/.config/polybar-scripts/temps.sh
+exec = ~/.config/polybar-scripts/shell/temps.sh
 
 interval = 1
 
