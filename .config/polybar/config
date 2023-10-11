@@ -79,12 +79,8 @@ type = internal/fs
 mount-0 = /
 label-mounted = %mountpoint%: %free%/%total%
 label-unmounted = %mountpoint%: not mounted
-interval = 25
 
-[module/pulseaudio]
-type = internal/pulseaudio
-interval = 5
-format-prefix = "VOL: "
+interval = 25
 
 # }}}
 
@@ -97,7 +93,6 @@ label = %date%, %time%
 
 time = %H:%M:%S
 date = %d %b
-
 interval = 1
 
 # }}}
@@ -112,12 +107,11 @@ interval = 1
 format-prefix = "CPU: "
 
 [module/gpu]
-type = custom/script 
-exec-if = radeontop  
-exec = ~/.config/polybar-scripts/python/radeon.py
-
+type = custom/script   
+exec = ~/.config/polybar-scripts/shell/gpu.sh
 interval = 1
 format-prefix = "GPU: "
+
 [module/temperatures]
 type = custom/script
 exec = ~/.config/polybar-scripts/shell/temps.sh
