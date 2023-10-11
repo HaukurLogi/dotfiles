@@ -27,7 +27,7 @@ font-1=FontAwesome:size=6;2
 
 # -- Modules -- {{{
 
-modules-left = i3 xkeyboard filesystem volume battery
+modules-left = i3 xkeyboard filesystem volume
 modules-center = date
 modules-right = cpu gpu temperatures memory
 
