@@ -13,30 +13,30 @@ defaultGrid = [
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
 
-def printLevel(level):
+def print_level(level):
     for row in level:
         print(row) # Print sudoku table
 
-def makeValidTable(grid):
-    appendedNumbersInRow = []
-    appendedNumbersInColumn = []
+def make_valid_table(grid):
+    appended_numbers_in_row = []
+    appended_numbers_in_column = []
 
     for row in range(0,9):
-        appendedNumbersInRow.clear()
+        appended_numbers_in_row.clear()
         for column in grid[row]:
-            skipColumn = bool(randint(0,1))
-            randomNumber = randint(1,9)
-            randomColumn = randint(0,8)
-            if grid[row][randomColumn] == 0 and not skipColumn: # Check if number isn't already taken
-                if randomNumber not in appendedNumbersInRow:
-                    if (randomColumn, randomNumber) not in appendedNumbersInColumn:
-                        grid[row][randomColumn] = randomNumber
-                        appendedNumbersInRow.append(randomNumber)
-                        appendedNumbersInColumn.append((randomColumn, randomNumber))
-    printLevel(grid)
+            skip_column = bool(randint(0,1))
+            random_number = randint(1,9)
+            random_column = randint(0,8)
+            if grid[row][random_column] == 0 and not skip_column: # Check if number isn't already taken
+                if random_number not in appended_numbers_in_row:
+                    if (random_column, random_number) not in appended_numbers_in_column:
+                        grid[row][random_column] = random_number
+                        appended_numbers_in_row.append(random_number)
+                        appended_numbers_in_column.append((random_column, random_number))
+    print_level(grid)
     return grid # Returns edited grid
 
-def placeNumber(level):
+def place_number(level):
     x = int(input("X : ")) - 1
     y = int(input("Y : ")) - 1
     number = int(input("Number : "))
@@ -46,27 +46,27 @@ def placeNumber(level):
     else:
         print("Invalid placement! :/")
 
-    seenX = []
-    seenY = []
+    seen_x = []
+    seen_y = []
 
     for row in range(0,9):
         for column, number in enumerate(level[row]):
             if number != 0:
-                if number not in seenX: # Check Row
-                    seenX.append(number)
+                if number not in seen_x: # Check Row
+                    seen_x.append(number)
                     return level
-                if (column, number) not in seenY: # Check Column
-                    seenY.append((column, number))
+                if (column, number) not in seen_y: # Check Column
+                    seen_y.append((column, number))
                     return level
-                if number in seenX or (column, number) in seenY:
+                if number in seen_x or (column, number) in seen_y:
                     print("You lost!")
                     return False
 
-    printLevel(level)
+    print_level(level)
 
-level = makeValidTable(defaultGrid) # Create valid sudoku table
+level = make_valid_table(defaultGrid) # Create valid sudoku table
 
 while True:
-    level = placeNumber(level)
+    level = place_number(level)
     if not level:
         break

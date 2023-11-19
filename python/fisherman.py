@@ -7,19 +7,19 @@ import collections
 cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
 suits = ['Spades','Hearts','Diamonds','Leaves']
 deck = []
-yourBooks = []
-opponentBooks = []
-yourInventory = []
-opponentInventory = []
-stealingFrom = opponentInventory
-stealingTo = yourInventory
+your_books = []
+opponent_books = []
+your_inventory = []
+opponent_inventory = []
+stealing_from = opponent_inventory
+stealing_to = your_inventory
 
 # Bools
-yourTurn = True
+your_turn = True
 start = True
 
 # Integers
-cardCount = 0
+card_count = 0
 
 # Strings
 border = "--------------"
@@ -48,101 +48,101 @@ for card in cards:
 
 random.shuffle(deck) # Shuffle
 
-def drawCard(): # Draws a card
-    randomCard = random.randint(0,len(deck) - 1)
+def draw_card(): # Draws a card
+    random_card = random.randint(0,len(deck) - 1)
 
-    if yourTurn:
-            yourInventory.append(deck[randomCard])
+    if your_turn:
+            your_inventory.append(deck[random_card])
             if not start:
-                print(f"You got {deck[randomCard]}!")
+                print(f"You got {deck[random_card]}!")
                 print(border)
-            deck.remove(deck[randomCard])
+            deck.remove(deck[random_card])
 
-    if not yourTurn:
-            opponentInventory.append(deck[randomCard])
-            deck.remove(deck[randomCard])
+    if not your_turn:
+            opponent_inventory.append(deck[random_card])
+            deck.remove(deck[random_card])
 
 if start:
         for i in range(10): # Gives the players cards
-                drawCard()
-                if len(yourInventory) == 10:
-                        opponentInventory = yourInventory[:5]
-                        del yourInventory[:5] 
+                draw_card()
+                if len(your_inventory) == 10:
+                        opponent_inventory = your_inventory[:5]
+                        del your_inventory[:5] 
                         start = not start
 
 def stealing():
-        global yourTurn
-        global cardCount
-        global stealingFrom
-        global stealingTo
+        global your_turn
+        global card_count
+        global stealing_from
+        global stealing_to
 
-        if not start and len(opponentInventory) == 0:
+        if not start and len(opponent_inventory) == 0:
                 print("You Win!")
-        elif not start and len(yourInventory) == 0:
+        elif not start and len(your_inventory) == 0:
                 print("You Lose!")
 
-        if yourTurn:
-                for cardAmount in yourInventoryInfo.amount:
-                                cardCount += 1
-                                if cardAmount == 4:
+        if your_turn:
+                for card_amount in your_inventory_info.amount:
+                                card_count += 1
+                                if card_amount == 4:
                                         print("You got a book!")
                                         
                                 
-                print(f"Opponent Books: {'   '.join(opponentBooks)}")
-                print(f"Your Books: {'   '.join(yourInventoryInfo.books)}")
-                print(f"Your inventory : {'   '.join(map(str, yourInventoryInfo.list))}")
+                print(f"Opponent Books: {'   '.join(opponent_books)}")
+                print(f"Your Books: {'   '.join(your_inventory_info.books)}")
+                print(f"Your inventory : {'   '.join(map(str, your_inventory_info.list))}")
                 print(border)
                 
                 asked = input("Please write the card you want to steal : ")
                 print(border)
-                checkCard = any([asked.capitalize() == card.number for card in stealingFrom])
+                check_card = any([asked.capitalize() == card.number for card in stealing_from])
         else:
-                aiAsking = random.randint(0, len(opponentInventory) - 1)
-                asked = opponentInventory[aiAsking].number
-                checkCard = any([asked.capitalize() == card.number for card in stealingFrom])
+                ai_asking = random.randint(0, len(opponent_inventory) - 1)
+                asked = opponent_inventory[ai_asking].number
+                check_card = any([asked.capitalize() == card.number for card in stealing_from])
                 print(f'AI: {asked}')
                 print(border)
 
-        if any([asked.capitalize() == card.number for card in stealingTo]):
-                if checkCard:
-                        if yourTurn:
+        if any([asked.capitalize() == card.number for card in stealing_to]):
+                if check_card:
+                        if your_turn:
                                 print("He had the card!")
                                 print(border)
-                        for x in stealingFrom:
+                        for x in stealing_from:
                                 if asked.capitalize() == x.number:
-                                        stealingTo.append(x)
-                                        stealingFrom.remove(x)
+                                        stealing_to.append(x)
+                                        stealing_from.remove(x)
                 else:
-                        if yourTurn:
+                        if your_turn:
                                 print("He didn't have the card. Go fish!")
                                 print(border)
-                        drawCard()
-                        newCard = stealingTo[len(stealingTo) - 1].number
+                        draw_card()
+                        new_card = stealing_to[len(stealing_to) - 1].number
 
-                        if newCard == asked.capitalize():
-                                if yourTurn:
+                        if new_card == asked.capitalize():
+                                if your_turn:
                                         print("You drew the card!")
                                         print(border)
                                 else:
                                         print("Your opponent drew the card!")
                                         print(border)
                         else:
-                                yourTurn = not yourTurn
+                                your_turn = not your_turn
 
-                                if yourTurn:
-                                        stealingFrom, stealingTo = opponentInventory, yourInventory
+                                if your_turn:
+                                        stealing_from, stealing_to = opponent_inventory, your_inventory
                                 else:
-                                        stealingFrom, stealingTo = yourInventory, opponentInventory
+                                        stealing_from, stealing_to = your_inventory, opponent_inventory
         else:
                 print("Please enter a card that you have :/")
                 print(border)        
         
 while True: 
         # Objects
-        yourInventoryInfo = InventoryInfo(yourInventory) # Your Inventory Info Object
-        opponentInventoryInfo = InventoryInfo(opponentInventory) # Your Opponents Inventory Info Object
+        your_inventory_info = InventoryInfo(your_inventory) # Your Inventory Info Object
+        opponent_inventory_info = InventoryInfo(opponent_inventory) # Your Opponents Inventory Info Object
 
-        print(yourInventoryInfo.amount, yourInventoryInfo.card)
+        print(your_inventory_info.amount, your_inventory_info.card)
 
         # Calls
         stealing()

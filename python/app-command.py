@@ -3,7 +3,7 @@ import os
 import time
 
 
-isRunning = False
+is_running = False
 
 
 parser = argparse.ArgumentParser()
@@ -16,12 +16,12 @@ args = parser.parse_args()
 while True:
     time.sleep(1) # Wait 1 second before checking again
     if os.popen(f'pgrep {args.app}').read() != '': # Check if program is running
-        if not isRunning: # Makes sure runningmcd only runs once
+        if not is_running: # Makes sure runningmcd only runs once
             print(f"Program running; executing {args.runningcmd}...")
             os.system(args.runningcmd) # Runs runningcmd
-            isRunning = True
+            is_running = True
     else:
-        if isRunning: # Makes sure stoppedcmd only runs once
+        if is_running: # Makes sure stoppedcmd only runs once
             print(f"Program stopped; executing {args.stoppedcmd}...")
             os.system(args.stoppedcmd) # Runs stoppedcmd
-            isRunning = False
+            is_running = False

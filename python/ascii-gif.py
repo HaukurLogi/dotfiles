@@ -9,14 +9,14 @@ parser.add_argument('--gif', type=str, required=True) # Gif path
 parser.add_argument('--fill-type', type=int, required=True) # Ascii char fill type
 args = parser.parse_args()
 
-videoPath = args.gif    
+video_path = args.gif    
 
-clip = mp.VideoFileClip(f"{videoPath}.gif")
-clip.write_videofile(f"{videoPath}.mp4")
+clip = mp.VideoFileClip(f"{video_path}.gif")
+clip.write_videofile(f"{video_path}.mp4")
 
-video = cv2.VideoCapture(f"{videoPath}.mp4")
+video = cv2.VideoCapture(f"{video_path}.mp4")
 
-frameCounter = 0
+frame_counter = 0
 
 if args.fill_type == 1:
     LETTER = [' ', '.', ':', '░', '▒', '▓', '█']
@@ -28,18 +28,18 @@ elif args.fill_type == 3:
 else:
     print("Invalid syntax. :/ ")
 
-def getColor(row, column, source):
+def get_color(row, column, source):
     return source[row, column]
 
-def convertRowToAscii(row):    
-    letterLength = len(LETTER) - 1    
-    return tuple(LETTER[int(x / (255 / letterLength))] for x in row)
+def convert_row_to_ascii(row):    
+    letter_length = len(LETTER) - 1    
+    return tuple(LETTER[int(x / (255 / letter_length))] for x in row)
 
-def convertToAscii(source):
-    return tuple(convertRowToAscii(row) for row in source)
+def convert_to_ascii(source):
+    return tuple(convert_row_to_ascii(row) for row in source)
 
-def printArray(inputAsciiArray):
-    print('\n'.join((''.join(row) for row in inputAsciiArray)), end='')
+def print_array(input_ascii_array):
+    print('\n'.join((''.join(row) for row in input_ascii_array)), end='')
 
 while (True):
     width = 160
@@ -48,14 +48,14 @@ while (True):
     ret, frame = video.read()
     if ret:
         time.sleep(0.041666) # 24 fps in seconds
-        frameCounter += 1
+        frame_counter += 1
 
-        if frameCounter == video.get(cv2.CAP_PROP_FRAME_COUNT):
-            frameCounter = 0
+        if frame_counter == video.get(cv2.CAP_PROP_FRAME_COUNT):
+            frame_counter = 0
             video.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
         colored = frame
         monocrome = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        reducedColored = cv2.resize(colored, (width, height))
-        reducedMono = cv2.resize(monocrome, (width, height)) # for 16:9 aspect ratio use 2x the amount of x pixels
-        printArray(convertToAscii(reducedMono))
+        reduced_colored = cv2.resize(colored, (width, height))
+        reduced_mono = cv2.resize(monocrome, (width, height)) # for 16:9 aspect ratio use 2x the amount of x pixels
+        print_array(convert_to_ascii(reduced_mono))
