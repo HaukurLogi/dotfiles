@@ -34,6 +34,8 @@ exec                             setxkbmap qgmlwy
 
 # -- Run At Startup -- {{{
 
+# - Conky -
+exec --no-startup-id             ~/.conkyrc
 # - Dunst -
 exec --no-startup-id             dunst
 # - Polybar -
@@ -44,6 +46,8 @@ exec --no-startup-id             redshift
 exec --no-startup-id             indicator-sound-switcher
 # - Unclutter -
 exec --no-startup-id             unclutter 
+# - Picom -
+exec --no-startup-id             picom
 
 # -- Applications -- {{{
 
