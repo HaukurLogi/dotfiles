@@ -19,6 +19,6 @@ IMGW=${IMGHW#*x}
 POSH=$((($SCRH/2)-($IMGH/2)))
 POSW=$((($SCRW/2)-($IMGW/2)))
 
-xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -b -sh circle -- gifview -w WID $1 -a
+xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -b -sh circle -- mpv mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 --geometry=${IMGHW}+${POSH}+${POSW} -wid WID --loop $1
 
 exit 0
