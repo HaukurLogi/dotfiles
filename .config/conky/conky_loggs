@@ -14,23 +14,24 @@ conky.config = {
     own_window_transparent=true,
     own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
     own_window_colour='000000',
-    draw_graph_borders=false,
 
+	alignment = 'top_left',
+	minimum_width = 540, minimum_height = 350,
+	maximum_width = 540,
+	gap_x = 55,
+	gap_y = 765,
 	default_color = '#494a5b',
-	default_shade_color = 'black',
-	alignment = 'top_right',
-	gap_x = 265,
-	gap_y = 340,
-	minimum_width = 160, minimum_height = 250,
-	maximum_width = 160,
-	color1 = '#a5adff',
-	color2 = '#b4b4b4',
-	color3 = '#494a5b',
-	imlib_cache_size = 0,
+	color2 = '#d05400',
+	color3 = '#b30000',
 };
 
 conky.text = [[
 
-${color3}╭┈                  ┈╮${color}
-${execpi 60 python3 /home/$USER/.conky/calendar/pycal.py}
+  ╭╴               ╶╮
+       ${color a5adff}SYS LOGS${color }   
+  ╰╴               ╶╯
+${execpi 60 sudo tail -n 15 /var/log/messages | cut -c1-90 | awk '{$1=$2=$4=""; print $0}' | sed -e 's/kernel/${color af2445}kernel${color}/' -e 's/root/${color 23ada0}root${color}/'}
+
+
+  UPTIME: ${execi 60 uptime | awk '{print $3 $4 $5}'}
 ]];

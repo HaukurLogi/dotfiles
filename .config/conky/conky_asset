@@ -38,11 +38,11 @@ ${goto 415}${upspeedf enp3s0} KiB${color}
 ${voffset -45}${upspeedgraph enp3s0 60,400 14151f 494a5b scale 100KiB -l}
 ${texeci 7200 speedtest-cli --simple > /home/$USER/.conky/.speeds 2>&1}
 
-${execpi 60 cat /home/haukur/.conky/.speeds | sed -e 's/Ping/PNG/' -e 's/Download/DWN/' -e 's/Upload/UPL/' -e 's/$/    /' | tr '\n' ' '}
+${execpi 60 cat /home/haukur/.config/conky/.speeds | sed -e 's/Ping/PNG/' -e 's/Download/DWN/' -e 's/Upload/UPL/' -e 's/$/    /' | tr '\n' ' '}
 
 
 
 
 ${color 494a5b}${execi 3600 ip route}${color}
-##${image /home/$USER/.conky/asset.png -p 0,0 -n}
+##${image ~/.config/conky/asset.png -p 0,0 -n}
 ]];
