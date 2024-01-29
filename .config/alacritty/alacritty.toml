@@ -1,3 +1,6 @@
+[window]
+opacity = 0.75
+
 [colors.bright]
 black = "#808080"
 blue = "#0066ff"
