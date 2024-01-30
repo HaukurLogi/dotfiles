@@ -35,7 +35,7 @@ exec                             setxkbmap qgmlwy
 # -- Run At Startup -- {{{
 
 # - Conky -
-exec --no-startup-id             ~/.conkyrc
+exec --no-startup-id             $HOME/.conkyrc
 # - Dunst -
 exec --no-startup-id             dunst
 # - Polybar -
@@ -96,7 +96,7 @@ bindsym $mod+Shift+r             exec i3-msg restart
 # - Rofi -
 bindsym $mod+d                   exec rofi -show drun fullscreen
 # - Screenshot -
-bindsym $mod+s                   exec maim --select "/home/$USER/$(date).png"
+bindsym $mod+s                   exec maim --select "$HOME/$(date).png"
 # - Volume -
 bindsym $mod+i                   exec amixer -D pipewire sset Master 5%+ 
 bindsym $mod+k                   exec amixer -D pipewire sset Master 5%-
