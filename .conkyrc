@@ -1,9 +1,10 @@
-#!/bin/sh 
+#!/bin/sh
 
-conky -q -c ~/.config/conky/conky.conf &
-conky -q -c ~/.config/conky/conky_processes &
-conky -q -c ~/.config/conky/conky_connections &
-conky -q -c ~/.config/conky/conky_hdd &
-conky -q -c ~/.config/conky/conky_asset &
-conky -q -c ~/.config/conky/conky_cal &
-conky -q -c ~/.config/conky/conky_loggs & exit
+cd $HOME/.config/conky/ 
+conky -q -c conky.conf &
+conky -q -c conky_processes &
+conky -q -c conky_connections &
+conky -q -c conky_hdd &
+conky -q -c conky_asset &
+conky -q -c conky_cal &
+conky -q -c conky_loggs & exit
