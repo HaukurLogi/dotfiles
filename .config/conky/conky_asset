@@ -44,5 +44,5 @@ ${execpi 60 cat ~/.config/conky/.speeds | sed -e 's/Ping/PNG/' -e 's/Download/DW
 
 
 ${color 494a5b}${execi 3600 ip route}${color}
-##${image ~/.config/conky/asset.png -p 0,0 -n}
+${image ~/.config/conky/asset.png -p 0,0 -n}
 ]];
