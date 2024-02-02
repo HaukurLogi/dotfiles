@@ -16,9 +16,9 @@ conky.config = {
     own_window_colour='000000',
 
 	default_color = '#494b5a',
-	alignment = 'top_left',
-	gap_x = 700,
-	gap_y = 70,
+	alignment = 'top_middle',
+	gap_x = 0,
+	gap_y = 75,
 	color1 = '#a5adff',
 	color2 = '#FFFF00',
 	color3 = '#a5adff',
