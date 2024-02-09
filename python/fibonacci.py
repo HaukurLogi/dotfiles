@@ -1,4 +1,4 @@
-fibonacci = 100
+fibonacci = int(input("Fibonacci? : "))
 
 n1 = 0
 n2 = 1
