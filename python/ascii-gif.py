@@ -1,5 +1,4 @@
 import argparse
-import colorist
 import cv2
 import moviepy.editor as mp
 import time 
