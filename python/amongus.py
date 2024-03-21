@@ -1,61 +1,49 @@
 import random
-def main():
-
     
-    astronauts = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
-    everyone = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
-    imposters = ['','','','','','','','']
+everyone = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
+everyone_count = len(everyone)
+astronauts = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
+astronauts_count = len(astronauts)
+imposters = []
+imposters_count = int(input("How many imposters should be in the game? : "))
 
+for i in range(imposters_count):
+    random_imposter = random.randint(0, len(astronauts) - 1)
+    imposters.append(astronauts.pop(random_imposter))   
+print(f"{', '.join(imposters[:imposters_count - 1])} and {imposters[-1]} are the imposters!")
 
-    imposter1 = random.randint(0,9)
-    imposter2 = random.randint(0,9)
+while True:
+    vote = True
+    kill = random.randint(0, 2)
+    print(f"{', '.join(everyone[:everyone_count - 1])} and {everyone[-1]} are still alive.")
 
+    if kill == 1:
+        person_to_kill = astronauts[random.randint(0, len(astronauts) - 1)]
+        everyone.remove(person_to_kill)
+        astronauts.remove(person_to_kill)
+        print(f"{person_to_kill} got killed!")
 
-    if imposter1 != imposter2:
-        imposter = astronauts[imposter1]   
-        other_imposter = astronauts[imposter2] 
-        imposters.insert(imposter1, imposter)
-        imposters.insert(imposter2, other_imposter)
-        astronauts.remove(imposter)
-        astronauts.insert(imposter1, '')
-        astronauts.remove(other_imposter)
-        astronauts.insert(imposter2, '')
-    else:
-        print("The imposters we're the same please try again :/")
+    if vote == True:
+        person_to_vote = everyone[random.randint(0, len(everyone) - 1)]
+        if person_to_vote in imposters:
+            imposters.remove(person_to_vote)
+        else:
+            astronauts.remove(person_to_vote)
+        everyone.remove(person_to_vote)
+        print(f"{person_to_vote} got voted out!")
 
-    print(f"{imposter} and {other_imposter} are the imposters.")
-    while True:
-        vote = True
-        person_to_vote = random.randint(0,len(everyone) - 1)
-        kill = random.randint(0,1)
-        person_to_kill = random.randint(0,len(astronauts) - 1)
+    everyone_count = len(everyone)
+    astronauts_count = len(astronauts)
+    imposters_count = len(imposters)
 
-        if kill == 0:
-            if astronauts[person_to_kill] != '':
-                print(f"{astronauts[person_to_kill]} got killed!")
-                astronauts[person_to_kill] = ''
-                everyone[person_to_kill] = ''
+    if astronauts_count <= 2 and imposters_count == 2:
+        print("The imposters won!")
+        break
 
-        if vote == True:
-            if everyone[person_to_vote] != '':
-                print(f"{everyone[person_to_vote]} got voted out!")
-                astronauts[person_to_vote] = ''
-                everyone[person_to_vote] = ''
-                imposters[person_to_vote] = ''
+    if astronauts_count <= 1:
+        print("The imposters won!")
+        break
 
-        astronauts_count = sum([v != '' for v in astronauts])
-        imposters_count = sum([v != '' for v in imposters])
-
-        if astronauts_count <= 2 and imposters_count == 2:
-            print("The imposters won!")
-            break
-
-        if astronauts_count <= 1:
-            print("The imposters won!")
-            break
-
-        if imposters_count <= 0:
-            print("The crewmates won!")
-            break
-
-main()
+    if imposters_count <= 0:
+        print("The crewmates won!")
+        break
