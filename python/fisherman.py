@@ -4,8 +4,8 @@ import collections
 
 
 # Arrays
-cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
-suits = ['Spades','Hearts','Diamonds','Leaves']
+cards = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
+suits = ["Spades","Hearts","Diamonds","Leaves"]
 deck = []
 your_books = []
 opponent_books = []
@@ -35,9 +35,9 @@ class Card:
 
 class InventoryInfo:
         def __init__(self, inventory):
-                self.numbers = [c.number for c in inventory] # An array of your cards name e.g. ['Ace', 'Seven', 'Six', 'Five', 'Jack']
-                self.dict = collections.Counter([c.number for c in inventory]) # A dictionary of all card names and amounts e.g. {'Ace': '1', 'Seven': '1', 'Six': '1', 'Five': '1', 'Jack': '1'}
-                self.list = [f"{key}, x{value}" for key, value in collections.Counter([c.number for c in inventory]).items()] # An array of all of your cards e.g. ['Ace x1', 'Seven x1', 'Six x1', 'Five x1', 'Jack x1']
+                self.numbers = [c.number for c in inventory] # An array of your cards name e.g. ["Ace", "Seven", "Six", "Five", "Jack"]
+                self.dict = collections.Counter([c.number for c in inventory]) # A dictionary of all card names and amounts e.g. {"Ace": "1", "Seven": "1", "Six": "1", "Five": "1", "Jack": "1"}
+                self.list = [f"{key}, x{value}" for key, value in collections.Counter([c.number for c in inventory]).items()] # An array of all of your cards e.g. ["Ace x1", "Seven x1", "Six x1", "Five x1", "Jack x1"]
                 self.card = [key for key, value in collections.Counter([c.number for c in inventory]).items()] # A card is the name of the card e.g. "Ace"
                 self.amount = [value for key, value in collections.Counter([c.number for c in inventory]).items()] # Amount is the amount of a card e.g. "1"
                 self.books = [key for key, value in collections.Counter([c.number for c in inventory]).items() if value >= 4] # A book is the key which has the value of or above 4
@@ -88,9 +88,9 @@ def stealing():
                                         print("You got a book!")
                                         
                                 
-                print(f"Opponent Books: {'   '.join(opponent_books)}")
-                print(f"Your Books: {'   '.join(your_inventory_info.books)}")
-                print(f"Your inventory : {'   '.join(map(str, your_inventory_info.list))}")
+                print(f"Opponent Books: {"   ".join(opponent_books)}")
+                print(f"Your Books: {"   ".join(your_inventory_info.books)}")
+                print(f"Your inventory : {"   ".join(map(str, your_inventory_info.list))}")
                 print(border)
                 
                 asked = input("Please write the card you want to steal : ")
@@ -100,7 +100,7 @@ def stealing():
                 ai_asking = random.randint(0, len(opponent_inventory) - 1)
                 asked = opponent_inventory[ai_asking].number
                 check_card = any([asked.capitalize() == card.number for card in stealing_from])
-                print(f'AI: {asked}')
+                print(f"AI: {asked}")
                 print(border)
 
         if any([asked.capitalize() == card.number for card in stealing_to]):

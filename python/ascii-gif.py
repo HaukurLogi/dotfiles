@@ -4,8 +4,8 @@ import moviepy.editor as mp
 import time 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--gif', type=str, required=True) # Gif path
-parser.add_argument('--fill-type', type=int, required=True) # Ascii char fill type
+parser.add_argument("--gif", type=str, required=True) # Gif path
+parser.add_argument("--fill-type", type=int, required=True) # Ascii char fill type
 args = parser.parse_args()
 
 video_path = args.gif    
@@ -18,12 +18,12 @@ video = cv2.VideoCapture(f"{video_path}.mp4")
 frame_counter = 0
 
 if args.fill_type == 1:
-    LETTER = [' ', '.', ':', '░', '▒', '▓', '█']
+    LETTER = [" ", ".", ":", "░", "▒", "▓", "█"]
 elif args.fill_type == 2:
-    LETTER = [' ', '_', '.', ',', '-', '=', '+', ':', ';', 'c', 'b', 'a', '!', '?',
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', 'W', '#', '@', 'Ñ']
+    LETTER = [" ", "_", ".", ",", "-", "=", "+", ":", ";", "c", "b", "a", "!", "?",
+                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "$", "W", "#", "@", "Ñ"]
 elif args.fill_type == 3:
-    LETTER = [' ', '.', ':', '-', '=', '+', '*', '#', '%', '@']
+    LETTER = [" ", ".", ":", "-", "=", "+", "*", "#", "%", "@"]
 else:
     print("Invalid syntax. :/ ")
 
@@ -38,7 +38,7 @@ def convert_to_ascii(source):
     return tuple(convert_row_to_ascii(row) for row in source)
 
 def print_array(input_ascii_array):
-    print('\n'.join((''.join(row) for row in input_ascii_array)), end='')
+    print("\n".join(("".join(row) for row in input_ascii_array)), end="")
 
 while (True):
     width = 160

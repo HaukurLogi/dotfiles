@@ -1,8 +1,8 @@
 import random
     
-everyone = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
+everyone = ["Red", "Blue", "Pink", "Yellow", "Black", "Green", "White", "Cyan", "Purple", "Orange"]
 everyone_count = len(everyone)
-astronauts = ['Red', 'Blue', 'Pink', 'Yellow', 'Black', 'Green', 'White', 'Cyan', 'Purple', 'Orange']
+astronauts = ["Red", "Blue", "Pink", "Yellow", "Black", "Green", "White", "Cyan", "Purple", "Orange"]
 astronauts_count = len(astronauts)
 imposters = []
 imposters_count = int(input("How many imposters should be in the game? : "))
@@ -10,12 +10,12 @@ imposters_count = int(input("How many imposters should be in the game? : "))
 for i in range(imposters_count):
     random_imposter = random.randint(0, len(astronauts) - 1)
     imposters.append(astronauts.pop(random_imposter))   
-print(f"{', '.join(imposters[:imposters_count - 1])} and {imposters[-1]} are the imposters!")
+print(f"{", ".join(imposters[:imposters_count - 1])} and {imposters[-1]} are the imposters!")
 
 while True:
     vote = True
     kill = random.randint(0, 2)
-    print(f"{', '.join(everyone[:everyone_count - 1])} and {everyone[-1]} are still alive.")
+    print(f"{", ".join(everyone[:everyone_count - 1])} and {everyone[-1]} are still alive.")
 
     if kill == 1:
         person_to_kill = astronauts[random.randint(0, len(astronauts) - 1)]

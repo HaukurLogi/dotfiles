@@ -2,8 +2,8 @@ import random
 from dataclasses import dataclass
 
 
-cards = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King']
-suits = ['Spades','Hearts','Diamonds','Leaves']
+cards = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"]
+suits = ["Spades","Hearts","Diamonds","Leaves"]
 shuffled_cards_with_dupes = []
 your_inventory = []
 opponent_inventory = []
@@ -26,4 +26,4 @@ for card in cards:
 
 random.shuffle(deck) # Shuffle
 
-print('  '.join(map(str, deck)))
+print("  ".join(map(str, deck)))

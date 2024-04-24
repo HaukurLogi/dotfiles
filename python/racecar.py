@@ -15,7 +15,7 @@ def backwards(string):
    #     reverseString += string[-i + len(string) - 1]
     #return string == reverseString 
 
-with open(path, 'rb') as file:
+with open(path, "rb") as file:
     contents = json.load(file)
     print(contents)
     for word in contents:

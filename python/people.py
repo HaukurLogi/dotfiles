@@ -27,7 +27,7 @@ new_file = []
 
 if os.path.exists(path):
     if os.stat(path).st_size: # Checks if json file is empty
-        add_people = bool(int(input('If you only want to list already registered people, press "0"\nPossible answers: 0 and 1\nDo you wish to add more people? : ')))
+        add_people = bool(int(input("If you only want to list already registered people, press 0\nPossible answers: 0 and 1\nDo you wish to add more people? : ")))
     else:
         add_people = True
     if add_people:
