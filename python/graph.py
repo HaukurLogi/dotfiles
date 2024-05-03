@@ -49,7 +49,7 @@ def main():
         graph_x = [] # X values
         graph_y = [] # Y values
 
-        for i in range(1, 100+1):
+        for i in range(-100, 100+1):
             problem_with_x = problem.replace("x", str(i))
     
             graph_x.append(i) # Append X values
