@@ -12,7 +12,7 @@
     font: "Jetbrains Mono 16";
 
     foreground: @rofi-foreground;
-    background: @rofi-backgound;
+    background: @rofi-background;
     alternate-background: @rofi-grayer;
     active-background: @rofi-white;
     active-foreground: @rofi-black;
